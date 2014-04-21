@@ -8,6 +8,8 @@
     <script src="http://netdna.bootstrapcdn.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>
     <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery.address/1.6/jquery.address.min.js"></script>
     
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
     <script type="text/javascript" charset="utf-8">
         jQuery(document).ready(function($){
             
@@ -49,19 +51,40 @@
     	});
     </script>
 
+	<link href="//fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+
 	<style type="text/css">
+
+		body { padding-bottom: 70px; }
 
 		.section {
 			display:none;
 		}
 
-		.project_title {
+		.project-title {
 			position:absolute;
-			left:30px;
+			left:20px;
 			top:20px;
 		}
 
-		#coast{
+		.quote{
+			color: #cccccc;
+			font-weight:100;
+			font-size:1.5em;
+			text-align: center;
+		}
+
+		#title{
+			margin-top:75px;
+		}
+
+		.subhead{
+			color:#cccccc;
+			font-size:2em;
+			font-weight:100;
+		}
+
+		#home{
 			background-image: url('media/coast.jpg');
 			background-attachment: fixed;
 			background-repeat: no-repeat;
@@ -94,14 +117,19 @@
 
 		h2.chapter_title{
 			position:absolute;
-			top:250px;
-			font: bold 60px/60px Helvetica, sans-serif;
+			top:10px;
+			font-family: "Montserrat";
+			font-style: normal;
+			font-weight: 700;
+			font-size:100px;
+			line-height:85px;
+			color: #ffffff;
 		}
 
 		#chapter {
 			background-color: white;
 			padding:0px 0 30px 0;
-			margin-top:650px;
+			margin-top:500px;
 			margin-bottom:100px;
 		}
 
@@ -132,9 +160,6 @@ iframe.cover{width:100%;height:100%;}
 
 	</style>
 
-	<script type="text/javascript">
-
-	</script>
 
 </head>
 
@@ -144,25 +169,57 @@ iframe.cover{width:100%;height:100%;}
 
 <!--TITLE PAGE -->
 
-	<div class="row " id="coast">
+	<div class="row" id="home">
 
 		<video class="cover background-video" autoplay loop>
 		    <source src="video/cc-cover.mp4" type="video/mp4">
 		</video>
 
 		<div class="col-sm-6 col-sm-offset-3">
-			<h2>
-				"If you try to pick anything out in nature you find it hitched to everything else in the universe."
+			<h2 class="quote">
+				"If you try to pick anything out in nature you find it hitched to everything else in the universe."&mdash;John Muir
 			</h2>
-
-			<nav>
-		        <a href="#drought">Go To Section 1</a> 
-		        <a href="#fire">Go To Section 2</a> 
-		        <a href="#ag">Go To Section 3</a> 
-		        <a href="#sealevel">Go To Section 4</a> 
-    		</nav>
 		</div>
+
+		<div class="col-md-5 col-sm-offset-1" id="title">
+			<h1 style="display:none;">Climate California</h1>
+			<img src="featurehead.png" class="img-responsive" />
+			<div class="col-md-10 col-sm-offset-2">
+				<h2 class="subhead">Stories from the front lines in the battle against climate change.</h2>
+			</div>
+		</div>
+
+
 	</div>
+
+	<nav class="navbar navbar-default navbar-fixed-bottom" role="navigation">
+	  <div class="container">
+
+	  	<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+	  		<span class="sr-only">Toggle navigation</span>
+	        <span class="icon-bar"></span>
+	        <span class="icon-bar"></span>
+	        <span class="icon-bar"></span>
+		</button>
+
+		<p class="navbar-text"><a href="#home">CLIMATE<br/>CALIFORNIA</a></p>
+        	
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+	  	  	<ul class="nav navbar-nav">
+        		<li><a href="#drought">Heat, Drought,<br/>Climate Change</a></li>
+	        	<li><a href="#fire">Up Dinkey Creek<br/>With a Drip Torch</a> </li>
+	        	<li><a href="#ag">The Central Valley's<br/>Chilling Future</a> </li>
+	        	<li><a href="#sealevel">Come Shell or<br/>High Water</a></li>
+	        	</ul>
+
+	        	<ul class="nav navbar-nav navbar-right">
+        			<li><a style="padding-top:25px"href="#about">About</a></li>
+        		</ul>
+        </div>
+
+
+	  </div>
+	</nav>
 
 	<!-- end #coast -->
 
@@ -179,7 +236,7 @@ iframe.cover{width:100%;height:100%;}
 
 		<div class="col-sm-6 col-sm-offset-3">
 			<h2 class="chapter_title">
-				IN HOT WATER
+				HEAT, DROUGHT, CLIMATE CHANGE
 			</h2>
 			
 		</div>
@@ -253,6 +310,8 @@ iframe.cover{width:100%;height:100%;}
 			proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
 			</div>
 		</div>
+
+
 	</div><!-- end .row -->
 
 
@@ -266,7 +325,7 @@ iframe.cover{width:100%;height:100%;}
 
 		<div class="col-sm-6 col-sm-offset-3">
 			<h2 class="chapter_title">
-				FORESTS ON FIRE
+				UP DINKEY CREEK, WITH A DRIP TORCH
 			</h2>
 		</div>
 
@@ -343,7 +402,7 @@ iframe.cover{width:100%;height:100%;}
 
 		<div class="col-sm-6 col-sm-offset-3">
 			<h2 class="chapter_title">
-				CENTRAL VALLEY OUT OF CHILL
+				THE CENTRAL VALLEY'S CHILLING FUTURE
 			</h2>
 		</div>
 
@@ -351,60 +410,104 @@ iframe.cover{width:100%;height:100%;}
 			<div class="col-sm-10 col-sm-offset-1">
 			<img src="http://placekitten.com/620/400" class="img-responsive" />
 			<br />
-			<p><span class="dropcap">L</span>orem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-			tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-			quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-			consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-			cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-			proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-			tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-			quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-			consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-			cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-			proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-			tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-			quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-			consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-			cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-			proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-			tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-			quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-			consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-			cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-			proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-			tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-			quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-			consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-			cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-			proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-			tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-			quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-			consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-			cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-			proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-			tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-			quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-			consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-			cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-			proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-			tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-			quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-			consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-			cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-			proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-			tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-			quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-			consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-			cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-			proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+			<p><span class="dropcap">I</span>n his lifelong career as a pitted fruit breeder, Floyd Zaiger tried everything he could to force his trees to mutate and create new varieties of pluots, or interspecies plums.</p>
+
+			<p>He zapped them with cobalt radiation, fired x-rays at them and pounded the blossoms with meat tenderizer mallets to induce “mechanical” mutation.</p>
+
+			<p>Those attempts failed, but it turned out that natural radiation from the sun’s rays produced the mutations he needed to develop brand new varieties of the peaches, plums and cherries that earned him fame in agricultural circles.</p>
+
+			<p>Early on, the goal was to breed trees that bore tasty fruit. But in California’s Central Valley the rising temperatures and parched soil associated with climate change add a new sense of purpose to Floyd Zaiger’s experiments.</p>
+
+			<p>Climate change threatens the future of the Central Valley’s staple and cash crops – especially finicky trees that require particular temperature ranges and year-round water.</p>
+
+			<p>While rotating out thirstier crops for ones that require less water could solve some problems, it doesn’t help California’s $8.7 billion tree-bearing fruit and nut production industry. </p>
+
+			<p>Fruits and nuts are perennial crops that require a long-term commitment and water year-round to keep alive. They take years, even decades, to reach fruit-bearing maturity, so you can’t just rip them out of the ground at the end of the growing season to plant something else next year.</p>
+
+			<p>Tree farmers are often left with the difficult choice of cutting back or abandoning altogether their operations, or trying to cope with scarcer and more expensive water and an increasingly inhospitable climate. </p>
+
+			<p>That’s where Floyd Zaiger comes in.</p>
+
+			<p>Founded in the 1970s, Zaiger’s Genetics in Modesto uses selective breeding to produce new varieties of pitted fruits, called stone fruits. The family-run research orchard then sends the rootstocks it develops to its partner, Dave Wilson Nursery in Modesto, for commercial production. The family maintains the intellectual property rights to its creations.</p>
+
+			<p>These days, Floyd Zaiger is semi-retired and his daughter, Leith Gardiner, mainly runs the orchard now. Gardiner has a plant sciences degree from the University of California, Davis and “a gazillion years experience” from working the family business.</p>
+
+			<p>On a February afternoon, she makes her rounds on a golf cart, rolling down aisle after aisle of trees, a cloud of red dust trailing behind. Her two dogs, Lucy and Trixie, follow along, weaving between trees, sometimes stopping to dig. When one gets tired, it hops up on the passenger side of the cart.</p>
+
+			<p>Some of the trees are starting to bloom with lavender and pink flowers. Gardiner takes note, charting when the trees bloom, which will be important to know come pollinating season.</p>
+
+			<p>She stops at a plum tree. Only half of its branches have blossomed, the rest is bare. </p>
+
+			<p>The unusually warm winter in the Central Valley this year means many fruit trees are blooming irregularly, she says. That generally means lower quality fruit. </p>
+
+			<p>Stone fruits and citrus trees need cold winter weather to properly grow blossoms and leaves in the spring and summer. Different types of tree require certain ranges of “winter chilling hours,” or hours when temperatures fall below 45 degrees Fahrenheit. When trees lose chilling hours, their buds might open later or be deformed. That lowers crop yields and the trees end up with fewer leaves, needed to absorb sunlight.</p>
+
+			<p>In 2014, California had a mild January and February, which offset some of the cold temperatures in December.</p>
+
+			<p>Gardiner is on the lookout for the trees that did well in this warm and dry year to breed into future varieties. Those are the trees that will probably do well in climate change, when warmer weather is more likely.</p>
+
+			<p>“Your goal is to breed things that are better than what already exists,” Gardiner said.</p>
+
+			<p>Varieties the Zaigers produce this year will take a decade to move into commercial production. That’s why, experts say, growers need to start planning now. </p>
+
+			<p>***</p>
+
+			<p>In some areas of the Central Valley, winter chilling hours have decreased by 30 percent since 1950, according to a 2009 study by researchers at UC Davis. Back then, growers could rely on 700-1200 chilling hours per winter. </p>
+
+			<p>By 2050, the decline will double to as much as 60 percent , according to the worst-case carbon emission scenarios from computer modeling the researchers used. By the end of the century, the Central Valley might not be suitable for growing walnuts, pistachios, peaches, apricots, plums and cherries anymore.</p>
+
+			<p>Measuring winter chill can be complicated, with different types of trees requiring different ranges of chilling hours and different models for measuring it.</p>
+
+			<p>But “chill is definitely reducing no matter which way you measure it,” said Katherine Pope, a UC Davis postdoctoral student who studies climate change and nut trees. </p>
+
+			<p>Many Central Valley crops were originally bred in southern Italy, Spain and Greece, climates similar to California’s Central Valley. In the short term, those plants might actually like the warmer climate and grow better. But after a certain point, the warmer climate will be deleterious, said Dennis Baldocchi, a UC Berkeley professor of environmental science, policy and management.</p>
+
+			<p>As a biometeorologist, Baldocchi measures the temperature of a plant’s buds that leaf out and form flowers. According to his latest research, the decline of winter chill could be even worse than what the computer models have projected so far. The models are based on simple weather station data, he said. That data doesn’t take into account one simple factor: fog.</p>
+
+			<p>In California in the past “we had a lot of winter chill because we got these inversion fogs during the winter time,” Baldochhi said. “When it’s foggy, the sunlight is reflected away from the ground. It kind of caps the cold air and it stays around 35-40 degrees.”</p>
+
+			<p>Baldocchi, 58, grew up in the Central Valley and recalled nights playing high school soccer and not being able to see the other end of the field because of the fog. His data from Fresno and Bakersfield shows that fog increased until the 1970s, then began to decline. </p>
+
+			<p>What does this mean for fruit trees? Less fog means more sunlight, more sunlight means less winter chill.</p>
+
+			<p>And the temperature the tree <em>actually feels</em> may be higher than what the weather station reports. As Pope explained: If you’re lying in the grass on a sunny day in 38 degree weather, you’ll absorb the sunlight and feel different than you would if it’s 38 degrees and foggy. Same for a tree.</p>
+
+			<p>As this dire, less chilly projection for the Central Valley unfolds, plants can still adapt to the changing environment, and humans can speed up the process. </p>
+
+			<p>At Zaiger’s Genetics, workers use eye shadow brushes to hand-pollinate 2,000 barreled trees starting as early as late January each year. Then they can collect the resulting seeds, plant them and evaluate the quality of the new trees. The desirable plants will provide pollen for future varieties.</p>
+
+			<p>For tree crops in particular, the process can take years to show any real results. That’s one reason to get on the bus early, Pope said.</p>
+
+			<p>“It takes so long from taking a tree with characteristics that you want to having a variety that you can release confidently into the marketplace,” she said. </p>
+
+			<p>For example, say you have two almond trees. One has the gold standard consumer characteristics: the right flavor and a hard golden shell. The other isn’t as great, but it requires less winter chill.</p>
+
+			<p>If you pollinate one tree with the other, according to simplified Mendelian genetics, half of the resulting nuts might have the low chill requirement you want. But you must wait for the trees to mature to observe the phenotype. You might also end up with unwanted traits in some of those trees that then need to be thrown out. Repeating this process over and over, it could be many years before you finally get a tree that yields a marketable crop.</p>
+
+			<p>“Then it’s 2050, and all these climate change predictions are coming true and you’re barely on top of it,” Pope said. </p>
+
+			<p>And while plant breeding can reduce the danger of crop failure posed by warming winters, Pope said, genetics can only go so far in addressing the problem.</p>
+
+			<p>Water will always be at the heart of any conversation about agriculture in California. The water problem is bigger than just winter chill and plant breeding. </p>
+
+			<p>“We’ve improved crop yields, but not water use one iota,” Baldocchi said. </p>
+
+			<p>Even as a student at UC Davis, before climate change was making headlines, Baldocchi said he was told that California’s system of irrigated agriculture was not sustainable.</p>
+
+			<p>“In California, the story is really two fold right now. You’re seeing lack of irrigation water, which the trees need,” Baldocchi said. “And part two is the (reduced) winter chill accumulation. Fruit tree ranchers have a double whammy going against them right now.”</p>
+
+			<p>***</p>
+
+			<p>At Zaiger’s orchard in February, it’s spring, even though the calendar still says it’s winter. “When trees start flowering, it’s spring,” Gardiner says.</p>
+
+			<p>Spring triggers the blooming process, and the orchard has come alive with the pinks and purples of fruit blossoms. The trees with petals required fewer chilling hours than the still-bare trees.</p>
+
+			<p>In a year of heat and drought, the plants that are thriving compared to the others, Gardiner said, are the adaptable varieties. </p>
+
+			<p>As conditions continue to swing toward hot and dry, the industry will need to look for drought-tolerant varieties like these, she said. Some could come from breakthroughs in lab testing of genetic modifications. But others will be the product of meticulous breeding of more and more resilient plants at farms like Zaiger’s, Gardiner said.</p>
+
+			<p>“Everything that makes it through a year like this is a little more tolerant than its predecessors,” she said.</p>
+
 			</div>
 		</div>
 	</div><!-- end .row -->
@@ -420,7 +523,7 @@ iframe.cover{width:100%;height:100%;}
 
 		<div class="col-sm-6 col-sm-offset-3">
 			<h2 class="chapter_title">
-				OYSTERS SAVE THE BAY
+				COME SHELL, OR HIGH WATER
 			</h2>
 		</div>
 
