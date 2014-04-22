@@ -10,8 +10,26 @@
     
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
+    <script type="text/javascript">
+    	jQuery(document).ready(function($){
+
+    		$(window).on('load resize', function(){
+
+    			$('.section').css('min-height', $(window).height());
+    		})
+    		
+
+    	});
+    </script>
+
     <script type="text/javascript" charset="utf-8">
         jQuery(document).ready(function($){
+
+        	$(function() {
+			$('#fds .fade').each(function(i) {
+			$(this).delay((i++) * 600).fadeTo(1500, 1,'linear'); })
+			});
+
             
             //This is what happens when you click on a link in the <nav> tag
             $.address.change(function(e) {  
@@ -20,7 +38,7 @@
                 var id = e.value.replace(/\//g, "");
                 
                 $("#" + id).css({
-                    'display':'block'
+                    'display':'block',
                 });
                 
                 /*
@@ -35,21 +53,10 @@
                 return $(this).attr('href').replace(/^#/, '');  
             });
 
-
         });
     </script>
 
-    <script type="text/javascript">
-    	jQuery(document).ready(function($){
 
-    		$(window).on('load resize', function(){
-
-    			$('.section').css('min-height', $(window).height());
-    		})
-    		
-
-    	});
-    </script>
 
 	<link href="//fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
 
@@ -67,15 +74,20 @@
 			top:20px;
 		}
 
-		.quote{
+		#quote{
 			color: #cccccc;
 			font-weight:100;
 			font-size:1.5em;
 			text-align: center;
 		}
 
+
 		#title{
 			margin-top:75px;
+		}
+
+		.fade{
+			opacity: 0;
 		}
 
 		.subhead{
@@ -126,9 +138,14 @@
 			color: #ffffff;
 		}
 
+		h3.subhead {
+			padding-bottom:30px;
+			color: #777;
+		}
+
 		#chapter {
 			background-color: white;
-			padding:0px 0 30px 0;
+			padding:30px 0 30px 0;
 			margin-top:500px;
 			margin-bottom:100px;
 		}
@@ -150,7 +167,6 @@
 		}
 
 
-
 video.cover{position:fixed;left:50%;top:50%;-webkit-transform:translate(-50%, -50%);-moz-transform:translate(-50%, -50%);-ms-transform:translate(-50%, -50%);transform:translate(-50%, -50%);height:100%;width:auto;}
 
 iframe.cover{width:100%;height:100%;}
@@ -165,32 +181,6 @@ iframe.cover{width:100%;height:100%;}
 
 <body>
 <div class="container-fluid">
-
-
-<!--TITLE PAGE -->
-
-	<div class="row" id="home">
-
-		<video class="cover background-video" autoplay loop>
-		    <source src="video/cc-cover.mp4" type="video/mp4">
-		</video>
-
-		<div class="col-sm-6 col-sm-offset-3">
-			<h2 class="quote">
-				"If you try to pick anything out in nature you find it hitched to everything else in the universe."&mdash;John Muir
-			</h2>
-		</div>
-
-		<div class="col-md-5 col-sm-offset-1" id="title">
-			<h1 style="display:none;">Climate California</h1>
-			<img src="featurehead.png" class="img-responsive" />
-			<div class="col-md-10 col-sm-offset-2">
-				<h2 class="subhead">Stories from the front lines in the battle against climate change.</h2>
-			</div>
-		</div>
-
-
-	</div>
 
 	<nav class="navbar navbar-default navbar-fixed-bottom" role="navigation">
 	  <div class="container">
@@ -221,7 +211,34 @@ iframe.cover{width:100%;height:100%;}
 	  </div>
 	</nav>
 
-	<!-- end #coast -->
+
+<!--TITLE PAGE -->
+	<div class="row" id="home">
+
+		<video class="cover background-video" autoplay loop>
+		    <source src="video/cc-cover.mp4" type="video/mp4">
+		</video>
+
+		<div id="fds">
+		<div class="col-sm-6 col-sm-offset-3">
+			<h2 id="quote" class="fade">
+				"If you try to pick anything out in nature you find it hitched to everything else in the universe."&mdash;John Muir
+			</h2>
+		</div>
+
+		<div class="col-md-5 col-sm-offset-1" id="title">
+			<h1 style="display:none;">Climate California</h1>
+			<img src="featurehead.png" class="img-responsive fade" />
+			<div class="col-md-10 col-sm-offset-2">
+				<h2 class="subhead fade">Stories from the front lines in the battle against climate change.</h2>
+			</div>
+		</div>
+		</div><!--fds-->
+
+	</div><!--end row-->
+
+
+<!-- end #coast -->
 
 
 
@@ -242,72 +259,78 @@ iframe.cover{width:100%;height:100%;}
 		</div>
 
 		<div class="col-sm-6 col-sm-offset-3" id="chapter">
-			<img src="http://placekitten.com/1000/600" class="img-responsive" />
+
 			<div class="col-sm-10 col-sm-offset-1">
-				<h2>In hot water</h2>
-			<br />
+			
+			<h3 class="subhead">
+				As California experiences its worst drought on record, the state takes a new look at conservation. 
+			</h3>
 
-			<p><span class="dropcap">L</span>orem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-			quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-			consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-			cillum dolore eu fugiat nulla pariatur. <span style="color:red; letter-spacing:4px; font-size:60px; line-height:50px;">THE QUICK BROWN FOX JUMPED OVER THE LAZY DOG</span>, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-			tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-			quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-			consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-			cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-			proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-			tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-			quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-			consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-			cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-			proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-			tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-			quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-			consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-			cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-			proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+			<p><span class="dropcap">C</span><p>alifornia may have grown up on a faulty assumption: the water we expected every year will always come.</p>
 
-			<div class="col-sm-6">
-				<img src="http://placekitten.com/400/400" class="img-responsive" />
-			</div>
-			<div class="col-sm-6">
-				<img src="http://placekitten.com/400/400" class="img-responsive" />
-			</div>
+			<p>In the winter, the Sierra Nevada mountains accumulate a thick layer of snow. As temperatures rise in the spring, the Sierra snowpack gradually melts and runs down to quench the Central Valley and the rest of the state. The snowpack is California’s  largest source of both irrigation and drinking water.</p>
 
+			<p>But in 2014, California’s driest year on record, the warm winter meant rain rather than snow in the mountains. With a snowpack level around 20 percent of normal, the mountains didn’t store the water for later. Most of the water ran right through to the streams. </p>
 
-			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-			tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-			quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-			consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-			cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-			proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-			tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-			quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-			consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-			cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-			proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-			tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-			quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-			consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-			cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-			proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-			tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-			quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-			consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-			cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-			proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-			tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-			quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-			consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-			cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-			proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+			<p>"So you can kind of look at the snowpack as a temporary reservoir," said Randall Osterhuber, a researcher at the Central Sierra Snow Lab, a unit of UC Berkeley. California does not typically store rainwater, and it’s difficult to manage. That’s why the timed-release of water from snowmelt matters.</p>
+
+			<p>"The short sentence is: up here, we're seeing a climate that's slightly and slightly warmer," Osterhuber said. "It's the warmer thing that really makes a difference in the mountains where the dominant precipitation type is snowfall."</p>
+
+			<img src="media/drought1.jpg" class="img-responsive" />
+
+			<p>***</p>
+
+			<p>This year’s historic drought raised questions about the threat that climate change poses to the state’s water supply, and also renewed a long-standing conversation about how to better manage that water supply. </p>
+
+			<p>California has a Mediterranean climate marked by dry summers and wet winters. Multi-year and multi-decade atmospheric patterns also play a role in when and how much water the area gets. </p>
+
+			<p>Paleoclimatologist and UC Berkeley professor Lynn Ingram used tree rings and sediment cores from the San Francisco Bay to track dry years in the historic record. In the 1500s, the time of Columbus, Ingram noted a “medieval megadrought,” </p>
+
+			<p>California has seen several such long dry spells lasting hundreds of years at a time.</p>
+
+			<p>The centuries after the medieval drought were relatively wet, including a “Little Ice Age.”</p>
+
+			<p>“California and Central Valley were founded under the assumption that this wet period would always continue,” Ingram said.</p>
+
+			<p>“This is a natural cycle independent of … global warming. So we have to consider both those possibilities” in tracing the cause of drought years in California, Ingram said at a conference on drought and climate change at UC Berkeley.</p>
+
+			<p>Scientists at Utah State University are working on a method to predict drought.</p>
+
+			<p>“Any indication of paleologic drought …will help us to understand if there’s a reason, a cycle, behind that,” said Simon Wang, an associate professor of climatology at Utah State. “We can use that to predict the next big one. But in terms of how big, I think that is an open question.”</p>
+
+			<p>Using a computer model, Wang and his colleagues found that the 2013-2014 drought could not have occurred due to natural historic cycles, according to the study published in the journal Geophysical Research Letters. In other words, climate change and greenhouse gas emissions are needed to explain the current drought.</p>
+
+			<p>A high-pressure ridge characterized this year’s drought over the Pacific Ocean. That system, dubbed the “Ridiculously Resilient Ridge” in the media, pushed winter storms north of California to the Pacific Northwest. At the same time, the eastern part of the country saw deep low pressure – a “trough” – which caused the large cold snap known as the “polar vortex.” Together, these events formed what’s called a “dipole.” </p>
+
+			<p>"It is important to note that the dipole is projected to intensify, which implies that the periodic and inevitable droughts California will experience will exhibit more severity," Wang wrote in the paper.</p>
+
+			<p>The paper also concludes that the dipole could be used to predict future El Niño events. A strong enough El Niño can break the high-pressure system, provide some relief to the drought-strained state.</p>
+
+			<p>The National Oceanic and Atmospheric Administration predicts with some certainty that a strong El Niño will develop this summer and bring rain and warmer seas to the California coast as early as this fall.</p>
+
+			<p>***</p>
+
+			<p>If you drew a line on a map from San Francisco to Lake Tahoe, you’d see the challenge the state’s water system faces. About 80 percent of the snowpack runoff comes from north of that line. Yet, 66 percent of water users live south of the line. People who live on the southern California coast receive more than 60 percent of the water they use piped in from other regions, said Kamyar Guivetchi of the California Department of Water Resources. The San Francisco Bay Area gets a similar percentage of its water piped in other parts of the state.</p>
+
+			<p>“If we go back to those medieval droughts, I don’t really know what we would do. But we’re in trouble now,” Guivetchi said in a panel discussion on drought at UC Berkeley. “We are living today what we could be experiencing in the future.”</p>
+
+			<p>By the end of the century, the snowpack might be reduced 45 percent of what it is today. The state might be getting enough precipitation, but it’s not getting enough snow. In a warmer climate, snow might occur only at higher altitudes, and scientists have observed the snow levels retreating up the slope. Higher up the mountain, there’s less terrain to cover with snow.</p>
+
+			<p>Mark Gold, the associate director of the UCLA Institute of the Environment and Sustainability, is part of an ambitious effort by UCLA scientists to help the city find local sources for 100 percent of its water by 2050.</p>
+
+			<p>Gold said the idea is “crazy, but doable.” In Los Angeles, 89 percent of the city’s water comes from hundreds of miles away in the Owens Valley, the Colorado River or the Sacramento-Bay Delta.</p>
+
+			<p>“It’s all coming from a long way. So clearly what we’re doing here has not been sustainable for decades and will not be in the future,” he said.</p>
+
+			<p>In addition to good old-fashioned conservation and better water recycling, Gold said they need to capture Southern California’s rainwater, most of which now just pours  into storm drains and out, to the ocean.</p>
+
+			<p>Gold suggested changing street improvement requirements to create “green streets” that would capture rainwater and runoff for treatment and reuse. In the Sun Valley  north of Los Angeles there are big troughs of open soil that capture stormwater. The soil then filters the water before it enters the supply.</p>
+
+			<p>“We need to start looking at stormwater as a supply source rather than a flood source,“ Gold said.</p>
+
+			<p>Drought researchers Ingram and Wang agree that conservation and better use of the shrinking water supplies will be critical.</p>
+
+			<p>“I definitely think we need to start valuing water more,” Ingram said. “We’re in for the long-term of water scarcity and we need to think of water as a much more valuable resource than we do now.”</p>
 			</div>
 		</div>
 
@@ -331,62 +354,122 @@ iframe.cover{width:100%;height:100%;}
 
 		<div class="col-sm-6 col-sm-offset-3" id="chapter">
 			<div class="col-sm-10 col-sm-offset-1">
-			<img src="http://placekitten.com/620/400" class="img-responsive" />
-			<br />
-			<p><span class="dropcap">L</span>orem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-			tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-			quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-			consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-			cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-			proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-			tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-			quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-			consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-			cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-			proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-			tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-			quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-			consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-			cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-			proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-			tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-			quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-			consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-			cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-			proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-			tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-			quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-			consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-			cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-			proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-			tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-			quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-			consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-			cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-			proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-			tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-			quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-			consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-			cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-			proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-			tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-			quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-			consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-			cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-			proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-			tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-			quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-			consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-			cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-			proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+
+			<h3 class="subhead">In the Southern Sierra, a group works to prevent a disaster like the Rim Fire in their forest. Using fire.</h3>
+
+			<p><span class="dropcap">T</span><p>here’s a serene silence in the forest, interrupted only by the occasional crackle of a burning tree. A gentle gust of wind catches the smoldering trunk and it erupts in flames. Carolyn Ballard, a United States Forest Service firefighter stands by, watching without alarm as smoke fills the canyon.</p>
+			
+			<p>In the Sierra National Forest, this is a restorative process.</p>
+
+			<p>***</p>
+			
+			<img src="media/fire1.jpg" class="img-responsive" />
+
+			<p>Over the course of her 30-year career, Ballard has seen the changes pile up in her section of forest in the southern Sierra, known as Dinkey Creek. The forest, she says, is “out of whack."</p>
+
+			<p>It’s late March and there still should be snow on the ground. Instead the ground is dry and the trees are thirsty. Freezing winters should kill off the bugs that eat the forest alive. Instead, they’re getting two influxes of bugs a year, Ballard said.</p>
+			
+			<p>“We don’t notice climate change, but we do notice warmer and drier winters and less snowpack,” she said.</p>
+
+			<p>In California’s forests, climate change is intensifying the potential for severe wildfires. Combine that with a century of poor forest management, and one spark could spell disaster for nearby homes and sensitive wildlife habitats.</p>
+
+			<p>But Ballard, a USFS fire and fuels specialist, believes catastrophic wildfires can be prevented using a tool the forest itself has always relied on: fire.</p>
+			
+			<p>The Dinkey Creek Landscape Restoration Project is a science-based approach to forest management, designed to essentially build a better forest – one that’s resilient to uncharacteristically large wildfires and the ill effects of climate change.</p>
+			
+			<p>The project area covers 154,000 acres in the southern Sierra Nevada mountains, northeast of Fresno. Part of the federally funded Collaborative Forest Landscape Restoration program, the Dinkey Creek project brings together scientists, Forest Service officials, conservationists, Native American groups, landowners and the 4-Wheel Drive Club of Fresno to guide the restoration. They’re collectively known as the Dinkey Collaborative.</p>
+			
+			<p>The collaboratives embrace the notion of fire as a natural process in the forests. Fires can be ecologically beneficial if conditions are right.</p>
+			
+			<p>Using prescribed burning and some mechanical thinning of the smaller trees and underbrush, the restoration project effectively stops large fires before they start by clearing the forest of fuel for fire.</p>
+
+			<img src="media/fire2.jpg" class="img-responsive" />
+
+			<p>These forest management initiatives have taken on a new sense of urgency as climate change has increased the conditions for catastrophic wildfires. With less snow in the mountains and rising temperatures at higher elevations, the soil begins to dry up along with the trees and underbrush in the forest.</p>
+			
+			<p>"Six or seven years ago, climate change wasn't really on anyone's radar,” said Malcolm North, a research ecologist with the United States Department of Agriculture. “Now it's pretty much percolated through all the land management agencies where I've worked."</p>
+
+			<p>North, whose research has guided much of the restoration work in Dinkey Creek, said with high temperatures, strong winds and fuel-filled forests, wildfires are likely to increase.</p>
+
+			<p>In the past decade, California has seen nine of its largest fires in history.</p>
+			
+			<style>.embed-container { position: relative; padding-bottom: 56.25%; padding-top: 30px; height: 0; overflow: hidden; max-width: 100%; height: auto; } .embed-container iframe, .embed-container object, .embed-container embed { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }</style><div class='embed-container'><iframe src='http://seangreene.github.io/BigFires/' style='border:0'></iframe></div>
+
+			<p>The changing weather patterns have also led fire managers to open fire season earlier and earlier each year since the mid-20th century.</p>
+			
+			<p>The forest didn’t always need help to regulate itself. Before California was a state, before it was settled, fire was part of the natural cycle in the Sierra’s forests. Sometimes, Native Americans would burn sites as they left for the winter to make it safe for them to return to later, Ballard said. </p>
+			
+			<p>A century ago, the United States Forest Service enacted a policy of trying to put out a fire by 10 o’clock the day or night after it was discovered. The goal was to suppress fires quickly to protect nearby homes and other property, at the expense of the forest’s natural process</p>
+
+			<p>
+			    <strong>graphic will go here</strong>
+			</p>
+
+
+			<p>The result is the growth of brush and smaller trees that pack the forest floor and provide fuel for catastrophic firestorms.</p>
+
+			<p>Some people visit the forests and think the dense can't-walk-through-it forest is how it’s supposed to be, said Denise Tolmie, a fire management specialist for the Sierra National Forest. Pre-settlement forests were more "park-like.” As it is now, the land doesn’t have the water, sunshine and space to sustain that many trees and plants. The trees are so packed, they’re competing with each other.</p>
+			
+			<p>“There are some pieces of land we have here in the Sierra National Forest that are basically overcrowded," Tolmie said.
+			</p>
+			
+			<p>Now the Dinkey Collaborative wants to return to the forest’s more natural state and way of regulating itself to avoid devastating fires.
+			</p>
+			
+			<p>“A lot of people would say there's no way we can go back in time,” North said. “(But) those past conditions still have lessons for us to try to put the forest back into the condition where it is better able to absorb disturbances and shocks to changing climate conditions.”
+			</p>
+
+			<img src="media/fire5.jpg" class="img-responsive" />
+
+			<p>Last summer’s devastating fire near Yosemite National Park reinforced the need for change in the Sierra.
+			</p>
+
+			<p>On Aug. 17, 2013, a hunter’s illegal campfire sparked what became California’s second most destructive wildfire in recorded history. The Rim Fire burned more than 400 square miles of old growth forest between Stanislaus National Forest and Yosemite National Park. There was no loss of life, but eleven homes were destroyed.
+			</p>
+			
+			<p>Climate scientists say, in the case of the Rim fire, the event wasn’t necessarily caused by climate change. But warmer, drier weather conditions mean a higher chance of more frequent and more severe wildfires, said Anthony Westerling, a wildfire researcher and associate professor at UC Merced.
+			</p>
+
+			<p>"The analogy I like to use for people is dice,” Westerling said. “The dice are representative of the climate system. Weather is the outcome. A roll of the die is like a weather event, and with climate change we're weighting the dice so we get more sixes and fewer ones.
+			</p>
+
+			<p>"Climate change is pushing us toward more warm-dry extremes and fewer cool-wet extremes. Over time that increases the risk of large fire events."</p>
+
+			<p>The Rim Fire also highlighted the difference the two different forest management approaches can make.</p>
+
+			<p>In the 1960s, the U.S. National Park Service started to change the way it managed fire, North said. When a fire ignited in Yosemite from lightning or natural causes, the Park Service would let it burn under moderate weather conditions. As a result, the area has a relatively low load of fuel for fires.</p>
+
+			<p>“It’s gotten part way back – if not most of the way back – to what we think the forest used to look like historically,” North said. “And because of that when you get a wildfire that burns into those forests it generally does not kill most of the trees.”</p>
+
+			<p>The Stanislaus National Forest, to the park’s west, saw more damage from the Rim Fire – many will say because of the Forest Service’s fire suppression policies. But the Forest Service has many more things to consider before letting a fire burn.</p>
+			
+			<p>The land is more productive at a lower elevation than the national park, meaning fuels pile up more quickly, North said.</p>
+			<p>That makes allowing fires to burn near people’s homes more dangerous.</p>
+
+			<p>“When you put recreation, wildlife, timber management and fire management all in the me organization, you're going to have some bumps in the road where some of those uses conflict with each other," Tolmie said. "The agency as a whole gets asked to balance all the different things the national forests are being utilized for… sometimes it works, sometimes there's conflict in that."</p>
+
+			<p>
+			    <strong>another graphic</strong>
+			</p>
+
+			<p>Another conflict concerns habitats for sensitive species such as the spotted owl and the Pacific fisher, a kind of tree-burrowing weasel that is neither coastal nor fish-eating.</p>
+
+			<p>In the springtime, Pacific fisher like to make their dens inside hollow sections of oak trees. Ballard and her fire crew can’t burn known fisher territory, even if they say it needs thinning, during the fisher’s active season because the fire would cook the animals alive inside the trees. Under the Dinkey Collaborative’s direction, the fisher zones are left relatively untouched.</p>
+
+			<p>To run prescribed burns – “putting fire on the ground,” in Ballard’s words – the Forest Service also needs permission from the San Joaquin Valley Air Quality Board. Smoke from fires in the Sierra can drift west over populated areas, raising health concerns.</p>
+			
+			<p>To have a burn day, the Forest Service must either wait for the winds to blow east, over the mountains where fewer people live, or pay the air quality
+			    district remediation for the smoke.</p>
+
+			<p>***</p>
+
+			<p>As Ballard drives through Dinkey Creek, a thin veil of smoke lingers just above the ground, scattering the sunlight among the forest’s lower boughs.</p>
+
+			<p>This road used to be densely overgrown, less defensible from fire, she said. Ten years ago, a fire ran through. Now the trees that remain are farther apart, and the forest floor looks clean, with a soft green ground covering. The property owners started doing their own clearing to protect their properties the next time a fire happens.</p>
+
+			<p>Just down the road, the forest is again overgrown. A mess of younger trees, twisted shrubs and wood debris surrounds the tall and established pines.</p>
+
+			<p>“This is what a hundred years of doing nothing looks like,” Ballard said.</p>
 			</div>
 		</div>
 	</div><!-- end .row -->
@@ -407,9 +490,13 @@ iframe.cover{width:100%;height:100%;}
 		</div>
 
 		<div class="col-sm-6 col-sm-offset-3" id="chapter">
+
 			<div class="col-sm-10 col-sm-offset-1">
-			<img src="http://placekitten.com/620/400" class="img-responsive" />
-			<br />
+
+			<h3 class="subhead">
+				Rising temperatures and drought threaten the Central Valley with crop failure, unless farmers can breed tougher plants.
+			</h3>
+
 			<p><span class="dropcap">I</span>n his lifelong career as a pitted fruit breeder, Floyd Zaiger tried everything he could to force his trees to mutate and create new varieties of pluots, or interspecies plums.</p>
 
 			<p>He zapped them with cobalt radiation, fired x-rays at them and pounded the blossoms with meat tenderizer mallets to induce “mechanical” mutation.</p>
@@ -432,6 +519,8 @@ iframe.cover{width:100%;height:100%;}
 
 			<p>These days, Floyd Zaiger is semi-retired and his daughter, Leith Gardiner, mainly runs the orchard now. Gardiner has a plant sciences degree from the University of California, Davis and “a gazillion years experience” from working the family business.</p>
 
+			<img src="media/zaigers5.jpg" class="img-responsive" />
+
 			<p>On a February afternoon, she makes her rounds on a golf cart, rolling down aisle after aisle of trees, a cloud of red dust trailing behind. Her two dogs, Lucy and Trixie, follow along, weaving between trees, sometimes stopping to dig. When one gets tired, it hops up on the passenger side of the cart.</p>
 
 			<p>Some of the trees are starting to bloom with lavender and pink flowers. Gardiner takes note, charting when the trees bloom, which will be important to know come pollinating season.</p>
@@ -449,6 +538,8 @@ iframe.cover{width:100%;height:100%;}
 			<p>“Your goal is to breed things that are better than what already exists,” Gardiner said.</p>
 
 			<p>Varieties the Zaigers produce this year will take a decade to move into commercial production. That’s why, experts say, growers need to start planning now. </p>
+
+			<img src="media/zaigers4.jpg" class="img-responsive" />
 
 			<p>***</p>
 
@@ -476,6 +567,8 @@ iframe.cover{width:100%;height:100%;}
 
 			<p>At Zaiger’s Genetics, workers use eye shadow brushes to hand-pollinate 2,000 barreled trees starting as early as late January each year. Then they can collect the resulting seeds, plant them and evaluate the quality of the new trees. The desirable plants will provide pollen for future varieties.</p>
 
+			<img src="media/zaigers6.jpg" class="img-responsive" />
+
 			<p>For tree crops in particular, the process can take years to show any real results. That’s one reason to get on the bus early, Pope said.</p>
 
 			<p>“It takes so long from taking a tree with characteristics that you want to having a variety that you can release confidently into the marketplace,” she said. </p>
@@ -497,6 +590,13 @@ iframe.cover{width:100%;height:100%;}
 			<p>“In California, the story is really two fold right now. You’re seeing lack of irrigation water, which the trees need,” Baldocchi said. “And part two is the (reduced) winter chill accumulation. Fruit tree ranchers have a double whammy going against them right now.”</p>
 
 			<p>***</p>
+
+			<div class="col-sm-6">
+				<img src="media/zaigers2.jpg" class="img-responsive" />
+			</div>
+			<div class="col-sm-6">
+				<img src="media/zaigers3.jpg" class="img-responsive" />
+			</div>
 
 			<p>At Zaiger’s orchard in February, it’s spring, even though the calendar still says it’s winter. “When trees start flowering, it’s spring,” Gardiner says.</p>
 
@@ -529,62 +629,156 @@ iframe.cover{width:100%;height:100%;}
 
 		<div class="col-sm-6 col-sm-offset-3" id="chapter">
 			<div class="col-sm-10 col-sm-offset-1">
-			<img src="http://placekitten.com/620/400" class="img-responsive" />
-			<br />
-			<p><span class="dropcap">L</span>orem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-			tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-			quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-			consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-			cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-			proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-			tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-			quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-			consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-			cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-			proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-			tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-			quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-			consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-			cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-			proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-			tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-			quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-			consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-			cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-			proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-			tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-			quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-			consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-			cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-			proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-			tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-			quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-			consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-			cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-			proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-			tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-			quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-			consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-			cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-			proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-			tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-			quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-			consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-			cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-			proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-			tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-			quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-			consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-			cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-			proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+
+			<img src="media/oyster2.jpg" class="img-responsive" />
+			<h3 class="subhead">
+				What can a dimminutive mollusk do to protect the San Francisco Bay Area from sea level rise?
+			</h3>
+
+			<p><span class="dropcap">T</span><p>he gray waters of San Francisco Bay slosh up against the jagged shoreline as two wetsuit-clad scientists hop down the rocks and into the mud below.
+			</p>
+
+			<p>Dead oyster shells cover the rocks, crunching under each step. The tide is waning, exposing a wide mudflat sparkling under a late afternoon sun. The tide is also uncovering what could be a prototype for a fortification against the impacts of sea level rise.
+			</p>
+
+			<p>Eight hundred feet offshore, across sticky, bubbling mud, the scientists make their way to that fortress, giving its 2 million inhabitants a checkup like doctors making a house call.
+			</p>
+
+			<p>***</p>
+
+			<p>Melting glacial ice could cause the sea level in the Bay Area to rise 14 inches by 2050 and 55 inches by 2100, according to estimates published by the California Ocean Protection Council. From 1900 to 2000, water levels have risen 8 inches under the Golden Gate Bridge.
+			</p>
+
+			<p>The resulting higher tides, combined with more frequent and stronger storms that scientists say an altered climate will bring to the area, mean powerful storm surges and increased flooding to the densely populated and expensively developed Bay Area shorelines.
+			</p>
+
+			<p>More than $50 billion in property and infrastructure lies in danger of sea level rise in the Bay Area, according to the Pacific Institute and Save the Bay. Also at risk are almost 100 schools and healthcare facilities, 1,780 miles of roads, 270,000 homes, and infrastructure such as airports and power plants.
+			</p>
+
+			<p>
+			<strong>graphics/map of sea level projections for bay/California</strong>
+			</p>
+
+			<p>The common shoreline protection method would be to build a sea wall, a hard barrier between ocean and land. But scientists in the Bay Area say there’s a cheaper and more environmentally friendly way than building more concrete into an already highly urbanized area:
+			</p>
+
+			<p>Oysters.</p>
+
+			<p>Marilyn Latta of the State Coastal Conservancy, along with scientists from San Francisco State University and other organizations, came up with the San Francisco Bay Living Shorelines Project.
+			</p>
+
+			<p>The project, which began in 2012, is an ambitious and innovative experiment in restoring native Olympia oyster habitat to the Bay. As a concept, living shorelines are meant to stabilize underwater environs using natural features – such as marshes and oyster reefs – in combination with minimal rock and concrete. This provides the dual benefit of wildlife habitat and coastal protection.
+			</p>
+
+			<p>In the San Francisco Bay’s version of a living shoreline, scientists submerged bundles of dead oyster shells and dome shaped structures made of cement and sand  that attract larval oysters. On these artificial reefs, the oysters attach themselves for life.
+			</p>
+
+			<p>It’s an “If you build it, they will come” mindset. Give oysters – and their symbiotic plant neighbor, eelgrass – a place in the Bay to live, and they could flourish there. The goal is to plant 8 million acres of native oyster beds, considered to be foundational to the underwater ecosystem, in the Bay – with hope that the mollusks will both protect the shoreline and restore the Bay’s degraded health.
+			</p>
+
+			<p>The project is currently in a prototype phase with two sites: one north of San Francisco in the bay near San Rafael, and the other south of Oakland near Hayward. Scientists make quarterly visits to the reefs, testing the overall health of the waters surrounding them and documenting any wildlife they see. A separate team measures the physical benefits, such as how the structures are affecting things like wave energy and sedimentation.
+			</p>
+
+			<p>In the last decade, scientists have broadened their strategies for protecting coastline property and residents from sea level rise by adding coastal habitat restoration to their toolbox. In California, coastal habitat can include kelp and other sea grass beds, sand dunes, and marshes.
+			</p>
+
+			<p>The San Francisco Bay is among the most vulnerable areas in the United States to the hazards of sea level rise, including erosion and flooding, according to a July 2013 Stanford University study published in the journal Nature Climate Change and not connected with the Living Shorelines Project.
+			</p>
+
+			<p><strong>small map of shoreline hazards from NCP</strong></p>
+
+			<p>Restoring coastal habitat – everything from mudflats and tidal marshes to the oyster reefs and sea grass - could play a big part in  reducing damage from these hazards, said Katie Arkema, a senior scientist at National Capital Project, a Stanford research group working to quantify the services nature provides to humans.
+			</p>
+
+			<p>“They all kind of have a different niche, I guess you could say, in the process,” Arkema said.
+			</p>
+
+			<p>Environmental groups have spent the last 30 years in the San Francisco Bay building one of the largest wetland and marsh restoration projects in the country. For decades, scientists have also known coastal wetlands serve as a protective buffer for shorelines from erosion and storm surges.
+			</p>
+
+			<p>But there’s a problem: much of the past restoration work was done without planning for sea level rise. With higher tides, the surging seas could drown and erode the existing wetlands, along with the protections to the coast they provide.
+			</p>
+
+			<p>That’s where the oyster and eelgrass reefs come in. The reefs can protect the restored marshes and wetlands from the beating of the ocean’s waves.
+			</p>
+
+			<p>When a wave starts in deep water and heads ashore, it loses speed from friction against the bay floor. When the wave hits the oyster reef, it trips and doesn’t hit the marsh as hard, said Jeremy Lowe, a geomorphologist at ESA Associates, an environmental science and planning firm.
+			</p>
+
+			<p>“We’re trying to manage that wave energy across the bay to our advantage,” Lowe said.
+			</p>
+
+			<p>Oysters do a good job tamping down the long-term wave energy of a body of water,  Arkema said. That makes for an environment where marshes and wetlands can persist and grow larger over time. When a large storm surge finally comes, it might ride right over the oyster reefs, but the larger marshes made possible by the oysters  would be there to still protect the shore.
+			</p>
+
+			<p>The reefs and wetlands, and in some places, maybe a small levee, “they’re all doing a piece of the job,” Lowe said. “Together they could make a more flexible shoreline and one that’s more fitting of a living shoreline concept.”
+			</p>
+
+			<p>If the Living Shorelines Project’s pilot experiment provides the results the team is hoping for, the concept could be applied elsewhere in the Bay to protect the homes of humans and wildlife alike.
+			</p>
+
+			<p>***
+			</p>
+			<img src="media/oyster1.jpg" class="img-responsive" />
+
+			<p>Olympia oysters were once believed to be abundant in the San Francisco Bay. But in the 1800s, the population declined to near extinction. While the exact cause is unclear, probable culprits include habitat destruction from Gold Rush-era hydraulic mining and overharvesting.
+			</p>
+
+			<p>Now scientists, lead by biologist Katharyn Boyer of San Francisco State University’s Romberg Tiburon Center for Environmental Studies, are trying to bring those oysters back with their artificial reefs.
+			</p>
+
+			<p>On an otherwise featureless mudflat in the bay near San Rafael, the reefs stand out. Two scientists with Boyer’s lab make their way across the mud, tugging along a boogie board carrying various scientific instruments. On a late afternoon, their job is to test the water quality surrounding the experiment site using an aquarium vacuum to take samples of any critters that might be living there.
+			</p>
+
+			<p>Dinosaur-like birds wade around the reefs, stalking and pecking at prey between the oysters and beds of eelgrass. Fish hide in the eelgrass, and small crabs and invertebrates take shelter between the oysters.
+			</p>
+
+			<p>It’s easy to forget humans created the reefs, now dominated by nature.
+			</p>
+
+			<p>To build the reefs, the Living Shorelines Project team used shucked Pacific oyster shells, bundled together in tough net-like bags. The Pacific, or Japanese oyster, is a species native to East Asia and farmed on the West Coast. They’re there to attract the larval oysters that float through the water until they find a suitable surface to which they can attach and mature. Baby oysters almost always prefer to settle onto other oyster shells, regardless of species.
+			</p>
+
+			<p>As an alternative to bagged shells, the project is also testing out differently shaped structures made with a mixture of bay sand and cement called “baycrete” – an eco-friendly substitute for using pure cement, Latta said.
+			</p>
+
+			<p>Scientists fashioned baycrete reefs shaped like domes, stacks of domes, “layer cakes” (cross-sectioned domes, stacked on top of each other), and “oyster blocks” – basically castles for oysters. Each configuration has a different surface area, horizontal and vertical spaces and varying amounts of hiding places for fish and invertebrates.
+			</p>
+
+			<p>In San Rafael, plots of eelgrass are interspersed with oyster reefs. One goal of the project is to see how reefs and eelgrass beds combined can help protect the shoreline from erosion, Boyer said.
+			</p>
+
+			<p>Besides providing habitat for wildlife, eelgrass has roots that help stabilize the sediments on the bottom of the Bay. And oysters in turn support the eelgrass: the murky water makes it hard for light to penetrate, but filter-feeding oysters can improve water clarity, helping the eelgrass to grow, Boyer said.
+			</p>
+
+			<img src="media/oyster-gfx-test.jpg" class="img-responsive" />
+
+			<p>It’s been about a year since the reefs were installed at the San Rafael site. In addition to the recruitment of two million oysters, the team found that the reefs here are reducing the energy of incoming waves by 30-50 percent.
+			</p>
+
+			<p>The results offer some hope that a large-scale oyster habitat restoration project, along with ongoing efforts to restore Bay Area tidal marshes, could offer shoreline communities protection against floods and storm surges.
+			</p>
+
+			<p>The Hayward site in the South Bay has seen less success. If one species of invasive snail isn’t outcompeting the oysters, a peskier invasive snail is eating them.
+			</p>
+
+			<p>But oyster reefs and coastal habitat alone will not be able to protect every mile of shoreline in the Bay. In some places, the only practical solution might be to build some kind of sea wall.
+			</p>
+
+			<p>“We're cautious about how much we can say about it at this point,” Boyer said. “I don’t want to make the oyster the hero,” Boyer said. “There are big decisions we want to make as a society on how close to the shoreline we have (development). (And) oysters and our reefs are part of a solution that everyone, scientists and managers included, will have to address.”
+			</p>
+
+			<p>The Living Shoreline experiment will need to be repeated again at larger scales and in different locations around the Bay, Latta said. For example, both of the test sites sit along rocky shorelines. Until the team tests the effects of their oyster reef against a soft shoreline, like a marsh, they can’t say for sure if it will actually protect the shoreline.
+			</p>
+
+			<p>When the reefs were first built, someone contacted Latta wondering how oysters could fix sea level rise. The caller thought oysters, since they’re filter feeders, would just suck up all the water, saving the Bay from climate change.
+			</p>
+
+			<p>Mistaken as that may be, Latta says, the complex relationship between oysters,  eelgrass and the shoreline holds promise for blunting the impact of global warming.
+			</p>
+
+			<p>“The more we can focus on what might be the solution and even small ways to adapt, that gives me great hope,” Latta said. “Even if it doesn’t work in the end, I want to spend my time looking for things we might do.”
+			</p>
 			</div>
 		</div>
 	</div><!-- end .row -->
