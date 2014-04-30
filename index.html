@@ -11,6 +11,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <script type="text/javascript">
+
+    	(function(a){a.bgCoverAttach=function(e,c){var b=a(e),e=e,h={};var g={parentelm:a(e).parent(),top:b.css("top"),left:b.css("left")};var f=this;f.settings={};f.init=function(){f.settings=a.extend({},g,c);var i=f.settings.parentelm.css("background-image").slice(4,-1);var k=new Image();var j=j||{error:function(){}};if(f.settings.parentelm.css("background-size")!="cover"){j.error("This plugin only works with the containing element has background-size:cover");return false}if(typeof i!=="string"){j.error("No background image found on parent element");return false}if(f.settings.top=="auto"||f.settings.left=="auto"){j.error("#"+b.attr("id")+" needs CSS values for 'top' and 'left'");return false}a(k).on("load",function(){h.width=this.width;h.height=this.height;d(h.width,h.height)});a(window).on("resize",function(){if("width" in h&&h.width!=0){d(h.width,h.height)}});k.src=i};var d=function(j,k){var i=f.settings.parentelm.width()/j,m=f.settings.parentelm.height()/k,l=i>m?i:m;b.css({top:parseInt(f.settings.top,10)*l,left:parseInt(f.settings.left,10)*l})};f.init()};a.fn.bgCoverAttach=function(b){return this.each(function(){if(undefined==a(this).data("bgCoverAttach")){var c=new a.bgCoverAttach(this,b);a(this).data("bgCoverAttach",c)}})}})(jQuery);
+
     	jQuery(document).ready(function($){
 
     		$(window).on('load resize', function(){
@@ -18,6 +21,7 @@
     			$('.section').css('min-height', $(window).height());
     		})
     		
+   			$('#title').bgCoverAttach();
 
     	});
     </script>
@@ -33,8 +37,8 @@
             
             //This is what happens when you click on a link in the <nav> tag
             $.address.change(function(e) {  
-                
-                $('section').css('display', 'none');
+                $("#home").css('display', 'none');
+                $('.section').css('display', 'none');
                 var id = e.value.replace(/\//g, "");
                 
                 $("#" + id).css({
@@ -84,6 +88,8 @@
 
 		#title{
 			margin-top:75px;
+			position:absolute;
+			top:10%;
 		}
 
 		.fade{
@@ -167,10 +173,10 @@
 		}
 
 
-video.cover{position:fixed;left:50%;top:50%;-webkit-transform:translate(-50%, -50%);-moz-transform:translate(-50%, -50%);-ms-transform:translate(-50%, -50%);transform:translate(-50%, -50%);height:100%;width:auto;}
+		video.cover{position:fixed;left:50%;top:50%;-webkit-transform:translate(-50%, -50%);-moz-transform:translate(-50%, -50%);-ms-transform:translate(-50%, -50%);transform:translate(-50%, -50%);height:100%;width:auto;}
 
-iframe.cover{width:100%;height:100%;}
-        @media screen and (min-aspect-ratio: 16/9) { video.cover{height:auto;width:100%;}}
+		iframe.cover{width:100%;height:100%;}
+        	@media screen and (min-aspect-ratio: 16/9) { video.cover{height:auto;width:100%;}}
 
 
 
@@ -195,15 +201,15 @@ iframe.cover{width:100%;height:100%;}
 		<p class="navbar-text"><a href="#home">CLIMATE<br/>CALIFORNIA</a></p>
         	
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-	  	  	<ul class="nav navbar-nav">
-        		<li><a href="#drought">Heat, Drought,<br/>Climate Change</a></li>
-	        	<li><a href="#fire">Up Dinkey Creek<br/>With a Drip Torch</a> </li>
-	        	<li><a href="#ag">The Central Valley's<br/>Chilling Future</a> </li>
-	        	<li><a href="#sealevel">Come Shell or<br/>High Water</a></li>
+	  	  	<ul style="padding-top:15px" class="nav navbar-nav">
+        		<li><a href="#drought">Heat, Drought, Climate Change</a></li>
+	        	<li><a href="#fire">Up Dinkey Creek With a Drip Torch</a> </li>
+	        	<li><a href="#ag">The Central Valley's Chilling Future</a> </li>
+	        	<li><a href="#sealevel">Come Shell or High Water</a></li>
 	        	</ul>
 
-	        	<ul class="nav navbar-nav navbar-right">
-        			<li><a style="padding-top:25px"href="#about">About</a></li>
+	        	<ul style="padding-top:15px" class="nav navbar-nav navbar-right">
+        			<li><a href="#about">About</a></li>
         		</ul>
         </div>
 
@@ -278,9 +284,7 @@ iframe.cover{width:100%;height:100%;}
 
 			<img src="media/drought1.jpg" class="img-responsive" />
 
-			<p>***</p>
-
-			<p>This year’s historic drought raised questions about the threat that climate change poses to the state’s water supply, and also renewed a long-standing conversation about how to better manage that water supply. </p>
+			<p><strong>This year’s historic drought</strong> raised questions about the threat that climate change poses to the state’s water supply, and also renewed a long-standing conversation about how to better manage that water supply. </p>
 
 			<p>California has a Mediterranean climate marked by dry summers and wet winters. Multi-year and multi-decade atmospheric patterns also play a role in when and how much water the area gets. </p>
 
@@ -308,9 +312,7 @@ iframe.cover{width:100%;height:100%;}
 
 			<p>The National Oceanic and Atmospheric Administration predicts with some certainty that a strong El Niño will develop this summer and bring rain and warmer seas to the California coast as early as this fall.</p>
 
-			<p>***</p>
-
-			<p>If you drew a line on a map from San Francisco to Lake Tahoe, you’d see the challenge the state’s water system faces. About 80 percent of the snowpack runoff comes from north of that line. Yet, 66 percent of water users live south of the line. People who live on the southern California coast receive more than 60 percent of the water they use piped in from other regions, said Kamyar Guivetchi of the California Department of Water Resources. The San Francisco Bay Area gets a similar percentage of its water piped in other parts of the state.</p>
+			<p><strong>If you drew a line</strong> on a map from San Francisco to Lake Tahoe, you’d see the challenge the state’s water system faces. About 80 percent of the snowpack runoff comes from north of that line. Yet, 66 percent of water users live south of the line. People who live on the southern California coast receive more than 60 percent of the water they use piped in from other regions, said Kamyar Guivetchi of the California Department of Water Resources. The San Francisco Bay Area gets a similar percentage of its water piped in other parts of the state.</p>
 
 			<p>“If we go back to those medieval droughts, I don’t really know what we would do. But we’re in trouble now,” Guivetchi said in a panel discussion on drought at UC Berkeley. “We are living today what we could be experiencing in the future.”</p>
 
@@ -360,12 +362,10 @@ iframe.cover{width:100%;height:100%;}
 			<p><span class="dropcap">T</span><p>here’s a serene silence in the forest, interrupted only by the occasional crackle of a burning tree. A gentle gust of wind catches the smoldering trunk and it erupts in flames. Carolyn Ballard, a United States Forest Service firefighter stands by, watching without alarm as smoke fills the canyon.</p>
 			
 			<p>In the Sierra National Forest, this is a restorative process.</p>
-
-			<p>***</p>
 			
 			<img src="media/fire1.jpg" class="img-responsive" />
 
-			<p>Over the course of her 30-year career, Ballard has seen the changes pile up in her section of forest in the southern Sierra, known as Dinkey Creek. The forest, she says, is “out of whack."</p>
+			<p><strong>Over the course</strong> of her 30-year career, Ballard has seen the changes pile up in her section of forest in the southern Sierra, known as Dinkey Creek. The forest, she says, is “out of whack."</p>
 
 			<p>It’s late March and there still should be snow on the ground. Instead the ground is dry and the trees are thirsty. Freezing winters should kill off the bugs that eat the forest alive. Instead, they’re getting two influxes of bugs a year, Ballard said.</p>
 			
@@ -458,12 +458,9 @@ iframe.cover{width:100%;height:100%;}
 
 			<p>To run prescribed burns – “putting fire on the ground,” in Ballard’s words – the Forest Service also needs permission from the San Joaquin Valley Air Quality Board. Smoke from fires in the Sierra can drift west over populated areas, raising health concerns.</p>
 			
-			<p>To have a burn day, the Forest Service must either wait for the winds to blow east, over the mountains where fewer people live, or pay the air quality
-			    district remediation for the smoke.</p>
+			<p>To have a burn day, the Forest Service must either wait for the winds to blow east, over the mountains where fewer people live, or pay the air quality district remediation for the smoke.</p>
 
-			<p>***</p>
-
-			<p>As Ballard drives through Dinkey Creek, a thin veil of smoke lingers just above the ground, scattering the sunlight among the forest’s lower boughs.</p>
+			<p><strong>As Ballard drives</strong> through Dinkey Creek, a thin veil of smoke lingers just above the ground, scattering the sunlight among the forest’s lower boughs.</p>
 
 			<p>This road used to be densely overgrown, less defensible from fire, she said. Ten years ago, a fire ran through. Now the trees that remain are farther apart, and the forest floor looks clean, with a soft green ground covering. The property owners started doing their own clearing to protect their properties the next time a fire happens.</p>
 
@@ -541,9 +538,7 @@ iframe.cover{width:100%;height:100%;}
 
 			<img src="media/zaigers4.jpg" class="img-responsive" />
 
-			<p>***</p>
-
-			<p>In some areas of the Central Valley, winter chilling hours have decreased by 30 percent since 1950, according to a 2009 study by researchers at UC Davis. Back then, growers could rely on 700-1200 chilling hours per winter. </p>
+			<p><strong>In some areas</strong> of the Central Valley, winter chilling hours have decreased by 30 percent since 1950, according to a 2009 study by researchers at UC Davis. Back then, growers could rely on 700-1200 chilling hours per winter. </p>
 
 			<p>By 2050, the decline will double to as much as 60 percent , according to the worst-case carbon emission scenarios from computer modeling the researchers used. By the end of the century, the Central Valley might not be suitable for growing walnuts, pistachios, peaches, apricots, plums and cherries anymore.</p>
 
@@ -553,7 +548,7 @@ iframe.cover{width:100%;height:100%;}
 
 			<p>Many Central Valley crops were originally bred in southern Italy, Spain and Greece, climates similar to California’s Central Valley. In the short term, those plants might actually like the warmer climate and grow better. But after a certain point, the warmer climate will be deleterious, said Dennis Baldocchi, a UC Berkeley professor of environmental science, policy and management.</p>
 
-			<p>As a biometeorologist, Baldocchi measures the temperature of a plant’s buds that leaf out and form flowers. According to his latest research, the decline of winter chill could be even worse than what the computer models have projected so far. The models are based on simple weather station data, he said. That data doesn’t take into account one simple factor: fog.</p>
+			<p>As a biometeorologist, Baldocchi measures the temperature of a plant’s buds that leaf out and form flowers. According to his latest research, the decline of winter chill could be even worse than what the computer models have projected so far. The models, he said, are based on simple weather station data that doesn’t take into account one simple factor: fog.</p>
 
 			<p>In California in the past “we had a lot of winter chill because we got these inversion fogs during the winter time,” Baldochhi said. “When it’s foggy, the sunlight is reflected away from the ground. It kind of caps the cold air and it stays around 35-40 degrees.”</p>
 
@@ -589,8 +584,6 @@ iframe.cover{width:100%;height:100%;}
 
 			<p>“In California, the story is really two fold right now. You’re seeing lack of irrigation water, which the trees need,” Baldocchi said. “And part two is the (reduced) winter chill accumulation. Fruit tree ranchers have a double whammy going against them right now.”</p>
 
-			<p>***</p>
-
 			<div class="col-sm-6">
 				<img src="media/zaigers2.jpg" class="img-responsive" />
 			</div>
@@ -598,7 +591,7 @@ iframe.cover{width:100%;height:100%;}
 				<img src="media/zaigers3.jpg" class="img-responsive" />
 			</div>
 
-			<p>At Zaiger’s orchard in February, it’s spring, even though the calendar still says it’s winter. “When trees start flowering, it’s spring,” Gardiner says.</p>
+			<p><strong>At Zaiger’s orchard in February,</strong> it’s spring, even though the calendar still says it’s winter. “When trees start flowering, it’s spring,” Gardiner says.</p>
 
 			<p>Spring triggers the blooming process, and the orchard has come alive with the pinks and purples of fruit blossoms. The trees with petals required fewer chilling hours than the still-bare trees.</p>
 
@@ -635,150 +628,65 @@ iframe.cover{width:100%;height:100%;}
 				What can a dimminutive mollusk do to protect the San Francisco Bay Area from sea level rise?
 			</h3>
 
-			<p><span class="dropcap">T</span><p>he gray waters of San Francisco Bay slosh up against the jagged shoreline as two wetsuit-clad scientists hop down the rocks and into the mud below.
-			</p>
-
-			<p>Dead oyster shells cover the rocks, crunching under each step. The tide is waning, exposing a wide mudflat sparkling under a late afternoon sun. The tide is also uncovering what could be a prototype for a fortification against the impacts of sea level rise.
-			</p>
-
-			<p>Eight hundred feet offshore, across sticky, bubbling mud, the scientists make their way to that fortress, giving its 2 million inhabitants a checkup like doctors making a house call.
-			</p>
-
+			<p><span class="dropcap">T</span><p>he gray waters of San Francisco Bay slosh up on the jagged shoreline as two wetsuit-clad scientists hop down the rocks and into the mud below.</p>
+			<p>Dead oyster shells cover the rocks, crunching under each step. The tide is waning, exposing a wide mudflat sparkling under a late afternoon sun. The tide is also uncovering what could be a prototype for a fortification against one of the impacts of sea level rise.</p>
+			<p>Eight hundred feet offshore, across sticky, bubbling mud, the scientists make their way to that fortress, giving its 2 million inhabitants a checkup like doctors making a house call.</p>
 			<p>***</p>
-
-			<p>Melting glacial ice could cause the sea level in the Bay Area to rise 14 inches by 2050 and 55 inches by 2100, according to estimates published by the California Ocean Protection Council. From 1900 to 2000, water levels have risen 8 inches under the Golden Gate Bridge.
-			</p>
-
-			<p>The resulting higher tides, combined with more frequent and stronger storms that scientists say an altered climate will bring to the area, mean powerful storm surges and increased flooding to the densely populated and expensively developed Bay Area shorelines.
-			</p>
-
-			<p>More than $50 billion in property and infrastructure lies in danger of sea level rise in the Bay Area, according to the Pacific Institute and Save the Bay. Also at risk are almost 100 schools and healthcare facilities, 1,780 miles of roads, 270,000 homes, and infrastructure such as airports and power plants.
-			</p>
+			<p>Melting glacial ice could cause the sea level in the Bay Area to rise 14 inches by 2050 and 55 inches by 2100, according to estimates published by the California Ocean Protection Council. From 1900 to 2000, water levels have risen 8 inches under the Golden Gate Bridge.</p>
+			<p>The resulting higher tides, combined with more frequent and stronger storms that scientists say an altered climate will bring to the area, mean powerful storm surges and increased flooding to the densely populated and expensively developed Bay Area shorelines.</p>
+			<p>More than $50 billion in property and infrastructure lies in danger of sea level rise in the Bay Area, according to the Pacific Institute and Save the Bay. Also at risk are almost 100 schools and healthcare facilities, 1,780 miles of roads, 270,000 homes, and infrastructure such as airports and power plants.</p>
 
 			<p>
 			<strong>graphics/map of sea level projections for bay/California</strong>
 			</p>
 
-			<p>The common shoreline protection method would be to build a sea wall, a hard barrier between ocean and land. But scientists in the Bay Area say there’s a cheaper and more environmentally friendly way than building more concrete into an already highly urbanized area:
-			</p>
-
+			<p>The common protection would be to build a sea wall, a hard barrier between ocean and land. But scientists in the Bay Area say there’s a cheaper and more environmentally friendly alternative to adding more concrete to an already highly urbanized area:</p>
 			<p>Oysters.</p>
-
-			<p>Marilyn Latta of the State Coastal Conservancy, along with scientists from San Francisco State University and other organizations, came up with the San Francisco Bay Living Shorelines Project.
-			</p>
-
-			<p>The project, which began in 2012, is an ambitious and innovative experiment in restoring native Olympia oyster habitat to the Bay. As a concept, living shorelines are meant to stabilize underwater environs using natural features – such as marshes and oyster reefs – in combination with minimal rock and concrete. This provides the dual benefit of wildlife habitat and coastal protection.
-			</p>
-
-			<p>In the San Francisco Bay’s version of a living shoreline, scientists submerged bundles of dead oyster shells and dome shaped structures made of cement and sand  that attract larval oysters. On these artificial reefs, the oysters attach themselves for life.
-			</p>
-
-			<p>It’s an “If you build it, they will come” mindset. Give oysters – and their symbiotic plant neighbor, eelgrass – a place in the Bay to live, and they could flourish there. The goal is to plant 8 million acres of native oyster beds, considered to be foundational to the underwater ecosystem, in the Bay – with hope that the mollusks will both protect the shoreline and restore the Bay’s degraded health.
-			</p>
-
-			<p>The project is currently in a prototype phase with two sites: one north of San Francisco in the bay near San Rafael, and the other south of Oakland near Hayward. Scientists make quarterly visits to the reefs, testing the overall health of the waters surrounding them and documenting any wildlife they see. A separate team measures the physical benefits, such as how the structures are affecting things like wave energy and sedimentation.
-			</p>
-
-			<p>In the last decade, scientists have broadened their strategies for protecting coastline property and residents from sea level rise by adding coastal habitat restoration to their toolbox. In California, coastal habitat can include kelp and other sea grass beds, sand dunes, and marshes.
-			</p>
-
-			<p>The San Francisco Bay is among the most vulnerable areas in the United States to the hazards of sea level rise, including erosion and flooding, according to a July 2013 Stanford University study published in the journal Nature Climate Change and not connected with the Living Shorelines Project.
-			</p>
+			<p>Marilyn Latta of the State Coastal Conservancy, along with scientists from San Francisco State University and other organizations, came up with the San Francisco Bay Living Shorelines Project in 2012.</p>
+			<p>It’s an ambitious and innovative experiment in restoring native Olympia oyster habitat to the Bay. As a concept, living shorelines are meant to stabilize underwater environs using natural features – such as marshes and oyster reefs – in combination with minimal rock and concrete. This creates wildlife habitat and coastal protection.</p>
+			<p>In the San Francisco Bay’s version of a living shoreline, scientists submerged bundles of dead oyster shells and dome shaped structures made of cement and sand that attract larval oysters. On these artificial reefs, the oysters attach themselves for life. Nearby, the team also planted patches of eelgrass, a kind of underwater plant they believe can live symbiotically with the oysters.</p>
+			<p>By 2060, the Living Shorelines Project hopes to have planted 8 million acres of native oyster beds in the Bay.</p>
+			<p>The project is currently in a prototype phase with two sites: one north of San Francisco near San Rafael, and the other south of Oakland near Hayward. Scientists make quarterly visits to the reefs, testing the overall health of the waters surrounding them and documenting any wildlife they see. A separate team measures the physical benefits, such as how the structures are affecting things like wave energy and sedimentation.</p>
+			<p>In the last decade, scientists have added coastal habitat restoration to their strategies for protecting coastline property and residents from sea level rise.  In California, coastal habitat can include kelp and other sea grass beds, sand dunes, and marshes.</p>
+			<p>The San Francisco Bay is among the most vulnerable areas in the United States to the hazards of sea level rise, including erosion and flooding, according to a July 2013 Stanford University study published in the journal Nature Climate Change and not connected to the Living Shorelines Project. </p>
 
 			<p><strong>small map of shoreline hazards from NCP</strong></p>
 
-			<p>Restoring coastal habitat – everything from mudflats and tidal marshes to the oyster reefs and sea grass - could play a big part in  reducing damage from these hazards, said Katie Arkema, a senior scientist at National Capital Project, a Stanford research group working to quantify the services nature provides to humans.
-			</p>
+			<p>Restoring coastal habitat – everything from mudflats and tidal marshes to the oyster reefs and sea grass - could play a big part in reducing damage from these hazards, said Katie Arkema, a senior scientist at National Capital Project, a Stanford research group studying the services nature provides to humans.</p>
+			<p>“They all kind of have a different niche, I guess you could say, in the process,” Arkema said.</p>
+			<p>Environmental groups have spent the last 30 years in the San Francisco Bay building one of the largest wetland and marsh restoration projects in the country. For decades, scientists have also known coastal wetlands serve as a protective buffer for shorelines from erosion and storm surges.</p>
+			<p>But much of the past restoration work was done without planning for sea level rise. With higher tides, the surging seas could drown and erode the existing wetlands, washing away the protections to the coast they provide.</p>
+			<p>That’s where the oyster reefs and eelgrass patches come in. The installations might be able to protect the restored marshes and wetlands from the beating of the ocean’s waves.</p>
+			<p>When a wave starts in deep water and heads ashore, it loses speed from friction against the bay floor. When the wave hits the oyster reef, it trips and doesn’t hit the marsh as hard, said Jeremy Lowe, a geomorphologist at ESA Associates, an environmental science and planning firm.</p>
+			<p>“We’re trying to manage that wave energy across the bay to our advantage,” Lowe said.</p>
+			<p>With the reefs tamping down on wave energy over a long period of time, the marshes and wetlands can grow unperturbed by the ocean, Arkema said. When a large storm surge comes, it might ride right over the oyster reefs, but the larger marshes (made possible by the oysters) would be there to protect the shore.</p>
+			<p>The reefs and wetlands, and in some places, maybe a small levee, “they’re all doing a piece of the job,” Lowe said. “Together they could make a more flexible shoreline and one that’s more fitting of a living shoreline concept.”</p>
+			<p>If the Living Shorelines Project’s pilot experiment provides the results the team is hoping for, the concept could be applied elsewhere in the Bay to protect the homes of humans and wildlife alike.</p>
 
-			<p>“They all kind of have a different niche, I guess you could say, in the process,” Arkema said.
-			</p>
-
-			<p>Environmental groups have spent the last 30 years in the San Francisco Bay building one of the largest wetland and marsh restoration projects in the country. For decades, scientists have also known coastal wetlands serve as a protective buffer for shorelines from erosion and storm surges.
-			</p>
-
-			<p>But there’s a problem: much of the past restoration work was done without planning for sea level rise. With higher tides, the surging seas could drown and erode the existing wetlands, along with the protections to the coast they provide.
-			</p>
-
-			<p>That’s where the oyster and eelgrass reefs come in. The reefs can protect the restored marshes and wetlands from the beating of the ocean’s waves.
-			</p>
-
-			<p>When a wave starts in deep water and heads ashore, it loses speed from friction against the bay floor. When the wave hits the oyster reef, it trips and doesn’t hit the marsh as hard, said Jeremy Lowe, a geomorphologist at ESA Associates, an environmental science and planning firm.
-			</p>
-
-			<p>“We’re trying to manage that wave energy across the bay to our advantage,” Lowe said.
-			</p>
-
-			<p>Oysters do a good job tamping down the long-term wave energy of a body of water,  Arkema said. That makes for an environment where marshes and wetlands can persist and grow larger over time. When a large storm surge finally comes, it might ride right over the oyster reefs, but the larger marshes made possible by the oysters  would be there to still protect the shore.
-			</p>
-
-			<p>The reefs and wetlands, and in some places, maybe a small levee, “they’re all doing a piece of the job,” Lowe said. “Together they could make a more flexible shoreline and one that’s more fitting of a living shoreline concept.”
-			</p>
-
-			<p>If the Living Shorelines Project’s pilot experiment provides the results the team is hoping for, the concept could be applied elsewhere in the Bay to protect the homes of humans and wildlife alike.
-			</p>
-
-			<p>***
-			</p>
 			<img src="media/oyster1.jpg" class="img-responsive" />
 
-			<p>Olympia oysters were once believed to be abundant in the San Francisco Bay. But in the 1800s, the population declined to near extinction. While the exact cause is unclear, probable culprits include habitat destruction from Gold Rush-era hydraulic mining and overharvesting.
-			</p>
-
-			<p>Now scientists, lead by biologist Katharyn Boyer of San Francisco State University’s Romberg Tiburon Center for Environmental Studies, are trying to bring those oysters back with their artificial reefs.
-			</p>
-
-			<p>On an otherwise featureless mudflat in the bay near San Rafael, the reefs stand out. Two scientists with Boyer’s lab make their way across the mud, tugging along a boogie board carrying various scientific instruments. On a late afternoon, their job is to test the water quality surrounding the experiment site using an aquarium vacuum to take samples of any critters that might be living there.
-			</p>
-
-			<p>Dinosaur-like birds wade around the reefs, stalking and pecking at prey between the oysters and beds of eelgrass. Fish hide in the eelgrass, and small crabs and invertebrates take shelter between the oysters.
-			</p>
-
-			<p>It’s easy to forget humans created the reefs, now dominated by nature.
-			</p>
-
-			<p>To build the reefs, the Living Shorelines Project team used shucked Pacific oyster shells, bundled together in tough net-like bags. The Pacific, or Japanese oyster, is a species native to East Asia and farmed on the West Coast. They’re there to attract the larval oysters that float through the water until they find a suitable surface to which they can attach and mature. Baby oysters almost always prefer to settle onto other oyster shells, regardless of species.
-			</p>
-
-			<p>As an alternative to bagged shells, the project is also testing out differently shaped structures made with a mixture of bay sand and cement called “baycrete” – an eco-friendly substitute for using pure cement, Latta said.
-			</p>
-
-			<p>Scientists fashioned baycrete reefs shaped like domes, stacks of domes, “layer cakes” (cross-sectioned domes, stacked on top of each other), and “oyster blocks” – basically castles for oysters. Each configuration has a different surface area, horizontal and vertical spaces and varying amounts of hiding places for fish and invertebrates.
-			</p>
-
-			<p>In San Rafael, plots of eelgrass are interspersed with oyster reefs. One goal of the project is to see how reefs and eelgrass beds combined can help protect the shoreline from erosion, Boyer said.
-			</p>
-
-			<p>Besides providing habitat for wildlife, eelgrass has roots that help stabilize the sediments on the bottom of the Bay. And oysters in turn support the eelgrass: the murky water makes it hard for light to penetrate, but filter-feeding oysters can improve water clarity, helping the eelgrass to grow, Boyer said.
-			</p>
+			<p><strong>Once believed</strong> to be an abundant presence in the San Francisco Bay, the Olympia oyster population declined significantly around the end of the 19th Century. Nobody knows exactly what brought on their disappearance, but scientists believe it was some combination of habitat destruction from Gold Rush-era hydraulic mining and overharvesting.</p>
+			<p>Now scientists, lead by biologist Katharyn Boyer of San Francisco State University’s Romberg Tiburon Center for Environmental Studies, hope their artificial reefs can aid in the population’s recovery.</p>
+			<p>On an otherwise featureless mudflat in the bay near San Rafael, the reefs stand out. Two scientists with Boyer’s lab make their way across the mud, tugging along a boogie board carrying various scientific instruments. On a late afternoon, their job is to test the water quality surrounding the experiment site using an aquarium vacuum to take samples of any critters that might be living there.</p>
+			<p>Dinosaur-like birds wade around the reefs, stalking and pecking at prey between the oysters and beds of eelgrass. Fish hide in the eelgrass, and small crabs and invertebrates take shelter between the oysters.</p>
+			<p>It’s easy to forget humans created the reefs, now dominated by nature.</p>
+			<p>To build the reefs, the Living Shorelines Project team used shucked Pacific oyster shells, bundled together in tough net-like bags. The Pacific, or Japanese oyster, is a species native to East Asia and farmed on the West Coast. They’re there to attract the larval oysters that float through the water until they find a suitable surface to which they can attach and mature. Baby oysters almost always prefer to settle onto other oyster shells, regardless of species.</p>
+			<p>As an alternative to bagged shells, the project is also testing out differently shaped structures made with a mixture of bay sand and cement called “baycrete” – an eco-friendly substitute for using pure cement, Latta said.</p>
+			<p>Scientists fashioned baycrete reefs shaped like domes, stacks of domes, “layer cakes” (cross-sectioned domes, stacked on top of each other), and “oyster blocks” – basically castles for oysters. Each configuration has a different surface area, horizontal and vertical spaces and varying amounts of hiding places for fish and invertebrates.</p>
+			<p>In San Rafael, plots of eelgrass are interspersed with oyster reefs. One goal of the project is to see how reefs and eelgrass beds combined can help protect the shoreline from erosion, Boyer said.</p>
+			<p>Eelgrass has roots that help stabilize the sediments on the bottom of the Bay. And filter-feeding oysters can improve water clarity, helping the eelgrass to grow, Boyer said.</p>
 
 			<img src="media/oyster-gfx-test.jpg" class="img-responsive" />
 
-			<p>It’s been about a year since the reefs were installed at the San Rafael site. In addition to the recruitment of two million oysters, the team found that the reefs here are reducing the energy of incoming waves by 30-50 percent.
-			</p>
-
-			<p>The results offer some hope that a large-scale oyster habitat restoration project, along with ongoing efforts to restore Bay Area tidal marshes, could offer shoreline communities protection against floods and storm surges.
-			</p>
-
-			<p>The Hayward site in the South Bay has seen less success. If one species of invasive snail isn’t outcompeting the oysters, a peskier invasive snail is eating them.
-			</p>
-
-			<p>But oyster reefs and coastal habitat alone will not be able to protect every mile of shoreline in the Bay. In some places, the only practical solution might be to build some kind of sea wall.
-			</p>
-
-			<p>“We're cautious about how much we can say about it at this point,” Boyer said. “I don’t want to make the oyster the hero,” Boyer said. “There are big decisions we want to make as a society on how close to the shoreline we have (development). (And) oysters and our reefs are part of a solution that everyone, scientists and managers included, will have to address.”
-			</p>
-
-			<p>The Living Shoreline experiment will need to be repeated again at larger scales and in different locations around the Bay, Latta said. For example, both of the test sites sit along rocky shorelines. Until the team tests the effects of their oyster reef against a soft shoreline, like a marsh, they can’t say for sure if it will actually protect the shoreline.
-			</p>
-
-			<p>When the reefs were first built, someone contacted Latta wondering how oysters could fix sea level rise. The caller thought oysters, since they’re filter feeders, would just suck up all the water, saving the Bay from climate change.
-			</p>
-
-			<p>Mistaken as that may be, Latta says, the complex relationship between oysters,  eelgrass and the shoreline holds promise for blunting the impact of global warming.
-			</p>
-
-			<p>“The more we can focus on what might be the solution and even small ways to adapt, that gives me great hope,” Latta said. “Even if it doesn’t work in the end, I want to spend my time looking for things we might do.”
-			</p>
+			<p>It’s been about a year since the reefs were installed at the San Rafael site. In addition to the recruitment of two million oysters, the team found that the reefs are reducing the energy of incoming waves by 30-50 percent.</p>
+			<p>The results offer some hope that a large-scale oyster habitat restoration project, along with ongoing efforts to restore Bay Area tidal marshes, could offer shoreline communities protection against floods and storm surges.</p>
+			<p>The Hayward site in the South Bay has seen less success. If one species of invasive snail isn’t outcompeting the oysters, a peskier invasive snail is eating them.</p>
+			<p>Oyster reefs and coastal habitat alone will not be able to protect every mile of shoreline in the Bay. In some places, the only practical solution might be to build some kind of sea wall.</p>
+			<p>“We're cautious about how much we can say about it at this point,” Boyer said. “I don’t want to make the oyster the hero,” Boyer said. “There are big decisions we want to make as a society on how close to the shoreline we have (development). (And) oysters and our reefs are part of a solution that everyone, scientists and managers included, will have to address.”</p>
+			<p>The Living Shoreline experiment will need to be repeated again at larger scales and in different locations around the Bay, Latta said. For example, both of the test sites sit along rocky shorelines. Until the team tests the effects of their oyster reef against a soft shoreline, like a marsh, they can’t say for sure if it will protect that shoreline.</p>
+			<p>When the reefs were first built, someone contacted Latta wondering how oysters could fix sea level rise. The caller thought oysters, since they’re filter feeders, would just suck up all the water, saving the Bay from climate change.</p>
+			<p>Mistaken as that may be, Latta says, the complex relationship between oysters,  eelgrass and the shoreline holds promise for blunting the impact of global warming.</p>
+			<p>“The more we can focus on what might be the solution and even small ways to adapt, that gives me great hope,” Latta said. “Even if it doesn’t work in the end, I want to spend my time looking for things we might do.”</p>
 			</div>
 		</div>
 	</div><!-- end .row -->
