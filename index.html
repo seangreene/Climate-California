@@ -3,11 +3,11 @@
 <head>
     <meta charset="utf-8">
     <title>Climate California</title>
-    <link href="http://netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css" rel="stylesheet">
-    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-    <script src="http://netdna.bootstrapcdn.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>
-    <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery.address/1.6/jquery.address.min.js"></script>
-    
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/jquery.address.min.js"></script>
+    <script src="js/jquery.jplayer.min.js"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <script type="text/javascript">
@@ -27,24 +27,53 @@
     </script>
 
     <script type="text/javascript" charset="utf-8">
+
+
         jQuery(document).ready(function($){
 
+        	//click arrow to automatically scroll down a little bit
+        	$("#down-arrow").on('click', function(){
+        		$("html, body").stop().animate({"scrollTop": "1000px"}, 1000);
+        	});
+
+
+        	//make something happen when scrolling to the very bottom of a page
+        	// $(window).on('scroll', function(){
+        	// 	if($(window).scrollTop() > $(document).height() - $(window).height() - 100){
+        	// 		//do something here
+        	// 		$("#something").addClass("")
+        	// 	}
+        	// });
+
+
         	$(function() {
-			$('#fds .fade').each(function(i) {
-			$(this).delay((i++) * 600).fadeTo(1500, 1,'linear'); })
+				$('#fds .fade').each(function(i) {
+					$(this).delay((i++) * 600).fadeTo(1500, 1,'linear'); 
+				})
 			});
 
-            
+
             //This is what happens when you click on a link in the <nav> tag
-            $.address.change(function(e) {  
-                $("#home").css('display', 'none');
+            $.address.change(function(e) { 
+
+                
+                
+                $('#fds').removeClass('.fade')
                 $('.section').css('display', 'none');
+
                 var id = e.value.replace(/\//g, "");
                 
                 $("#" + id).css({
                     'display':'block',
                 });
-                
+
+ 				if(e.path == "/" || e.path == "/home"){
+ 					$("#home").css('display', 'block');
+ 				}
+ 				
+                window.scrollTo(0,0);
+
+
                 /*
                 if(id == 'ag'){
                     
@@ -56,6 +85,25 @@
             $('nav a').address(function() { 
                 return $(this).attr('href').replace(/^#/, '');  
             });
+
+            /********* JPLAYER **********/
+
+            $('#cover-video').jPlayer({
+            	ready : function(e){
+
+            		$(this).jPlayer("setMedia", {
+            			m4v : 'http://s3-us-west-1.amazonaws.com/climate-california/cc-cover.mp4'
+            			//poster: 'IMAGE WILL GO HERE'
+            		}).jPlayer("play");
+            	},
+
+            	size     : {width: "100%", height:"100%"},
+            	swfPath  : "js/Jplayer.swf",
+            	supplied : "m4v"
+            });
+
+
+
 
         });
     </script>
@@ -72,24 +120,19 @@
 			display:none;
 		}
 
-		.project-title {
-			position:absolute;
-			left:20px;
-			top:20px;
-		}
-
 		#quote{
-			color: #cccccc;
+			color: #ffffff;
 			font-weight:100;
+			font-style:italic;
 			font-size:1.5em;
-			text-align: center;
+			/*text-align: center;*/
+			padding-top:15px;
 		}
 
 
 		#title{
-			margin-top:75px;
 			position:absolute;
-			top:10%;
+			top:14em;
 		}
 
 		.fade{
@@ -97,17 +140,19 @@
 		}
 
 		.subhead{
-			color:#cccccc;
+			color:#ffffff;
 			font-size:2em;
 			font-weight:100;
 		}
 
+		/*
 		#home{
 			background-image: url('media/coast.jpg');
 			background-attachment: fixed;
 			background-repeat: no-repeat;
 			background-size: 100%;
 		}
+		
 		#drought{
 			background-image: url('http://raw.github.com/seangreene/Climate-California/gh-pages/Media/drought.jpg');
 			background-attachment: fixed;
@@ -132,10 +177,10 @@
 			background-repeat: no-repeat;
 			background-size: 100%;
 		}
-
+		*/
 		h2.chapter_title{
 			position:absolute;
-			top:10px;
+			top:100px;
 			font-family: "Montserrat";
 			font-style: normal;
 			font-weight: 700;
@@ -154,6 +199,8 @@
 			padding:30px 0 30px 0;
 			margin-top:500px;
 			margin-bottom:100px;
+			position: absolute;
+			top:500px;
 		}
 
 		p {
@@ -172,8 +219,18 @@
 			padding-left:3px;
 		}
 
+		.down-arrow {
+			position:absolute;
+			left:50%;
+			right:50%;
+			top:46em;
+			width:5em;
+			height:5em;
+			cursor: pointer;
+		}
 
-		video.cover{position:fixed;left:50%;top:50%;-webkit-transform:translate(-50%, -50%);-moz-transform:translate(-50%, -50%);-ms-transform:translate(-50%, -50%);transform:translate(-50%, -50%);height:100%;width:auto;}
+
+		#cover-video {position:fixed;left:50%;top:50%;-webkit-transform:translate(-50%, -50%);-moz-transform:translate(-50%, -50%);-ms-transform:translate(-50%, -50%);transform:translate(-50%, -50%);height:100%;width:auto;}
 
 		iframe.cover{width:100%;height:100%;}
         	@media screen and (min-aspect-ratio: 16/9) { video.cover{height:auto;width:100%;}}
@@ -219,27 +276,59 @@
 
 
 <!--TITLE PAGE -->
-	<div class="row" id="home">
+	<div class="row section" id="home">
 
-		<video class="cover background-video" autoplay loop>
-		    <source src="video/cc-cover.mp4" type="video/mp4">
-		</video>
+		<div id="cover-video" class="cover background-video">
+		    <!-- <source src="http://s3-us-west-1.amazonaws.com/climate-california/cc-cover.mp4" type="video/mp4"> -->
+		</div>
 
 		<div id="fds">
-		<div class="col-sm-6 col-sm-offset-3">
-			<h2 id="quote" class="fade">
-				"If you try to pick anything out in nature you find it hitched to everything else in the universe."&mdash;John Muir
-			</h2>
-		</div>
 
 		<div class="col-md-5 col-sm-offset-1" id="title">
 			<h1 style="display:none;">Climate California</h1>
-			<img src="featurehead.png" class="img-responsive fade" />
-			<div class="col-md-10 col-sm-offset-2">
+			<img src="media/climate-california.png" class="img-responsive fade" />
+
+			<div class="col-sm-10 col-sm-offset-2">
 				<h2 class="subhead fade">Stories from the front lines in the battle against climate change.</h2>
+
+			<h3 id="quote" class="fade">
+				"If you try to pick anything out in nature you find it hitched to everything else in the universe."
+				<br/>
+				&mdash;John Muir
+			</h3>
+			</div>
+
+		</div>
+
+			<!-- DOWN ARROW -->
+			<div class="col-sm-2 col-sm-offset-5">
+				
+				<img src="media/down-arrow.png" id="down-arrow" class="img-responsive fade down-arrow" />
+			</div>
+		</div><!--fds-->
+
+		<div class="col-sm-6 col-sm-offset-3" id="chapter">
+
+			<div class="col-sm-10 col-sm-offset-1">
+			
+			<p><span class="dropcap">F</span>or California in all its natural diversity, this past year has been a portend of the effects of climate change.</p>
+
+			<p>Drought parched the state, wildfire ripped through massive swaths of forest, and crops in the Central Valley suffered in a warmer winter. All the while, the sea continues to rise, compromising California’s iconic coastlines.</p>
+
+			<p>An overwhelming majority of scientists agree that greenhouse gas emissions cause climate change. Carbon dioxide builds up in the atmosphere, trapping heat inside like a greenhouse. </p>
+
+			<p>The ultimate solution to climate change is reducing greenhouse gas emissions to curb warming. Ironically, California leads the nation with its environmental standards and emissions regulations, but stands to lose in the short term.  Combating greenhouse gases will require a level of international cooperation that is probably a long ways away.</p>
+
+			<p>In the meantime, scientists, scholars and government officials up and down the state are starting to take measures that reduce the impacts of climate change at local levels. Adaptation doesn’t require large-scale governmental support, and can serve as a test case for larger projects that build a more resilient California.</p>
+
+			<p>“California is setting the agenda for the rest of the country to follow,” said Norman Miller, a UC Berkeley climate scientist and member of the International Panel on Climate Change. “These things take time to propagate across the country.”</p>
+
+			<p>This story is about those efforts – stretching already thin water resources, breeding plants that thrive in warmer weather, allowing smaller fires to prevent catastrophic wildfires and building natural barriers against surging seas.</p>
+			
 			</div>
 		</div>
-		</div><!--fds-->
+
+
 
 	</div><!--end row-->
 
@@ -272,45 +361,51 @@
 				As California experiences its worst drought on record, the state takes a new look at conservation. 
 			</h3>
 
-			<p><span class="dropcap">C</span><p>alifornia may have grown up on a faulty assumption: the water we expected every year will always come.</p>
+			<p><span class="dropcap">C</span>alifornia may have grown up on a faulty assumption: the water we expected every year will always come.</p>
 
-			<p>In the winter, the Sierra Nevada mountains accumulate a thick layer of snow. As temperatures rise in the spring, the Sierra snowpack gradually melts and runs down to quench the Central Valley and the rest of the state. The snowpack is California’s  largest source of both irrigation and drinking water.</p>
+			<p>In the winter, the Sierra Nevada mountains accumulate a blanket of snow. As temperatures rise in the spring and summer, the Sierra snowpack gradually melts and runs down to quench the Central Valley and the rest of the state. The snowpack supplies California with 35 percent of its irrigation and drinking water.</p>
 
-			<p>But in 2014, California’s driest year on record, the warm winter meant rain rather than snow in the mountains. With a snowpack level around 20 percent of normal, the mountains didn’t store the water for later. Most of the water ran right through to the streams. </p>
+			<p>But in 2013, one of California’s driest year on record, the warm winter meant more of that snow fell as rain in the mountains. With a snowpack level below 20 percent of normal statewide, the mountains didn’t store that water – it ran right through to the streams. </p>
 
-			<p>"So you can kind of look at the snowpack as a temporary reservoir," said Randall Osterhuber, a researcher at the Central Sierra Snow Lab, a unit of UC Berkeley. California does not typically store rainwater, and it’s difficult to manage. That’s why the timed-release of water from snowmelt matters.</p>
+			<p>"So you can kind of look at the snowpack as a temporary reservoir," said Randall Osterhuber, a researcher at the Central Sierra Snow Lab, a unit of UC Berkeley.</p>
 
-			<p>"The short sentence is: up here, we're seeing a climate that's slightly and slightly warmer," Osterhuber said. "It's the warmer thing that really makes a difference in the mountains where the dominant precipitation type is snowfall."</p>
+			<p>The state relies on runoff from snowpack for water during its hot summers. From April through July, 15 million acre feet of water runs down from the mountains, delivering water to ecosystems, agriculture and hydropower dams. </p>
+
+			<p>When there’s less snow and earlier melting, that delivery system breaks down.</p>
+
+			<p>California does not typically store rainwater, and on top of that, it’s difficult to manage, Osterhuber said. That’s why the timed-release of water from snowmelt matters. Early spring runoff also poses flooding risk.</p>
+
+			<p>"The short sentence is: up here, we're seeing a climate that's slightly wetter and slightly warmer," Osterhuber said. "It's the warmer thing that really makes a difference in the mountains where the dominant precipitation type is snowfall."</p>
+
 
 			<img src="media/drought1.jpg" class="img-responsive" />
 
-			<p><strong>This year’s historic drought</strong> raised questions about the threat that climate change poses to the state’s water supply, and also renewed a long-standing conversation about how to better manage that water supply. </p>
+			<p><strong>Climate change has raised the specter</strong> of California’s longstanding water problems. Scientists and water managers are searching for new ways to conserve, capture and recycle water as resources only grow scarcer.</p>
 
-			<p>California has a Mediterranean climate marked by dry summers and wet winters. Multi-year and multi-decade atmospheric patterns also play a role in when and how much water the area gets. </p>
+			<p>Drought in the West is a cyclic phenomenon as much as it is a symptom of climate change. The Mediterranean climate here means summers are and winters wet. Multi-year and multi-decade atmospheric patterns also influence how much rain the region gets.</p>
 
-			<p>Paleoclimatologist and UC Berkeley professor Lynn Ingram used tree rings and sediment cores from the San Francisco Bay to track dry years in the historic record. In the 1500s, the time of Columbus, Ingram noted a “medieval megadrought,” </p>
+			<p>Paleoclimatologist and UC Berkeley professor B. Lynn Ingram used tree rings and sediment cores from the San Francisco Bay to track dry years in the historic record. In the 1500s, the time of Columbus, Ingram noted a 200-year-long “medieval megadrought.” Periods of drought correspond with periods of global warmth, Ingram said.</p>
 
-			<p>California has seen several such long dry spells lasting hundreds of years at a time.</p>
+			<p>“This is a natural cycle, independent of the drying we might experience with global warming. So we have to consider both those possibilities,” Ingram said at a conference on drought and climate change at UC Berkeley.</p>
 
-			<p>The centuries after the medieval drought were relatively wet, including a “Little Ice Age.”</p>
+			<p>The centuries after the medieval drought were relatively wet,  called the Little Ice Age</p>
+			<p>California’s climate naturally varies by the year, decade and century in accordance to natural cycles. But it’s possible that climate change is making some of those cycles worse.</p>
+			<p>scientists at Utah State University showed the 2013-14 drought was caused by greenhouse gas emissions. Using a new global climate computer model, Simon Wang, a Utah State associate professor of climatology, found the drought could not be explained by natural historic cycles alone.</p>
 
-			<p>“California and Central Valley were founded under the assumption that this wet period would always continue,” Ingram said.</p>
+			<p>Wind patterns over the Pacific Ocean created a high-pressure ridge, blocking rain and snow storms from blowing over California and pushing them north toward the Pacific Northwest. At the same time, the eastern part of the country experienced a deep low-pressure “trough,” Wang said, causing the massive cold snap known as the Polar Vortex.</p>
 
-			<p>“This is a natural cycle independent of … global warming. So we have to consider both those possibilities” in tracing the cause of drought years in California, Ingram said at a conference on drought and climate change at UC Berkeley.</p>
+			<p>The study called this system of high and low pressure a “dipole,” which has persisted since December 2012 and has generally intensified since the 1970s. Computer simulations showed the dipole would normally be weakening, if it weren’t for greenhouse gases. When the researchers introduced carbon emissions to the equation, they found the simulation matched real-world observations. </p>
 
-			<p>Scientists at Utah State University are working on a method to predict drought.</p>
+			<p>"It is important to note that the dipole is projected to intensify, which implies that the periodic and inevitable droughts California will experience will exhibit more severity," the study, published in the journal Geophysical Research Letters, said.</p>
 
-			<p>“Any indication of paleologic drought …will help us to understand if there’s a reason, a cycle, behind that,” said Simon Wang, an associate professor of climatology at Utah State. “We can use that to predict the next big one. But in terms of how big, I think that is an open question.”</p>
+			<p>The researchers realized the dipole’s formation didn’t correspond with any known climate model. Instead, they found it was a precursor to El Niño, a weather phenomenon that warms the Pacific Ocean, causing wet weather and worldwide climate anomalies, the study said. The dipole forms about a year before El Niño.</p>
 
-			<p>Using a computer model, Wang and his colleagues found that the 2013-2014 drought could not have occurred due to natural historic cycles, according to the study published in the journal Geophysical Research Letters. In other words, climate change and greenhouse gas emissions are needed to explain the current drought.</p>
+			<p>The model also found the appearance of the dipole and drought are a natural part of the beginnings of an El Niño or La Niña event – which warm the Pacific Ocean, causing wet weather and worldwide climate anomalies, the study said. The dipole forms about a year before El Niño.</p>
 
-			<p>A high-pressure ridge characterized this year’s drought over the Pacific Ocean. That system, dubbed the “Ridiculously Resilient Ridge” in the media, pushed winter storms north of California to the Pacific Northwest. At the same time, the eastern part of the country saw deep low pressure – a “trough” – which caused the large cold snap known as the “polar vortex.” Together, these events formed what’s called a “dipole.” </p>
+			<p>As of April, the National Oceanic and Atmospheric Administration predicts with about 50 percent certainty that a strong El Niño will develop this summer and bring rain and warmer seas to the California coast as early as this fall. In that case, the storms could provide some drought relief, but likely not enough to keep the dry year out of the records books.</p>
 
-			<p>"It is important to note that the dipole is projected to intensify, which implies that the periodic and inevitable droughts California will experience will exhibit more severity," Wang wrote in the paper.</p>
+						<style>.embed-container { position: relative; padding-bottom: 56.25%; padding-top: 30px; height: 0; overflow: hidden; max-width: 100%; height: auto; } .embed-container iframe, .embed-container object, .embed-container embed { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }</style><div class='embed-container'><iframe src='http://seangreene.github.io/Drought-Chart/' style='border:0'></iframe></div>
 
-			<p>The paper also concludes that the dipole could be used to predict future El Niño events. A strong enough El Niño can break the high-pressure system, provide some relief to the drought-strained state.</p>
-
-			<p>The National Oceanic and Atmospheric Administration predicts with some certainty that a strong El Niño will develop this summer and bring rain and warmer seas to the California coast as early as this fall.</p>
 
 			<p><strong>If you drew a line</strong> on a map from San Francisco to Lake Tahoe, you’d see the challenge the state’s water system faces. About 80 percent of the snowpack runoff comes from north of that line. Yet, 66 percent of water users live south of the line. People who live on the southern California coast receive more than 60 percent of the water they use piped in from other regions, said Kamyar Guivetchi of the California Department of Water Resources. The San Francisco Bay Area gets a similar percentage of its water piped in other parts of the state.</p>
 
@@ -333,6 +428,7 @@
 			<p>Drought researchers Ingram and Wang agree that conservation and better use of the shrinking water supplies will be critical.</p>
 
 			<p>“I definitely think we need to start valuing water more,” Ingram said. “We’re in for the long-term of water scarcity and we need to think of water as a much more valuable resource than we do now.”</p>
+
 			</div>
 		</div>
 
@@ -467,6 +563,7 @@
 			<p>Just down the road, the forest is again overgrown. A mess of younger trees, twisted shrubs and wood debris surrounds the tall and established pines.</p>
 
 			<p>“This is what a hundred years of doing nothing looks like,” Ballard said.</p>
+
 			</div>
 		</div>
 	</div><!-- end .row -->
@@ -504,7 +601,7 @@
 
 			<p>Climate change threatens the future of the Central Valley’s staple and cash crops – especially finicky trees that require particular temperature ranges and year-round water.</p>
 
-			<p>While rotating out thirstier crops for ones that require less water could solve some problems, it doesn’t help California’s $8.7 billion tree-bearing fruit and nut production industry. </p>
+			<p>While rotating out thirstier crops for ones that require less water could solve some problems, it doesn’t help California’s $8.7 billion tree-bearing fruit and nut production industry.</p>
 
 			<p>Fruits and nuts are perennial crops that require a long-term commitment and water year-round to keep alive. They take years, even decades, to reach fruit-bearing maturity, so you can’t just rip them out of the ground at the end of the growing season to plant something else next year.</p>
 
@@ -539,6 +636,12 @@
 			<img src="media/zaigers4.jpg" class="img-responsive" />
 
 			<p><strong>In some areas</strong> of the Central Valley, winter chilling hours have decreased by 30 percent since 1950, according to a 2009 study by researchers at UC Davis. Back then, growers could rely on 700-1200 chilling hours per winter. </p>
+			
+			<div class="col-sm-6" style="padding-left:0px;">
+
+			<img src="media/chillhours.png" class="img-responsive">
+
+			</div>
 
 			<p>By 2050, the decline will double to as much as 60 percent , according to the worst-case carbon emission scenarios from computer modeling the researchers used. By the end of the century, the Central Valley might not be suitable for growing walnuts, pistachios, peaches, apricots, plums and cherries anymore.</p>
 
@@ -631,8 +734,8 @@
 			<p><span class="dropcap">T</span><p>he gray waters of San Francisco Bay slosh up on the jagged shoreline as two wetsuit-clad scientists hop down the rocks and into the mud below.</p>
 			<p>Dead oyster shells cover the rocks, crunching under each step. The tide is waning, exposing a wide mudflat sparkling under a late afternoon sun. The tide is also uncovering what could be a prototype for a fortification against one of the impacts of sea level rise.</p>
 			<p>Eight hundred feet offshore, across sticky, bubbling mud, the scientists make their way to that fortress, giving its 2 million inhabitants a checkup like doctors making a house call.</p>
-			<p>***</p>
-			<p>Melting glacial ice could cause the sea level in the Bay Area to rise 14 inches by 2050 and 55 inches by 2100, according to estimates published by the California Ocean Protection Council. From 1900 to 2000, water levels have risen 8 inches under the Golden Gate Bridge.</p>
+
+			<p><strong>Melting glacial ice</strong> could cause the sea level in the Bay Area to rise 14 inches by 2050 and 55 inches by 2100, according to estimates published by the California Ocean Protection Council. From 1900 to 2000, water levels have risen 8 inches under the Golden Gate Bridge.</p>
 			<p>The resulting higher tides, combined with more frequent and stronger storms that scientists say an altered climate will bring to the area, mean powerful storm surges and increased flooding to the densely populated and expensively developed Bay Area shorelines.</p>
 			<p>More than $50 billion in property and infrastructure lies in danger of sea level rise in the Bay Area, according to the Pacific Institute and Save the Bay. Also at risk are almost 100 schools and healthcare facilities, 1,780 miles of roads, 270,000 homes, and infrastructure such as airports and power plants.</p>
 
