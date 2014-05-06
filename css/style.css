@@ -16,7 +16,7 @@ body { padding-bottom: 70px; }
 
 		#title{
 			position:absolute;
-			top:14em;
+			top:20%;
 		}
 
 		.fade{
@@ -79,7 +79,7 @@ body { padding-bottom: 70px; }
 			position:absolute;
 			left:50%;
 			right:50%;
-			top:46em;
+			top:75%;
 			width:5em;
 			height:5em;
 			cursor: pointer;
@@ -103,9 +103,9 @@ body { padding-bottom: 70px; }
 		iframe.cover{width:100%;height:100%;}
         	@media screen and (min-aspect-ratio: 16/9) { video.cover{height:auto;width:100%;}}
 
- /*       .embed-container {
+        .embed-container {
         	position: relative;
-        	padding-bottom: 85%;
+        	padding-bottom: 310%;
         	padding-top:30px;
         	height: 0;
         	overflow: hidden;
@@ -119,9 +119,37 @@ body { padding-bottom: 70px; }
 		    width: 100%;
 		    height: 100%;
 		}
-
-
-
-*/
+		.droughtviz-container {
+        	position: relative;
+        	padding-bottom: 50%;
+        	padding-top:30px;
+        	height: 0;
+        	overflow: hidden;
+        }
+ 		.droughtviz-container iframe,
+		.droughtviz-container object,
+		.droughtviz-container embed {
+		    position: absolute;
+		    top: 0;
+		    left: 0;
+		    width: 100%;
+		    height: 100%;
+		}
+		.fireviz-container {
+        	position: relative;
+        	padding-bottom: 50%;
+        	padding-top:30px;
+        	height: 0;
+        	overflow: hidden;
+        }
+ 		.fireviz-container iframe,
+		.fireviz-container object,
+		.fireviz-container embed {
+		    position: absolute;
+		    top: 0;
+		    left: 0;
+		    width: 100%;
+		    height: 100%;
+		}
 
 

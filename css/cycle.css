@@ -1,0 +1,52 @@
+      .cycle img {
+        width:100%;
+        height:auto;
+      }
+      .cycle #no-template-pager {
+        font-family: Helvetica Neue;
+        font-size: 14px;
+      }
+
+      .cycle a {
+        color:#777;
+        font-size:1.1em;
+        padding-right:.6em;
+      }
+      .cycle a:link {text-decoration:none;color:#777;}
+      .cycle a:visited {text-decoration:none; color:#777;}
+      .cycle a:hover {text-decoration:none; color:black;}
+      .cycle a:active {text-decoration:underline;}
+
+       .cycle  .legend-title {
+          text-align: left;
+          margin-bottom: 8px;
+          font-weight: bold;
+          font-size: 90%;
+        }
+       .cycle  .legend-scale ul {
+          margin: 0;
+          padding: 0;
+          float: left;
+          list-style: none;
+        }
+       .cycle  .legend-scale ul li {
+          display: block;
+          float: left;
+          width: 50px;
+          margin-bottom: 6px;
+          text-align: center;
+          font-size: 80%;
+          list-style: none;
+        }
+       .cycle  ul.legend-labels li span {
+          display: block;
+          float: left;
+          height: 15px;
+          width: 50px;
+          border: 1px solid gray;
+        }
+       .cycle  .legend-source {
+          font-size: 70%;
+          color: #999;
+          clear: both;
+        }
