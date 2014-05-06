@@ -105,14 +105,71 @@
             	swfPath  : "js/Jplayer.swf",
             	supplied : "m4v"
             });
-var url = window.location;
-// Will only work if string in href matches with location
-$('ul.nav a[href="'+ url +'"]').parent().addClass('active');
 
-// Will also work for relative and absolute hrefs
-$('ul.nav a').filter(function() {
-    return this.href == url;
-}).parent().addClass('active');
+            $('#drought-video').jPlayer({
+            	ready : function(e){
+
+            		$(this).jPlayer("setMedia", {
+            			m4v : 'http://s3-us-west-1.amazonaws.com/climate-california/cc-drought.mp4'
+            			//poster: 'IMAGE WILL GO HERE'
+            		}).jPlayer("play");
+            	},
+            	fullScreen: "true",
+            	size     : {'width': "100%", 'height':"100%"},
+            	swfPath  : "js/Jplayer.swf",
+            	supplied : "m4v"
+            });
+
+            $('#fire-video').jPlayer({
+            	ready : function(e){
+
+            		$(this).jPlayer("setMedia", {
+            			m4v : 'http://s3-us-west-1.amazonaws.com/climate-california/cc-fire.mp4'
+            			//poster: 'IMAGE WILL GO HERE'
+            		}).jPlayer("play");
+            	},
+            	fullScreen: "true",
+            	size     : {'width': "100%", 'height':"100%"},
+            	swfPath  : "js/Jplayer.swf",
+            	supplied : "m4v"
+            });
+
+            $('#ag-video').jPlayer({
+            	ready : function(e){
+
+            		$(this).jPlayer("setMedia", {
+            			m4v : 'http://s3-us-west-1.amazonaws.com/climate-california/cc-ag.mp4'
+            			//poster: 'IMAGE WILL GO HERE'
+            		}).jPlayer("play");
+            	},
+            	fullScreen: "true",
+            	size     : {'width': "100%", 'height':"100%"},
+            	swfPath  : "js/Jplayer.swf",
+            	supplied : "m4v"
+            });
+
+            $('#sealevel-video').jPlayer({
+            	ready : function(e){
+
+            		$(this).jPlayer("setMedia", {
+            			m4v : 'http://s3-us-west-1.amazonaws.com/climate-california/cc-sealvl.mp4'
+            			//poster: 'IMAGE WILL GO HERE'
+            		}).jPlayer("play");
+            	},
+            	fullScreen: "true",
+            	size     : {'width': "100%", 'height':"100%"},
+            	swfPath  : "js/Jplayer.swf",
+            	supplied : "m4v"
+            });
+
+			var url = window.location;
+			// Will only work if string in href matches with location
+			$('ul.nav a[href="'+ url +'"]').parent().addClass('active');
+
+			// Will also work for relative and absolute hrefs
+			$('ul.nav a').filter(function() {
+			    return this.href == url;
+			}).parent().addClass('active');
 
 
 
@@ -223,9 +280,9 @@ $('ul.nav a').filter(function() {
 <!-- CHAPTER 1: HEAT, DROUGHT, CLIMATE CHANGE -->	
 	<div class="row section" id="drought">
 
-		<video class="cover background-video" autoplay loop>
-		    <source src="video/forest.mp4" type="video/mp4">
-		</video>
+		<div id="drought-video" class="cover">
+		<!-- <source src="video/forest.mp4" type="video/mp4">-->		
+		</div>
 
 		<div class="col-sm-6 col-sm-offset-3">
 			<h2 class="chapter_title">
@@ -323,9 +380,9 @@ $('ul.nav a').filter(function() {
 
 	<div class="row section" id="fire">
 
- 		<video class="cover background-video" autoplay loop>
-		    <source src="video/cc-fire.mp4" type="video/mp4">
-		</video>
+ 		<div id="fire-video" class="cover">
+		    <!-- <source src="video/cc-fire.mp4" type="video/mp4"> -->
+		</div>
 
 		<div class="col-sm-6 col-sm-offset-3">
 			<h2 class="chapter_title">
@@ -456,9 +513,9 @@ $('ul.nav a').filter(function() {
 
 	<div class="row section" id="ag">
 
-		<video class="cover background-video" autoplay loop>
-		    <source src="video/cc-ag.mp4" type="video/mp4">
-		</video>
+		<div id="ag-video" class="cover">
+		    <!-- <source src="video/cc-ag.mp4" type="video/mp4"> -->
+		</div>
 
 		<div class="col-sm-6 col-sm-offset-3">
 			<h2 class="chapter_title">
@@ -520,8 +577,8 @@ $('ul.nav a').filter(function() {
 
 			<p><strong>In some areas</strong> of the Central Valley, winter chilling hours have decreased by 30 percent since 1950, according to a 2009 study by researchers at UC Davis. Back then, growers could rely on 700-1200 chilling hours per winter. </p>
 			
-			<div class="embed col-sm-6">
-			<iframe src="http://seangreene.github.io/Winter-Chill" style="width: 100%; padding: 0px;margin: 0; border: none; display: block;height:0px; overflow: hidden;"></iframe>
+			<div class="embed-container col-sm-6">
+			<iframe src="http://seangreene.github.io/Winter-Chill" frameborder="0"></iframe>
 			</div>
 
 			<p>By 2050, the decline will double to as much as 60 percent , according to the worst-case carbon emission scenarios from computer modeling the researchers used. By the end of the century, the Central Valley might not be suitable for growing walnuts, pistachios, peaches, apricots, plums and cherries anymore.</p>
@@ -594,9 +651,9 @@ $('ul.nav a').filter(function() {
 
 	<div class="row section" id="sealevel">
 
-		<video class="cover background-video" autoplay loop>
-		    <source src="video/cc-sealvl.mp4" type="video/mp4">
-		</video>
+		<div id="sealevel-video" class="cover">
+		    <!-- <source src="video/cc-sealvl.mp4" type="video/mp4"> -->
+		</div>
 
 		<div class="col-sm-6 col-sm-offset-3">
 			<h2 class="chapter_title">
@@ -607,7 +664,8 @@ $('ul.nav a').filter(function() {
 		<div class="col-sm-6 col-sm-offset-3" id="chapter">
 			<div class="col-sm-10 col-sm-offset-1">
 
-			<img src="media/oyster2.jpg" class="img-responsive" />
+			<img src="media/oyster1.jpg" class="img-responsive" />
+
 			<h3 class="subhead">
 				What can a dimminutive mollusk do to protect the San Francisco Bay Area from sea level rise?
 			</h3>
@@ -621,14 +679,15 @@ $('ul.nav a').filter(function() {
 			<p>More than $50 billion in property and infrastructure lies in danger of sea level rise in the Bay Area, according to the Pacific Institute and Save the Bay. Also at risk are almost 100 schools and healthcare facilities, 1,780 miles of roads, 270,000 homes, and infrastructure such as airports and power plants.</p>
 
 			<script type="text/javascript">
+
 			      $(function(){
-			        $('iframe').responsiveIframe({this: 'isnt', that: 'is'});
-			      });        
-			  
+			        $('iframe').responsiveIframe();
+			      });    
+
 			</script>
 
-			<div id="embed">
-			<iframe src="http://seangreene.github.io/Sea-Level/"  style="width: 100%; padding: 0px;margin: 0; border: none; display: block;height:0px; overflow: hidden;"></iframe>
+			<div style="padding: 10px 0 10px 0">
+			<iframe src="http://seangreene.github.io/Sea-Level/"  style="width: 100%; padding: 0px;margin: 0; border: none; display: block;height:800px; overflow:hidden;"></iframe>
 			</div>
 
 			<p>The common protection would be to build a sea wall, a hard barrier between ocean and land. But scientists in the Bay Area say there’s a cheaper and more environmentally friendly alternative to adding more concrete to an already highly urbanized area:</p>
@@ -652,7 +711,7 @@ $('ul.nav a').filter(function() {
 			<p>The reefs and wetlands, and in some places, maybe a small levee, “they’re all doing a piece of the job,” Lowe said. “Together they could make a more flexible shoreline and one that’s more fitting of a living shoreline concept.”</p>
 			<p>If the Living Shorelines Project’s pilot experiment provides the results the team is hoping for, the concept could be applied elsewhere in the Bay to protect the homes of humans and wildlife alike.</p>
 
-			<img src="media/oyster1.jpg" class="img-responsive" />
+			<img src="media/oyster2.jpg" class="img-responsive" />
 
 			<p><strong>Once believed</strong> to be an abundant presence in the San Francisco Bay, the Olympia oyster population declined significantly around the end of the 19th Century. Nobody knows exactly what brought on their disappearance, but scientists believe it was some combination of habitat destruction from Gold Rush-era hydraulic mining and overharvesting.</p>
 			<p>Now scientists, lead by biologist Katharyn Boyer of San Francisco State University’s Romberg Tiburon Center for Environmental Studies, hope their artificial reefs can aid in the population’s recovery.</p>
