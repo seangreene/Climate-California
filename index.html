@@ -12,6 +12,11 @@
     <link href="css/style.css" rel="stylesheet">
 	<link href="//fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
 
+
+	<script src="x-gif/dist/platform.js"></script>
+
+	<link rel="import" href="x-gif/dist/x-gif.html">
+
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <script type="text/javascript">
@@ -344,7 +349,7 @@
 
 			<p>As of April, the National Oceanic and Atmospheric Administration predicts with about 50 percent certainty that a strong El Niño will develop this summer and bring rain and warmer seas to the California coast as early as this fall. In that case, the storms could provide some drought relief, but likely not enough to keep the dry year out of the records books.</p>
 
-						<style>.embed-container { position: relative; padding-bottom: 56.25%; padding-top: 30px; height: 0; overflow: hidden; max-width: 100%; height: auto; } .embed-container iframe, .embed-container object, .embed-container embed { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }</style><div class='embed-container'><iframe src='http://seangreene.github.io/Drought-Chart/' style='border:0'></iframe></div>
+			<iframe src='http://seangreene.github.io/Drought-Chart/' style=' width=100%; border:none;'></iframe>
 
 
 			<p><strong>If you drew a line</strong> on a map from San Francisco to Lake Tahoe, you’d see the challenge the state’s water system faces. About 80 percent of the snowpack runoff comes from north of that line. Yet, 66 percent of water users live south of the line. People who live on the southern California coast receive more than 60 percent of the water they use piped in from other regions, said Kamyar Guivetchi of the California Department of Water Resources. The San Francisco Bay Area gets a similar percentage of its water piped in other parts of the state.</p>
@@ -577,9 +582,41 @@
 
 			<p><strong>In some areas</strong> of the Central Valley, winter chilling hours have decreased by 30 percent since 1950, according to a 2009 study by researchers at UC Davis. Back then, growers could rely on 700-1200 chilling hours per winter. </p>
 			
-			<div class="embed-container col-sm-6">
+<!-- 			<div class="embed-container col-sm-6">
 			<iframe src="http://seangreene.github.io/Winter-Chill" frameborder="0"></iframe>
+			</div> -->
+			<div class="col-sm-6" >
+			<script>
+		      window.addEventListener('polymer-ready', function(e) {
+		        document.querySelectorAll('x-gif').array().forEach(function (el) {
+		          el.addEventListener('click', function () {
+		            el.stopped = (el.stopped == null) ? true : null;
+		          })
+		        })
+		      });
+		    </script>
+			<h3>
+				Click each emissions scenario to see how winter chill hours are projected to decline by the end of the century.
+			</h3>
+
+			<div class="col-sm-4 col-sm-offset-8 legend">
+				<img src="x-gif/legend.png" class="img-responsive" height="50px"/>
 			</div>
+
+			<div class="col-sm-4">
+				<p>Low emissions:</p>
+				<x-gif stopped src="x-gif/low2.gif"></x-gif>
+			</div>
+			<div class="col-sm-4">
+				<p>Medium emissions:</p>
+				<x-gif stopped src="x-gif/medium2.gif"></x-gif>
+			</div>
+			<div class="col-sm-4">
+				<p>High emissions:</p>
+				<x-gif stopped src="x-gif/high2.gif"></x-gif>
+			</div>
+		</div>
+
 
 			<p>By 2050, the decline will double to as much as 60 percent , according to the worst-case carbon emission scenarios from computer modeling the researchers used. By the end of the century, the Central Valley might not be suitable for growing walnuts, pistachios, peaches, apricots, plums and cherries anymore.</p>
 
