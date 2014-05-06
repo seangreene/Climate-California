@@ -8,6 +8,10 @@
     <script src="js/bootstrap.min.js"></script>
     <script src="js/jquery.address.min.js"></script>
     <script src="js/jquery.jplayer.min.js"></script>
+    <script src="js/jquery.responsiveiframe.js"></script>
+    <link href="css/style.css" rel="stylesheet">
+	<link href="//fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <script type="text/javascript">
@@ -48,7 +52,7 @@
 
         	$(function() {
 				$('#fds .fade').each(function(i) {
-					$(this).delay((i++) * 600).fadeTo(1500, 1,'linear'); 
+					$(this).delay((i++) * 600).fadeTo(1700, 1,'linear'); 
 				})
 			});
 
@@ -96,12 +100,19 @@
             			//poster: 'IMAGE WILL GO HERE'
             		}).jPlayer("play");
             	},
-
-            	size     : {width: "100%", height:"100%"},
+            	fullScreen: "true",
+            	size     : {'width': "100%", 'height':"100%"},
             	swfPath  : "js/Jplayer.swf",
             	supplied : "m4v"
             });
+var url = window.location;
+// Will only work if string in href matches with location
+$('ul.nav a[href="'+ url +'"]').parent().addClass('active');
 
+// Will also work for relative and absolute hrefs
+$('ul.nav a').filter(function() {
+    return this.href == url;
+}).parent().addClass('active');
 
 
 
@@ -110,135 +121,7 @@
 
 
 
-	<link href="//fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
 
-	<style type="text/css">
-
-		body { padding-bottom: 70px; }
-
-		.section {
-			display:none;
-		}
-
-		#quote{
-			color: #ffffff;
-			font-weight:100;
-			font-style:italic;
-			font-size:1.5em;
-			/*text-align: center;*/
-			padding-top:15px;
-		}
-
-
-		#title{
-			position:absolute;
-			top:14em;
-		}
-
-		.fade{
-			opacity: 0;
-		}
-
-		.subhead{
-			color:#ffffff;
-			font-size:2em;
-			font-weight:100;
-		}
-
-		/*
-		#home{
-			background-image: url('media/coast.jpg');
-			background-attachment: fixed;
-			background-repeat: no-repeat;
-			background-size: 100%;
-		}
-		
-		#drought{
-			background-image: url('http://raw.github.com/seangreene/Climate-California/gh-pages/Media/drought.jpg');
-			background-attachment: fixed;
-			background-repeat: no-repeat;
-			background-size: 100%;
-		}
-		#fire{
-			background-image:url('http://raw.github.com/seangreene/Climate-California/gh-pages/Media/fire.jpg');
-			background-attachment: fixed;
-			background-repeat: no-repeat;			
-			background-size: 100%;
-		}
-		#ag{
-			background-image:url('http://raw.github.com/seangreene/Climate-California/gh-pages/Media/ag.jpg');
-			background-attachment: fixed;
-			background-repeat: no-repeat;
-			background-size: 100%;
-		}
-		#sealevel{
-			background-image:url('http://raw.github.com/seangreene/Climate-California/gh-pages/Media/sealevel.jpg');
-			background-attachment: fixed;
-			background-repeat: no-repeat;
-			background-size: 100%;
-		}
-		*/
-		h2.chapter_title{
-			position:absolute;
-			top:100px;
-			font-family: "Montserrat";
-			font-style: normal;
-			font-weight: 700;
-			font-size:100px;
-			line-height:85px;
-			color: #ffffff;
-			z-index:100;
-		}
-
-		h3.subhead {
-			padding-bottom:30px;
-			color: #777;
-		}
-
-		#chapter {
-			background-color: white;
-			padding:30px 0 30px 0;
-			margin-top:500px;
-			margin-bottom:100px;
-			position: absolute;
-			top:500px;
-		}
-
-		p {
-			font-size: 18px;
-			line-height:24px;
-			font-family: Georgia, serif;
-		}
-
-		.dropcap {
-			font-family: Georgia, serif;
-			float: left;
-			font-size:75px;
-			line-height:60px;
-			padding-top: 4px;
-			padding-right:8px;
-			padding-left:3px;
-		}
-
-		.down-arrow {
-			position:absolute;
-			left:50%;
-			right:50%;
-			top:46em;
-			width:5em;
-			height:5em;
-			cursor: pointer;
-		}
-
-
-		video.cover {position:fixed;left:50%;top:50%;-webkit-transform:translate(-50%, -50%);-moz-transform:translate(-50%, -50%);-ms-transform:translate(-50%, -50%);transform:translate(-50%, -50%);height:100%;width:auto;}
-
-		iframe.cover{width:100%;height:100%;}
-        	@media screen and (min-aspect-ratio: 16/9) { video.cover{height:auto;width:100%;}}
-
-
-
-	</style>
 
 
 </head>
@@ -256,17 +139,17 @@
 	        <span class="icon-bar"></span>
 		</button>
 
-		<p class="navbar-text"><a href="#home">CLIMATE<br/>CALIFORNIA</a></p>
+		<p class="navbar-text"><a href="#home">CLIMATE CALIFORNIA</a></p>
         	
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-	  	  	<ul style="padding-top:15px" class="nav navbar-nav">
-        		<li><a href="#drought">Heat, Drought, Climate Change</a></li>
-	        	<li><a href="#fire">Up Dinkey Creek With a Drip Torch</a> </li>
-	        	<li><a href="#ag">The Central Valley's Chilling Future</a> </li>
-	        	<li><a href="#sealevel">Come Shell or High Water</a></li>
+	  	  	<ul class="nav navbar-nav">
+        		<li><a href="#drought">Drought</a></li>
+	        	<li><a href="#fire">Wildfire</a> </li>
+	        	<li><a href="#ag">Agriculture</a> </li>
+	        	<li><a href="#sealevel">Sea Level Rise</a></li>
 	        	</ul>
 
-	        	<ul style="padding-top:15px" class="nav navbar-nav navbar-right">
+	        	<ul class="nav navbar-nav navbar-right">
         			<li><a href="#about">About</a></li>
         		</ul>
         </div>
@@ -279,7 +162,7 @@
 <!--TITLE PAGE -->
 	<div class="row section" id="home">
 
-		<div id="cover-video" class="cover background-video">
+		<div id="cover-video" class="cover">
 		    <!-- <source src="http://s3-us-west-1.amazonaws.com/climate-california/cc-cover.mp4" type="video/mp4"> -->
 		</div>
 
@@ -301,11 +184,8 @@
 
 		</div>
 
-			<!-- DOWN ARROW -->
-			<div class="col-sm-2 col-sm-offset-5">
-				
+			<!-- DOWN ARROW -->				
 				<img src="media/down-arrow.png" id="down-arrow" class="img-responsive fade down-arrow" />
-			</div>
 		</div><!--fds-->
 
 		<div class="col-sm-6 col-sm-offset-3" id="chapter">
@@ -390,8 +270,10 @@
 			<p>“This is a natural cycle, independent of the drying we might experience with global warming. So we have to consider both those possibilities,” Ingram said at a conference on drought and climate change at UC Berkeley.</p>
 
 			<p>The centuries after the medieval drought were relatively wet,  called the Little Ice Age</p>
+
 			<p>California’s climate naturally varies by the year, decade and century in accordance to natural cycles. But it’s possible that climate change is making some of those cycles worse.</p>
-			<p>scientists at Utah State University showed the 2013-14 drought was caused by greenhouse gas emissions. Using a new global climate computer model, Simon Wang, a Utah State associate professor of climatology, found the drought could not be explained by natural historic cycles alone.</p>
+
+			<p>Scientists at Utah State University showed the 2013-14 drought was caused by greenhouse gas emissions. Using a new global climate computer model, Simon Wang, a Utah State associate professor of climatology, found the drought could not be explained by natural historic cycles alone.</p>
 
 			<p>Wind patterns over the Pacific Ocean created a high-pressure ridge, blocking rain and snow storms from blowing over California and pushing them north toward the Pacific Northwest. At the same time, the eastern part of the country experienced a deep low-pressure “trough,” Wang said, causing the massive cold snap known as the Polar Vortex.</p>
 
@@ -489,8 +371,8 @@
 			<p>North, whose research has guided much of the restoration work in Dinkey Creek, said with high temperatures, strong winds and fuel-filled forests, wildfires are likely to increase.</p>
 
 			<p>In the past decade, California has seen nine of its largest fires in history.</p>
-			
-			<style>.embed-container { position: relative; padding-bottom: 56.25%; padding-top: 30px; height: 0; overflow: hidden; max-width: 100%; height: auto; } .embed-container iframe, .embed-container object, .embed-container embed { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }</style><div class='embed-container'><iframe src='http://seangreene.github.io/BigFires/' style='border:0'></iframe></div>
+
+			<style>.embed-container { position: relative; padding-bottom: 56.25%; padding-top: 30px; height: 0; overflow: hidden; max-width: 100%; height: auto; } .embed-container iframe, .embed-container object, .embed-container embed { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }</style><div class='embed-container col-sm-12'><iframe src='http://seangreene.github.io/BigFires/' style='border:0'></iframe></div>
 
 			<p>The changing weather patterns have also led fire managers to open fire season earlier and earlier each year since the mid-20th century.</p>
 			
@@ -638,17 +520,15 @@
 
 			<p><strong>In some areas</strong> of the Central Valley, winter chilling hours have decreased by 30 percent since 1950, according to a 2009 study by researchers at UC Davis. Back then, growers could rely on 700-1200 chilling hours per winter. </p>
 			
-			<div class="col-sm-6" style="padding-left:0px;">
-
-			<img src="media/chillhours.png" class="img-responsive">
-
+			<div class="embed col-sm-6">
+			<iframe src="http://seangreene.github.io/Winter-Chill" style="width: 100%; padding: 0px;margin: 0; border: none; display: block;height:0px; overflow: hidden;"></iframe>
 			</div>
 
 			<p>By 2050, the decline will double to as much as 60 percent , according to the worst-case carbon emission scenarios from computer modeling the researchers used. By the end of the century, the Central Valley might not be suitable for growing walnuts, pistachios, peaches, apricots, plums and cherries anymore.</p>
 
 			<p>Measuring winter chill can be complicated, with different types of trees requiring different ranges of chilling hours and different models for measuring it.</p>
 
-			<p>But “chill is definitely reducing no matter which way you measure it,” said Katherine Pope, a UC Davis postdoctoral student who studies climate change and nut trees. </p>
+			<p>But “chill is definitely reducing no matter which way you measure it,” said Katherine Pope, a UC Davis postdoctoral student who studies climate change and nut trees.</p>
 
 			<p>Many Central Valley crops were originally bred in southern Italy, Spain and Greece, climates similar to California’s Central Valley. In the short term, those plants might actually like the warmer climate and grow better. But after a certain point, the warmer climate will be deleterious, said Dennis Baldocchi, a UC Berkeley professor of environmental science, policy and management.</p>
 
@@ -740,9 +620,16 @@
 			<p>The resulting higher tides, combined with more frequent and stronger storms that scientists say an altered climate will bring to the area, mean powerful storm surges and increased flooding to the densely populated and expensively developed Bay Area shorelines.</p>
 			<p>More than $50 billion in property and infrastructure lies in danger of sea level rise in the Bay Area, according to the Pacific Institute and Save the Bay. Also at risk are almost 100 schools and healthcare facilities, 1,780 miles of roads, 270,000 homes, and infrastructure such as airports and power plants.</p>
 
-			<p>
-			<strong>graphics/map of sea level projections for bay/California</strong>
-			</p>
+			<script type="text/javascript">
+			      $(function(){
+			        $('iframe').responsiveIframe({this: 'isnt', that: 'is'});
+			      });        
+			  
+			</script>
+
+			<div id="embed">
+			<iframe src="http://seangreene.github.io/Sea-Level/"  style="width: 100%; padding: 0px;margin: 0; border: none; display: block;height:0px; overflow: hidden;"></iframe>
+			</div>
 
 			<p>The common protection would be to build a sea wall, a hard barrier between ocean and land. But scientists in the Bay Area say there’s a cheaper and more environmentally friendly alternative to adding more concrete to an already highly urbanized area:</p>
 			<p>Oysters.</p>
@@ -753,8 +640,6 @@
 			<p>The project is currently in a prototype phase with two sites: one north of San Francisco near San Rafael, and the other south of Oakland near Hayward. Scientists make quarterly visits to the reefs, testing the overall health of the waters surrounding them and documenting any wildlife they see. A separate team measures the physical benefits, such as how the structures are affecting things like wave energy and sedimentation.</p>
 			<p>In the last decade, scientists have added coastal habitat restoration to their strategies for protecting coastline property and residents from sea level rise.  In California, coastal habitat can include kelp and other sea grass beds, sand dunes, and marshes.</p>
 			<p>The San Francisco Bay is among the most vulnerable areas in the United States to the hazards of sea level rise, including erosion and flooding, according to a July 2013 Stanford University study published in the journal Nature Climate Change and not connected to the Living Shorelines Project. </p>
-
-			<p><strong>small map of shoreline hazards from NCP</strong></p>
 
 			<p>Restoring coastal habitat – everything from mudflats and tidal marshes to the oyster reefs and sea grass - could play a big part in reducing damage from these hazards, said Katie Arkema, a senior scientist at National Capital Project, a Stanford research group studying the services nature provides to humans.</p>
 			<p>“They all kind of have a different niche, I guess you could say, in the process,” Arkema said.</p>
@@ -776,6 +661,15 @@
 			<p>It’s easy to forget humans created the reefs, now dominated by nature.</p>
 			<p>To build the reefs, the Living Shorelines Project team used shucked Pacific oyster shells, bundled together in tough net-like bags. The Pacific, or Japanese oyster, is a species native to East Asia and farmed on the West Coast. They’re there to attract the larval oysters that float through the water until they find a suitable surface to which they can attach and mature. Baby oysters almost always prefer to settle onto other oyster shells, regardless of species.</p>
 			<p>As an alternative to bagged shells, the project is also testing out differently shaped structures made with a mixture of bay sand and cement called “baycrete” – an eco-friendly substitute for using pure cement, Latta said.</p>
+
+			<div class="col-sm-5" style="padding-left:0px;">
+			<img class="img-responsive" src="media/reefs-big.jpg"/>
+
+			<p class="caption">Sketches of the different artificial reefs styles by the Coastal Conservancy.
+			</p>
+
+			</div>
+
 			<p>Scientists fashioned baycrete reefs shaped like domes, stacks of domes, “layer cakes” (cross-sectioned domes, stacked on top of each other), and “oyster blocks” – basically castles for oysters. Each configuration has a different surface area, horizontal and vertical spaces and varying amounts of hiding places for fish and invertebrates.</p>
 			<p>In San Rafael, plots of eelgrass are interspersed with oyster reefs. One goal of the project is to see how reefs and eelgrass beds combined can help protect the shoreline from erosion, Boyer said.</p>
 			<p>Eelgrass has roots that help stabilize the sediments on the bottom of the Bay. And filter-feeding oysters can improve water clarity, helping the eelgrass to grow, Boyer said.</p>
