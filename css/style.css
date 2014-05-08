@@ -50,9 +50,10 @@ body { padding-bottom: 70px; }
 			background-color: white;
 			padding:30px 0 30px 0;
 			margin-top:35em;
-			margin-bottom:100px;
-			position: absolute;
+			margin-bottom:40em;
+			position: relative;
 			top:500px;
+			z-index:100;
 		}
 
 		p {
@@ -87,7 +88,7 @@ body { padding-bottom: 70px; }
 		}
 
 		.caption {
-			font-family: Helvetica Neue;
+			font-family: 'Helvetica Neue';
 			font-size:1.1em;
 			font-weight:200;
 
