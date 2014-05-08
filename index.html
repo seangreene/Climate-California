@@ -5,21 +5,19 @@
     <title>Climate California</title>
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <script src="js/jquery.min.js"></script>
-    <!--
-    <script type="text/javascript" src="js/jquery-ui-1.10.4.custom.min.js"></script>
-	<script type="text/javascript" src="js/jquery.beforeafter-1.4.min.js"></script>
--->
     <script src="js/bootstrap.min.js"></script>
     <script src="js/jquery.address.min.js"></script>
     <script src="js/jquery.jplayer.min.js"></script>
     <link href="css/style.css" rel="stylesheet">
 	<link href="//fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
 
+	<!--TWENTY TWENTY PLUGIN-->
 	<script type="text/javascript" src="js/jquery.twentytwenty.js"></script>
     <script type="text/javascript" src="js/jquery.event.move.js"></script>
   	<link href="css/twentytwenty.css" rel="stylesheet" type="text/css" />
 
-	<script src="http://malsup.github.com/jquery.cycle2.js"></script>
+  	<!--CYCLE2 PLUGIN-->
+	<script src="js/cycle2.js"></script>
 	<link href="css/cycle.css" rel="stylesheet">
 
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -348,22 +346,6 @@
 				});
 			</script>
 
-
-			<div class="col-sm-6">
-			<img id="img" src="media/drought1.jpg" class="img-responsive"/>
-			</div>
-			<script>
-				//script to restart the animation
-			    $(function(){
-			    var image = new Image();
-			       image.src='media/droughtmap.gif';
-			     $('#img').click(function(){
-			       $(this).attr('src',image.src);
-			     }); 
-			 	});
-
-			</script>
-
 			<p><strong>Climate change has raised the specter</strong> of California’s longstanding water problems. Scientists and water managers are searching for new ways to conserve, capture and recycle water as resources only grow scarcer.</p>
 
 			<p>Drought in the West is a cyclic phenomenon as much as it is a symptom of climate change. The Mediterranean climate here means summers are and winters wet. Multi-year and multi-decade atmospheric patterns also influence how much rain the region gets.</p>
@@ -373,6 +355,36 @@
 			<p>“This is a natural cycle, independent of the drying we might experience with global warming. So we have to consider both those possibilities,” Ingram said at a conference on drought and climate change at UC Berkeley.</p>
 
 			<p>The centuries after the medieval drought were relatively wet,  called the Little Ice Age</p>
+
+			<div class="col-sm-6">
+				<h3>A year of drought</h3>
+			<img id="img" src="media/droughtmap-cover.png" class="img-responsive"/>
+
+		        <div class="legend-title">Legend</div>
+		        <div class='legend-scale'>
+
+		        <ul class="legend-labels">
+		        	<li><span class="d0"></span>D0<br/>Abnormally Dry</li>
+					<li><span class="d1"></span>D1<br/>Moderate Drought</li>
+		        	<li><span class="d2"></span>D2<br/>Severe Drought</li>
+		        	<li><span class="d3"></span>D3<br/>Extreme Drought</li>
+		        	<li><span class="d4"></span>D4<br/>Exceptional Drought</li>
+		        </ul>
+
+		    	</div>
+			</div>
+			<script>
+				//script to restart the animation
+			    $(function(){
+			    var image = new Image();
+			       image.src='media/droughtmap2.gif';
+			     $('#img').click(function(){
+			       $(this).attr('src',image.src);
+			     }); 
+
+			 	});
+
+			</script>
 
 			<p>California’s climate naturally varies by the year, decade and century in accordance to natural cycles. But it’s possible that climate change is making some of those cycles worse.</p>
 
@@ -393,7 +405,6 @@
 			<div class="droughtviz-container">
 			<iframe src='http://seangreene.github.io/Drought-Chart/' frameborder="0" scrolling="no"></iframe>
 			</div>
-
 
 			<p><strong>If you drew a line</strong> on a map from San Francisco to Lake Tahoe, you’d see the challenge the state’s water system faces. About 80 percent of the snowpack runoff comes from north of that line. Yet, 66 percent of water users live south of the line. People who live on the southern California coast receive more than 60 percent of the water they use piped in from other regions, said Kamyar Guivetchi of the California Department of Water Resources. The San Francisco Bay Area gets a similar percentage of its water piped in other parts of the state.</p>
 
@@ -628,10 +639,58 @@
 
 			<p><strong>In some areas</strong> of the Central Valley, winter chilling hours have decreased by 30 percent since 1950, according to a 2009 study by researchers at UC Davis. Back then, growers could rely on 700-1200 chilling hours per winter. </p>
 			
-			<div class="col-sm-6">
-				<div class="embed-container">
+			<div class="col-sm-6">	
+			<!--<div class="embed-container">
 			<iframe src="http://seangreene.github.io/Winter-Chill"  frameborder="0" scrolling="no"></iframe>
+				</div>-->
+				<h3>
+					Click each emissions scenario to see how winter chill hours are projected to decline by the end of the century.
+				</h3>
+
+				<div class="col-sm-12">
+					<img src="media/wc-legend.png" class="img-responsive" style="float:left;" />
 				</div>
+
+				<div class="col-sm-12">
+					<p>Low emissions:</p>
+					<img src="media/low-cover.png" id="low" class="img-responsive"/>
+				</div>
+				<div class="col-sm-12">
+					<p>Medium emissions:</p>
+					<img src="media/medium-cover.png" id="medium" class="img-responsive"/>
+				</div>
+				<div class="col-sm-12">
+					<p>High emissions:</p>
+					<img src="media/high-cover.png" id="high" class="img-responsive"/>
+				</div>
+
+			<script>
+				//script to restart the animation
+			    $(function(){
+			    var image = new Image();
+			       image.src='media/low.gif';
+			     $('#low').click(function(){
+			       $(this).attr('src',image.src);
+			     }); 
+
+			 	});
+			    $(function(){
+			    var image = new Image();
+			       image.src='media/medium.gif';
+			     $('#medium').click(function(){
+			       $(this).attr('src',image.src);
+			     }); 
+
+			 	});			 	
+			    $(function(){
+			    var image = new Image();
+			       image.src='media/high.gif';
+			     $('#high').click(function(){
+			       $(this).attr('src',image.src);
+			     }); 
+
+			 	});
+			</script>
 			</div>
 
 
@@ -732,16 +791,19 @@
 			<p>The resulting higher tides, combined with more frequent and stronger storms that scientists say an altered climate will bring to the area, mean powerful storm surges and increased flooding to the densely populated and expensively developed Bay Area shorelines.</p>
 			<p>More than $50 billion in property and infrastructure lies in danger of sea level rise in the Bay Area, according to the Pacific Institute and Save the Bay. Also at risk are almost 100 schools and healthcare facilities, 1,780 miles of roads, 270,000 homes, and infrastructure such as airports and power plants.</p>
 
-
-
-			<div class="cycle col-sm-12" style="padding: 10px 0 10px 0">
+			<div class="cycle col-sm-12" style="padding: 0 0 10px 0; overflow:hidden;">
 			  <div class="cycle-slideshow"
 				    data-cycle-fx=scrollHorz
-				    data-cycle-timeout=0
+				    data-cycle-timeout="0"
+				    data-cycle-speed="500"
+				    data-cycle-manual-speed="500"
 				    data-cycle-pager="#no-template-pager"
 				    data-cycle-pager-template=""
 				    data-cycle-swipe=true
+
 				    >
+				      <div class="cycle-prev"></div>
+    				  <div class="cycle-next"></div>
 				      <img src="media/sealvl-sfbay.jpg" 
 				        class="img-responsive" 
 				        data-cycle-pager-template="<a href=#>Bay Area</a>" />
@@ -764,14 +826,14 @@
 				        class="img-responsive" 
 				        data-cycle-pager-template="<a href=#>South Bay</a>" />
 				  </div>
-				  <div id="no-template-pager" class="cycle-pager external">
+				  <div id="no-template-pager" class="col-sm-12 cycle-pager external">
 				  </div>
 
-				    <div class="col-xs-8 col-md-6" style="padding-top:5px">
-				        <p>Click to city or region's name to see USGS projections for sea level rise.
+				    <div class="col-xs-12 col-md-6" style="padding-top:5px">
+				        <p class="caption">Click to view USGS sea level rise projections for the San Francisco Bay Area.
 				    </div>
 
-				<div class="col-xs-8 col-md-6" style="padding-top:10px">
+				<div class="col-xs-8 col-md-6" style="padding:10px 0 10px 0">
 				  <div class="legend-title">Sea level rise (in inches)</div>
 				    <div class='legend-scale'>
 				      <ul class="legend-labels">

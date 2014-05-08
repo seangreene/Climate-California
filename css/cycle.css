@@ -5,11 +5,14 @@
       .cycle #no-template-pager {
         font-family: Helvetica Neue;
         font-size: 14px;
+        font-weight: bold;
+        text-align: center;
+        padding-top:10px;
       }
 
       .cycle a {
         color:#777;
-        font-size:1.1em;
+        font-size:1em;
         padding-right:.6em;
       }
       .cycle a:link {text-decoration:none;color:#777;}
@@ -50,3 +53,9 @@
           color: #999;
           clear: both;
         }
+      /* prev / next links */
+      .cycle-prev, .cycle-next { position: absolute; top: 0; width: 30%; opacity: 0; filter: alpha(opacity=0); z-index: 800; height: 100%; cursor: pointer; }
+      .cycle-prev { left: 0;  background: url(left.png) 50% 50% no-repeat;}
+      .cycle-next { right: 0; background: url(right.png) 50% 50% no-repeat;}
+      .cycle-prev:hover, .cycle-next:hover { opacity: .7; filter: alpha(opacity=70) }
+
