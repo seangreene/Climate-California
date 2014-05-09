@@ -117,7 +117,7 @@
 
             /********* JPLAYER **********/
 
-            $('.cover-video').jPlayer({
+            $('#cover-video').jPlayer({
             	ready : function(e){
 
             		$(this).jPlayer("setMedia", {
@@ -284,9 +284,7 @@
 <!--TITLE PAGE -->
 	<div class="row section" id="home">
 
-		<div class="cover-video =cover">
-		    <!-- <source src="http://s3-us-west-1.amazonaws.com/climate-california/cc-cover.mp4" type="video/mp4"> -->
-		</div>
+		<div id="cover-video" class="cover"></div>
 
 		<div id="fds">
 
@@ -329,16 +327,12 @@
 			
 			</div>
 
-			<div style="clear:both;"></div>
-			<a href="#drought">
-				<div class="next-box">
-				<p class="next-text">next chapter:</p><br/>
-				<p class="next-chapter">'Heat, Drought, Climate Change'</p>
-				<span class="next-arrow">&#10148;</span>
-				</div>
-			</a>
+            <div style="clear:both;"></div>
+            <a href="#drought"><span class="next-arrow">&#10148;</span></a>
 
 		</div>
+
+ 
 
 	</div><!--end row-->
 
@@ -352,9 +346,7 @@
 <!-- CHAPTER 1: HEAT, DROUGHT, CLIMATE CHANGE -->	
 	<div class="row section" id="drought">
 
-		<div id="drought-video" class="cover">
-		<!-- <source src="video/forest.mp4" type="video/mp4">-->		
-		</div>
+		<div id="drought-video" class="cover"></div>
 
 		<div class="col-sm-5 col-sm-offset-3">
 			<h2 class="chapter_title">
@@ -453,11 +445,11 @@
 
 			<p>As of April, the National Oceanic and Atmospheric Administration predicts with about 50 percent certainty that a strong El Niño will develop this summer and bring rain and warmer seas to the California coast as early as this fall. In that case, the storms could provide some drought relief, but likely not enough to keep the dry year out of the records books.</p>
 
-            <p><strong>Cyclic drought</strong></p>
+            <h3>Cyclic drought</h3>
 
 			<div class="droughtviz-container">
 			<iframe src='http://seangreene.github.io/Drought-Chart/' frameborder="0" scrolling="no"></iframe>
-            </div>
+            </div><div class="col-sm-12" style="clear:both;margin-top:10px;"></div>
             <div class="col-sm-6">
                 <p class="caption">The colored areas indicate the percentage of the state affected by drought. Data: U.S. Drought Monitor</p>
             </div>
@@ -500,14 +492,8 @@
 
 			</div>
 
-			<div style="clear:both;"></div>
-			<a href="#fire">
-				<div class="next-box">
-				<p class="next-text">next chapter:</p><br/>
-				<p class="next-chapter">'Fighting Wildfire With Fire'</p>
-				<span class="next-arrow">&#10148;</span>
-				</div>
-			</a>
+            <div style="clear:both;"></div>
+            <a href="#fire"><span class="next-arrow">&#10148;</span></a>
 
 		</div>
 
@@ -518,9 +504,7 @@
 
 	<div class="row section" id="fire">
 
- 		<div id="fire-video" class="cover">
-		    <!-- <source src="video/cc-fire.mp4" type="video/mp4"> -->
-		</div>
+ 		<div id="fire-video" class="cover"></div>
 
 		<div class="col-sm-5 col-sm-offset-3">
 			<h2 class="chapter_title">
@@ -567,10 +551,10 @@
 
 			<p><strong>Since the year 2000, California has seen 12 of its largest fires in history.</strong></p>
 
-			<!--<style>.embed-container { position: relative; padding-bottom: 56.25%; padding-top: 30px; height: 0; overflow: hidden; max-width: 100%; height: auto; } .embed-container iframe, .embed-container object, .embed-container embed { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }</style>-->
 			<div class="fireviz-container col-sm-12">
-				<iframe src='http://seangreene.github.io/BigFires/' style='border:0' scrolling="no"></iframe>
+				<iframe src='http://seangreene.github.io/BigFires/' style='border:0;' scrolling="no"></iframe>
 			</div>
+
             <p class="caption">The 20 largest fires in state history. Note: the second largest fire, Rush, burned an additional 46,000 acres in Nevada that is not reflected in this chart. (Data: Cal Fire)</p> 
 
 			<p>The changing weather patterns have also led fire managers to open fire season earlier and earlier each year since the mid-20th century.</p>
@@ -654,13 +638,8 @@
 			</div>
 
 			<div style="clear:both;"></div>
-			<a href="#ag">
-				<div class="next-box">
-				<p class="next-text">next chapter:</p><br/>
-				<p class="next-chapter">'The Central Valley's Chilling Future'</p>
-				<span class="next-arrow">&#10148;</span>
-				</div>
-			</a>
+            <a href="#ag"><span class="next-arrow">&#10148;</span></a>
+
 
 		</div>
 	</div><!-- end .row -->
@@ -670,9 +649,7 @@
 
 	<div class="row section" id="ag">
 
-		<div id="ag-video" class="cover">
-		    <!-- <source src="video/cc-ag.mp4" type="video/mp4"> -->
-		</div>
+		<div id="ag-video" class="cover"></div>
 
 		<div class="col-sm-5 col-sm-offset-3">
 			<h2 class="chapter_title">
@@ -735,9 +712,7 @@
 			<p><strong>In some areas</strong> of the Central Valley, winter chilling hours have decreased by 30 percent since 1950, according to a 2009 study by researchers at UC Davis. Back then, growers could rely on 700-1200 chilling hours per winter. </p>
 			
 			<div class="col-sm-6">	
-			<!--<div class="embed-container">
-			<iframe src="http://seangreene.github.io/Winter-Chill"  frameborder="0" scrolling="no"></iframe>
-				</div>-->
+
 				<h3 class="caption">
 					Click each greenhouse gas emissions scenario to see how winter chill hours are projected to decline by the end of the century.
 				</h3>
@@ -854,13 +829,8 @@
 			</div>
 
 			<div style="clear:both;"></div>
-			<a href="#sealevel">
-				<div class="next-box">
-				<p class="next-text">next chapter:</p><br/>
-				<p class="next-chapter">'Come Shell or High Water'</p>
-				<span class="next-arrow">&#10148;</span>
-				</div>
-			</a>
+            <a href="#sealevel"><span class="next-arrow">&#10148;</span></a>
+
 
 		</div>
 	</div><!-- end .row -->
@@ -870,9 +840,7 @@
 
 	<div class="row section" id="sealevel">
 
-		<div id="sealevel-video" class="cover">
-		    <!-- <source src="video/cc-sealvl.mp4" type="video/mp4"> -->
-		</div>
+		<div id="sealevel-video" class="cover"></div>
 
 		<div class="col-sm-5 col-sm-offset-3">
 			<h2 class="chapter_title">
@@ -1016,13 +984,8 @@
 			</div>
 
 			<div style="clear:both;"></div>
-			<a href="#about">
-				<div class="next-box">
-				<p class="next-text">next chapter:</p><br/>
-				<p class="next-chapter">About this Project</p>
-				<span class="next-arrow">&#10148;</span>
-				</div>
-			</a>
+            <a href="#about"><span class="next-arrow">&#10148;</span></a>
+
 
 		</div>
 	</div><!-- end .row -->
@@ -1032,9 +995,11 @@
 
     <div class="row section" id="about">
 
-        <div class="cover-video cover">
-        </div>
-
+        <video class="cover" autoplay loop>
+            <source src="http://s3-us-west-1.amazonaws.com/climate-california/cc-cover.mp4" type="video/mp4">
+            <source src="movie.ogg" type="video/ogg">
+            <img src="" />
+        </video>
 
         <div class="col-sm-6 col-sm-offset-3" id="about-section">
             <div class="col-sm-10 col-sm-offset-1">
