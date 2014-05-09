@@ -117,7 +117,7 @@
 
             /********* JPLAYER **********/
 
-            $('#cover-video').jPlayer({
+            $('.cover-video').jPlayer({
             	ready : function(e){
 
             		$(this).jPlayer("setMedia", {
@@ -284,7 +284,7 @@
 <!--TITLE PAGE -->
 	<div class="row section" id="home">
 
-		<div id="cover-video" class="cover">
+		<div class="cover-video =cover">
 		    <!-- <source src="http://s3-us-west-1.amazonaws.com/climate-california/cc-cover.mp4" type="video/mp4"> -->
 		</div>
 
@@ -356,7 +356,7 @@
 		<!-- <source src="video/forest.mp4" type="video/mp4">-->		
 		</div>
 
-		<div class="col-sm-6 col-sm-offset-3">
+		<div class="col-sm-5 col-sm-offset-3">
 			<h2 class="chapter_title">
 				HEAT, DROUGHT, CLIMATE CHANGE
 			</h2>
@@ -392,7 +392,7 @@
 					<img src="media/NASA2013018.jpg" class="img-responsive" style="margin:0;" />
 				 	<img src="media/NASA2014018.jpg" class="img-responsive" style="margin:0;" />
 				</div>
- 
+                <p class="caption">Use the slider to compare California in January 2013 to January 2014, when Governor Jerry Brown declared a drought emergency. (Images: NASA)</p>
             </div>
 
 
@@ -422,6 +422,7 @@
 		        </ul>
 
 		    	</div>
+                <p class="caption">(Maps: U.S. Drought Monitor)</p>
 			</div>
 			<script>
 				//script to restart the animation
@@ -452,9 +453,28 @@
 
 			<p>As of April, the National Oceanic and Atmospheric Administration predicts with about 50 percent certainty that a strong El Niño will develop this summer and bring rain and warmer seas to the California coast as early as this fall. In that case, the storms could provide some drought relief, but likely not enough to keep the dry year out of the records books.</p>
 
+            <p><strong>Cyclic drought</strong></p>
+
 			<div class="droughtviz-container">
 			<iframe src='http://seangreene.github.io/Drought-Chart/' frameborder="0" scrolling="no"></iframe>
-			</div>
+            </div>
+            <div class="col-sm-6">
+                <p class="caption">The colored areas indicate the percentage of the state affected by drought. Data: U.S. Drought Monitor</p>
+            </div>
+            <div class="col-sm-6">
+                <div class="legend-title">Legend</div>
+                <div class='legend-scale'>
+
+                <ul class="legend-labels">
+                    <li><span class="d0"></span>D0<br/>Abnormally Dry</li>
+                    <li><span class="d1"></span>D1<br/>Moderate Drought</li>
+                    <li><span class="d2"></span>D2<br/>Severe Drought</li>
+                    <li><span class="d3"></span>D3<br/>Extreme Drought</li>
+                    <li><span class="d4"></span>D4<br/>Exceptional Drought</li>
+                </ul>
+
+                </div>
+            </div>
 
 			<p><strong>If you drew a line</strong> on a map from San Francisco to Lake Tahoe, you’d see the challenge the state’s water system faces. About 80 percent of the snowpack runoff comes from north of that line. Yet, 66 percent of water users live south of the line. People who live on the southern California coast receive more than 60 percent of the water they use piped in from other regions, said Kamyar Guivetchi of the California Department of Water Resources. The San Francisco Bay Area gets a similar percentage of its water piped in other parts of the state.</p>
 
@@ -502,7 +522,7 @@
 		    <!-- <source src="video/cc-fire.mp4" type="video/mp4"> -->
 		</div>
 
-		<div class="col-sm-6 col-sm-offset-3">
+		<div class="col-sm-5 col-sm-offset-3">
 			<h2 class="chapter_title">
 				UP DINKEY CREEK, WITH A DRIP TORCH
 			</h2>
@@ -545,12 +565,13 @@
 
 			<p>North, whose research has guided much of the restoration work in Dinkey Creek, said with high temperatures, strong winds and fuel-filled forests, wildfires are likely to increase.</p>
 
-			<p>In the past decade, California has seen nine of its largest fires in history.</p>
+			<p><strong>Since the year 2000, California has seen 12 of its largest fires in history.</strong></p>
 
 			<!--<style>.embed-container { position: relative; padding-bottom: 56.25%; padding-top: 30px; height: 0; overflow: hidden; max-width: 100%; height: auto; } .embed-container iframe, .embed-container object, .embed-container embed { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }</style>-->
 			<div class="fireviz-container col-sm-12">
 				<iframe src='http://seangreene.github.io/BigFires/' style='border:0' scrolling="no"></iframe>
 			</div>
+            <p class="caption">The 20 largest fires in state history. Note: the second largest fire, Rush, burned an additional 46,000 acres in Nevada that is not reflected in this chart. (Data: Cal Fire)</p> 
 
 			<p>The changing weather patterns have also led fire managers to open fire season earlier and earlier each year since the mid-20th century.</p>
 			
@@ -583,6 +604,11 @@
 
 			<p>On Aug. 17, 2013, a hunter’s illegal campfire sparked what became California’s second most destructive wildfire in recorded history. The Rim Fire burned more than 400 square miles of old growth forest between Stanislaus National Forest and Yosemite National Park. There was no loss of life, but eleven homes were destroyed.
 			</p>
+
+            <div class="col-sm-6">
+                <img src="media/NASA_rimfire.jpg" class="img-responsive"/>
+                <p class="caption">The Rim Fire in August of 2013. (Image: NASA Earth Observatory)</p>
+            </div>
 			
 			<p>Climate scientists say, in the case of the Rim fire, the event wasn’t necessarily caused by climate change. But warmer, drier weather conditions mean a higher chance of more frequent and more severe wildfires, said Anthony Westerling, a wildfire researcher and associate professor at UC Merced.
 			</p>
@@ -648,7 +674,7 @@
 		    <!-- <source src="video/cc-ag.mp4" type="video/mp4"> -->
 		</div>
 
-		<div class="col-sm-6 col-sm-offset-3">
+		<div class="col-sm-5 col-sm-offset-3">
 			<h2 class="chapter_title">
 				THE CENTRAL VALLEY'S CHILLING FUTURE
 			</h2>
@@ -712,8 +738,8 @@
 			<!--<div class="embed-container">
 			<iframe src="http://seangreene.github.io/Winter-Chill"  frameborder="0" scrolling="no"></iframe>
 				</div>-->
-				<h3>
-					Click each emissions scenario to see how winter chill hours are projected to decline by the end of the century.
+				<h3 class="caption">
+					Click each greenhouse gas emissions scenario to see how winter chill hours are projected to decline by the end of the century.
 				</h3>
 
 				<div class="col-sm-12">
@@ -721,17 +747,18 @@
 				</div>
 
 				<div class="col-sm-12">
-					<p>Low emissions:</p>
+					<p class="caption">Low emissions:</p>
 					<img src="media/low-cover.png" id="low" class="img-responsive"/>
 				</div>
 				<div class="col-sm-12">
-					<p>Medium emissions:</p>
+					<p class="caption">Medium emissions:</p>
 					<img src="media/medium-cover.png" id="medium" class="img-responsive"/>
 				</div>
 				<div class="col-sm-12">
-					<p>High emissions:</p>
+					<p class="caption">High emissions:</p>
 					<img src="media/high-cover.png" id="high" class="img-responsive"/>
 				</div>
+                <p class="caption">(Maps: Eike Luedeling and Minghua Zhang, UC Davis)</p>
 
 			<script>
 				//script to restart the animation
@@ -847,7 +874,7 @@
 		    <!-- <source src="video/cc-sealvl.mp4" type="video/mp4"> -->
 		</div>
 
-		<div class="col-sm-6 col-sm-offset-3">
+		<div class="col-sm-5 col-sm-offset-3">
 			<h2 class="chapter_title">
 				COME SHELL, OR HIGH WATER
 			</h2>
@@ -968,13 +995,14 @@
 			<p>In San Rafael, plots of eelgrass are interspersed with oyster reefs. One goal of the project is to see how reefs and eelgrass beds combined can help protect the shoreline from erosion, Boyer said.</p>
 			<p>Eelgrass has roots that help stabilize the sediments on the bottom of the Bay. And filter-feeding oysters can improve water clarity, helping the eelgrass to grow, Boyer said.</p>
 
-                <div class="col-sm-12">
-                    <video width="100%" height="auto" controls>
-                        <source src="http://s3-us-west-1.amazonaws.com/climate-california/oysters.mp4" type="video/mp4">
-                        <source src="movie.ogg" type="video/ogg">
-                        Your browser does not support the video tag.
-                    </video>
-                </div>
+            <div class="col-sm-12">
+                <video width="100%" height="auto" controls>
+                    <source src="http://s3-us-west-1.amazonaws.com/climate-california/oysters.mp4" type="video/mp4">
+                    <source src="movie.ogg" type="video/ogg">
+                    Your browser does not support the video tag.
+                </video>
+                <p class="caption">See how oysters and eelgrass benefit ecosystem health in the San Francisco Bay. (Art: Tracey Saxby and Jane Hawkey, Integration and Application Network)</p>
+            </div>
 
 			<p>It’s been about a year since the reefs were installed at the San Rafael site. In addition to the recruitment of two million oysters, the team found that the reefs are reducing the energy of incoming waves by 30-50 percent.</p>
 			<p>The results offer some hope that a large-scale oyster habitat restoration project, along with ongoing efforts to restore Bay Area tidal marshes, could offer shoreline communities protection against floods and storm surges.</p>
@@ -998,6 +1026,49 @@
 
 		</div>
 	</div><!-- end .row -->
+
+
+
+
+    <div class="row section" id="about">
+
+        <div class="cover-video cover">
+        </div>
+
+
+        <div class="col-sm-6 col-sm-offset-3" id="about-section">
+            <div class="col-sm-10 col-sm-offset-1">
+
+            <h3 class="subhead">
+                About Climate California  <img src="media/bear.png" style=" height:30px; width:auto;"/>
+            </h3>
+
+            <div class="about-text" style="padding:none;margin:none;">
+
+            <h4>Project by:</h4>
+            <ul>
+                <li>Sean Greene</li>
+                <li>UC Berkeley Graduate School of Journalism, 2014</li>
+            </ul>
+            <h4>Contact:</h4>
+            <ul>
+                <li>seangreene [at] berkeley.edu</li>
+            </ul>
+            <h4>Advisors:</h4>
+            <ul>
+                <li>Paul Grabowicz</li>
+                <li>Richard Koci Hernandez</li>
+                <li>Jeremy Rue</li>
+                <li>Mark Schapiro</li>
+                <li>Eric Simons</li>
+            </ul>
+
+            </div>
+
+            </div>
+        </div>
+    </div>
 </div><!-- end container fluid -->
+
 </body>
 </html>
