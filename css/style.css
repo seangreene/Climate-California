@@ -35,7 +35,7 @@ body { padding-bottom: 70px;
 
 		h2.chapter_title{
 			position:absolute;
-			top:100px;
+			top:150px;
 			font-family: "Montserrat";
 			font-style: normal;
 			font-weight: 700;
@@ -211,22 +211,7 @@ body { padding-bottom: 70px;
 		iframe.cover{width:100%;height:100%;}
         	@media screen and (min-aspect-ratio: 16/9) { video.cover{height:auto;width:100%;}}
 
-        .embed-container {
-        	position: relative;
-        	padding-bottom: 310%;
-        	padding-top:30px;
-        	height: 0;
-        	overflow: hidden;
-        }
-		.embed-container iframe,
-		.embed-container object,
-		.embed-container embed {
-		    position: absolute;
-		    top: 0;
-		    left: 0;
-		    width: 100%;
-		    height: 100%;
-		}
+
 		.droughtviz-container {
         	position: relative;
         	padding-bottom: 50%;
