@@ -20,7 +20,7 @@ body { padding-bottom: 70px;
 
 		#title{
 			position:absolute;
-			top:20%;
+			top:12%;
 		}
 
 		.fade{
@@ -101,76 +101,21 @@ body { padding-bottom: 70px;
 			font-style: italic;
 			margin-bottom: 0px;
 		}
-		span.next-arrow {
+		div.next-arrow {
 			position: relative;
-			font-size: 55px;
-			color: #ccc;
 			float:right;
 			right:0;
 			bottom: 0;
-			margin-right:10px;
 			cursor:pointer;
+			background-image:url('arrow-light.png');
+			background-repeat: no-repeat;
+			height:50px;
+			width:150px;			
 		}
-		span.next-arrow:hover{
-			color:#777;
+		div.next-arrow:hover{
+			background-image:url('arrow-dark.png');
+			background-repeat: no-repeat;
 		}
-
-		.prev-box {
-			left: 0;
-			height: 60px;
-			width: 45%;
-			float: left;
-			position: relative;
-			margin: 15px 0 15px 0;
-			cursor: pointer;
-
-		}
-		.prev-text {
-			position:absolute;
-			font-family: 'Helvetica Neue';
-			color:#777;
-			font-variant: small-caps;
-			font-size: 15px;
-			text-align: right;
-			margin-bottom: 0px;
-		}
-		.prev-chapter {
-			position:absolute;
-			font-family: 'Helvetica Neue';
-			font-size: 20px;
-			font-weight: 100;
-			color: #777;
-			font-style: italic;
-			margin-bottom: 0px;
-		}
-		span.prev-arrow {
-			position: absolute;
-			font-size: 55px;
-			font-style:bold;
-			color: #ccc;
-			float: left;
-			bottom: -5px;
-			left: 0;
-			margin-left:10px;
-			cursor:pointer;
-		}
-		span.left-arrow:hover{
-			color:#777;
-		}
-		span.prev-arrow {
-		  -webkit-transform:rotateY(180deg);
-		  -moz-transform:rotateY(180deg);
-		  -o-transform:rotateY(180deg);
-		  -ms-transform:rotateY(180deg);
-		  unicode-bidi:bidi-override;
-		  direction:rtl;
-		}
-
-		.prev-box .next-box a {   	}
-	    .prev-box .next-box a:link {text-decoration:none;color:#777;}
-	    .prev-box .next-box a:visited {text-decoration:none; color:#777;}
-	    .prev-box .next-box a:hover {text-decoration:none; color:black;}
-	    .prev-box .next-box a:active {text-decoration:none;}
 
 		p {
 			font-size: 18px;
@@ -223,7 +168,7 @@ body { padding-bottom: 70px;
 
 		.droughtviz-container {
         	position: relative;
-        	padding-bottom: 40%;
+        	padding-bottom: 45%;
         	padding-top:30px;
         	height: 0;
         	overflow: hidden;

@@ -3,6 +3,8 @@
 <head>
     <meta charset="utf-8">
     <title>Climate California</title>
+    <link rel="shortcut icon" href="media/bearicon.ico" type="image/x-icon" />
+
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <script src="js/jquery.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
@@ -218,15 +220,6 @@
                 supplied : "m4v, ogv"
             });
 
-			var url = window.location;
-			// Will only work if string in href matches with location
-			$('ul.nav a[href="'+ url +'"]').parent().addClass('active');
-
-			// Will also work for relative and absolute hrefs
-			$('ul.nav a').filter(function() {
-			    return this.href == url;
-			}).parent().addClass('active');
-
         });
     </script>
 
@@ -265,7 +258,7 @@
         		<li><a href="#drought">Drought</a></li>
 	        	<li><a href="#fire">Wildfire</a> </li>
 	        	<li><a href="#ag">Agriculture</a> </li>
-	        	<li><a href="#sealevel">Sea Level Rise</a></li>
+	        	<li><a href="#sealevel">Rising Seas</a></li>
 	        	</ul>
 
 	        	<ul class="nav navbar-nav navbar-right">
@@ -322,10 +315,10 @@
 
 			<p>This story is about those efforts – stretching already thin water resources, breeding plants that thrive in warmer weather, allowing smaller fires to prevent catastrophic wildfires and building natural barriers against surging seas.</p>
 			
-			</div>
-
             <div style="clear:both;"></div>
-            <a href="#drought"><span class="next-arrow">&#10148;</span></a>
+            <a href="#drought"><div class="next-arrow"></div></a>
+            
+            </div>
 
 		</div>
 
@@ -376,12 +369,12 @@
 
 			<p>"The short sentence is: up here, we're seeing a climate that's slightly wetter and slightly warmer," Osterhuber said. "It's the warmer thing that really makes a difference in the mountains where the dominant precipitation type is snowfall."</p>
 
-            <div class="col-sm-12" style="margin:15px 0 15px 0;">
+            <div class="col-sm-12" style="margin: 15px 0 15px 0; min-height:300px">
 				<div id="twentytwenty" class="twentytwenty-container" style="height:100%; min-height:200px;">
 					<img src="media/NASA2013018.jpg" class="img-responsive" style="margin:0;" />
 				 	<img src="media/NASA2014018.jpg" class="img-responsive" style="margin:0;" />
 				</div>
-                <p class="caption">Use the slider to compare California in January 2013 to January 2014, when Governor Jerry Brown declared a drought emergency. (Images: NASA)</p>
+                <p class="caption">Use the slider to compare California snowpacks in January 2013 to January 2014, when Governor Jerry Brown declared a drought emergency. (Images: NASA)</p>
             </div>
 
 
@@ -396,11 +389,12 @@
 			<p>The centuries after the medieval drought were relatively wet,  called the Little Ice Age</p>
 
 			<div class="col-sm-6">
-				<h3>A year of drought</h3>
+			
+            <h3>A year of drought</h3>
 			<img id="img" src="media/droughtmap-cover.png" class="img-responsive"/>
-
+                <div class="col-sm-12">
 		        <div class="legend-title">Legend</div>
-		        <div class='legend-scale'>
+		        <div class="legend-scale">
 
 		        <ul class="legend-labels">
 		        	<li><span class="d0"></span>D0<br/>Abnormally Dry</li>
@@ -409,9 +403,12 @@
 		        	<li><span class="d3"></span>D3<br/>Extreme Drought</li>
 		        	<li><span class="d4"></span>D4<br/>Exceptional Drought</li>
 		        </ul>
-
-		    	</div>
+                </div>
+                </div><div style="clear:both;">
+                <div class="col-sm-12">
                 <p class="caption">(Maps: U.S. Drought Monitor)</p>
+                </div>
+            </div>
 			</div>
 			<script>
 				//script to restart the animation
@@ -441,12 +438,16 @@
 			<p>The model also found the appearance of the dipole and drought are a natural part of the beginnings of an El Niño or La Niña event – which warm the Pacific Ocean, causing wet weather and worldwide climate anomalies, the study said. The dipole forms about a year before El Niño.</p>
 
 			<p>As of April, the National Oceanic and Atmospheric Administration predicts with about 50 percent certainty that a strong El Niño will develop this summer and bring rain and warmer seas to the California coast as early as this fall. In that case, the storms could provide some drought relief, but likely not enough to keep the dry year out of the records books.</p>
+            </div>
 
+            <div class="col-sm-12" style="margin: 0 5px 0 5px;">
             <h3>Cyclic drought</h3>
 
 			<div class="droughtviz-container">
 			<iframe src='http://seangreene.github.io/Drought-Chart/' frameborder="0" scrolling="no"></iframe>
-            </div><div class="col-sm-12" style="clear:both;margin-top:10px;"></div>
+            </div>
+
+            <div class="col-sm-12" style="margin-top:10px;">
             <div class="col-sm-6">
                 <p class="caption">The colored areas indicate the percentage of the state affected by drought. Data: U.S. Drought Monitor</p>
             </div>
@@ -464,6 +465,9 @@
 
                 </div>
             </div>
+            </div>
+            </div><div style="clear:both;"></div>
+            <div class="col-sm-10 col-sm-offset-1">
 
 			<p><strong>If you drew a line</strong> on a map from San Francisco to Lake Tahoe, you’d see the challenge the state’s water system faces. About 80 percent of the snowpack runoff comes from north of that line. Yet, 66 percent of water users live south of the line. People who live on the southern California coast receive more than 60 percent of the water they use piped in from other regions, said Kamyar Guivetchi of the California Department of Water Resources. The San Francisco Bay Area gets a similar percentage of its water piped in other parts of the state.</p>
 
@@ -487,10 +491,10 @@
 
 			<p>“I definitely think we need to start valuing water more,” Ingram said. “We’re in for the long-term of water scarcity and we need to think of water as a much more valuable resource than we do now.”</p>
 
-			</div>
-
             <div style="clear:both;"></div>
-            <a href="#fire"><span class="next-arrow">&#10148;</span></a>
+            <a href="#fire"><div class="next-arrow"></div></a>
+
+            </div>
 
 		</div>
 
@@ -547,12 +551,16 @@
 			<p>North, whose research has guided much of the restoration work in Dinkey Creek, said with high temperatures, strong winds and fuel-filled forests, wildfires are likely to increase.</p>
 
 			<p><strong>Since the year 2000, California has seen 12 of its largest fires in history.</strong></p>
+            </div>
 
-			<div class="fireviz-container col-sm-12">
+			<div class="fireviz-container col-sm-12" style="margin: 0 5px 0 5px;">
 				<iframe src='http://seangreene.github.io/BigFires/' style='border:0;' scrolling="no"></iframe>
+            </div>
+            <div class="col-sm-12" style="margin-top:-15px;">
+                <p class="caption">Red bars indicate fires that occurred after the year 2000 by acres burned. Note: the second largest fire, Rush, burned an additional 46,000 acres in Nevada that is not reflected in this chart. (Data: Cal Fire)</p>
 			</div>
-
-            <p class="caption">The 20 largest fires in state history. Note: the second largest fire, Rush, burned an additional 46,000 acres in Nevada that is not reflected in this chart. (Data: Cal Fire)</p> 
+            
+            <div class="col-sm-10 col-sm-offset-1">
 
 			<p>The changing weather patterns have also led fire managers to open fire season earlier and earlier each year since the mid-20th century.</p>
 			
@@ -560,12 +568,15 @@
 			
 			<p>A century ago, the United States Forest Service enacted a policy of trying to put out a fire by 10 o’clock the day or night after it was discovered. The goal was to suppress fires quickly to protect nearby homes and other property, at the expense of the forest’s natural process</p>
 
-			<p>
-			    <strong>graphic will go here</strong>
-			</p>
+            <p>The result is the growth of brush and smaller trees that pack the forest floor and provide fuel for catastrophic wildfires.</p>
 
+            </div>
 
-			<p>The result is the growth of brush and smaller trees that pack the forest floor and provide fuel for catastrophic firestorms.</p>
+            <div class="col-sm-12">
+			<img src="media/fire-gfx.png" class="img-responsive"/>
+            </div>
+            
+            <div class="col-sm-10 col-sm-offset-1">
 
 			<p>Some people visit the forests and think the dense can't-walk-through-it forest is how it’s supposed to be, said Denise Tolmie, a fire management specialist for the Sierra National Forest. Pre-settlement forests were more "park-like.” As it is now, the land doesn’t have the water, sunshine and space to sustain that many trees and plants. The trees are so packed, they’re competing with each other.</p>
 			
@@ -578,8 +589,6 @@
 			<p>“A lot of people would say there's no way we can go back in time,” North said. “(But) those past conditions still have lessons for us to try to put the forest back into the condition where it is better able to absorb disturbances and shocks to changing climate conditions.”
 			</p>
 
-			<img src="media/fire5.jpg" class="img-responsive" />
-
 			<p>Last summer’s devastating fire near Yosemite National Park reinforced the need for change in the Sierra.
 			</p>
 
@@ -588,7 +597,7 @@
 
             <div class="col-sm-6">
                 <img src="media/NASA_rimfire.jpg" class="img-responsive"/>
-                <p class="caption">The Rim Fire in August of 2013. (Image: NASA Earth Observatory)</p>
+                <p class="caption">Smoke from the Rim Fire seen top right in August of 2013. (Image: NASA Earth Observatory)</p>
             </div>
 			
 			<p>Climate scientists say, in the case of the Rim fire, the event wasn’t necessarily caused by climate change. But warmer, drier weather conditions mean a higher chance of more frequent and more severe wildfires, said Anthony Westerling, a wildfire researcher and associate professor at UC Merced.
@@ -612,10 +621,6 @@
 
 			<p>“When you put recreation, wildlife, timber management and fire management all in the me organization, you're going to have some bumps in the road where some of those uses conflict with each other," Tolmie said. "The agency as a whole gets asked to balance all the different things the national forests are being utilized for… sometimes it works, sometimes there's conflict in that."</p>
 
-			<p>
-			    <strong>another graphic</strong>
-			</p>
-
 			<p>Another conflict concerns habitats for sensitive species such as the spotted owl and the Pacific fisher, a kind of tree-burrowing weasel that is neither coastal nor fish-eating.</p>
 
 			<p>In the springtime, Pacific fisher like to make their dens inside hollow sections of oak trees. Ballard and her fire crew can’t burn known fisher territory, even if they say it needs thinning, during the fisher’s active season because the fire would cook the animals alive inside the trees. Under the Dinkey Collaborative’s direction, the fisher zones are left relatively untouched.</p>
@@ -623,6 +628,8 @@
 			<p>To run prescribed burns – “putting fire on the ground,” in Ballard’s words – the Forest Service also needs permission from the San Joaquin Valley Air Quality Board. Smoke from fires in the Sierra can drift west over populated areas, raising health concerns.</p>
 			
 			<p>To have a burn day, the Forest Service must either wait for the winds to blow east, over the mountains where fewer people live, or pay the air quality district remediation for the smoke.</p>
+
+            <img src="media/fire5.jpg" class="img-responsive" />
 
 			<p><strong>As Ballard drives</strong> through Dinkey Creek, a thin veil of smoke lingers just above the ground, scattering the sunlight among the forest’s lower boughs.</p>
 
@@ -632,10 +639,10 @@
 
 			<p>“This is what a hundred years of doing nothing looks like,” Ballard said.</p>
 
-			</div>
-
 			<div style="clear:both;"></div>
-            <a href="#ag"><span class="next-arrow">&#10148;</span></a>
+            <a href="#ag"><div class="next-arrow"></div></a>
+
+            </div>
 
 
 		</div>
@@ -650,7 +657,7 @@
 
 		<div class="col-sm-5 col-sm-offset-3">
 			<h2 class="chapter_title">
-				PRESERVING FRUIT FOR A WARMER VALLEY
+				PRESERVING FRUIT IN A WARMER VALLEY
 			</h2>
 		</div>
 
@@ -711,7 +718,7 @@
 			<div class="col-sm-6">	
 
 				<h3 class="caption">
-					Click each greenhouse gas emissions scenario to see how winter chill hours are projected to decline by the end of the century.
+					Click each greenhouse gas emissions scenario to see how the number of winter chill hours are projected to decline by the end of the century.
 				</h3>
 
 				<div class="col-sm-12">
@@ -736,7 +743,7 @@
 				//script to restart the animation
 			    $(function(){
 			    var image = new Image();
-			       image.src='media/low.`';
+			       image.src='media/low.gif';
 			     $('#low').click(function(){
 			       $(this).attr('src',image.src);
 			     }); 
@@ -806,12 +813,7 @@
 
 			<p>“In California, the story is really two fold right now. You’re seeing lack of irrigation water, which the trees need,” Baldocchi said. “And part two is the (reduced) winter chill accumulation. Fruit tree ranchers have a double whammy going against them right now.”</p>
 
-			<div class="col-sm-6">
-				<img src="media/zaigers2.jpg" class="img-responsive" />
-			</div>
-			<div class="col-sm-6">
-				<img src="media/zaigers3.jpg" class="img-responsive" />
-			</div>
+				<img src="media/zaigers7.jpg" class="img-responsive" />
 
 			<p><strong>At Zaiger’s orchard in February,</strong> it’s spring, even though the calendar still says it’s winter. “When trees start flowering, it’s spring,” Gardiner says.</p>
 
@@ -823,10 +825,10 @@
 
 			<p>“Everything that makes it through a year like this is a little more tolerant than its predecessors,” she said.</p>
 
-			</div>
-
 			<div style="clear:both;"></div>
-            <a href="#sealevel"><span class="next-arrow">&#10148;</span></a>
+            <a href="#sealevel"><div class="next-arrow"></div></a>
+
+            </div>
 
 
 		</div>
@@ -850,15 +852,15 @@
 		<div class="col-sm-6 col-sm-offset-3" id="chapter">
 			<div class="col-sm-10 col-sm-offset-1">
 
-			<img src="media/oyster1.jpg" class="img-responsive" />
-
 			<h3 class="subhead">
-				What can a dimminutive mollusk do to protect the San Francisco Bay Area from sea level rise?
+				What can a diminutive mollusk do to protect the San Francisco Bay Area from sea level rise?
 			</h3>
 
 			<p><span class="dropcap">T</span><p>he gray waters of San Francisco Bay slosh up on the jagged shoreline as two wetsuit-clad scientists hop down the rocks and into the mud below.</p>
 			<p>Dead oyster shells cover the rocks, crunching under each step. The tide is waning, exposing a wide mudflat sparkling under a late afternoon sun. The tide is also uncovering what could be a prototype for a fortification against one of the impacts of sea level rise.</p>
 			<p>Eight hundred feet offshore, across sticky, bubbling mud, the scientists make their way to that fortress, giving its 2 million inhabitants a checkup like doctors making a house call.</p>
+
+            <img src="media/oyster1.jpg" class="img-responsive" />
 
 			<p><strong>Melting glacial ice</strong> could cause the sea level in the Bay Area to rise 14 inches by 2050 and 55 inches by 2100, according to estimates published by the California Ocean Protection Council. From 1900 to 2000, water levels have risen 8 inches under the Golden Gate Bridge.</p>
 			<p>The resulting higher tides, combined with more frequent and stronger storms that scientists say an altered climate will bring to the area, mean powerful storm surges and increased flooding to the densely populated and expensively developed Bay Area shorelines.</p>
@@ -883,9 +885,6 @@
 				      <img src="media/sealvl-sf.jpg" 
 				        class="img-responsive" 
 				        data-cycle-pager-template="<a href=#>San Francisco</a>" />
-				      <img src="media/sealvl-northbay.jpg" 
-				        class="img-responsive" 
-				        data-cycle-pager-template="<a href=#>North Bay</a>" />
 				      <img src="media/sealvl-sanrafael.jpg" 
 				        class="img-responsive" 
 				        data-cycle-pager-template="<a href=#>San Rafael</a>" />
@@ -895,9 +894,6 @@
 				      <img src="media/sealvl-oakland.jpg" 
 				        class="img-responsive" 
 				        data-cycle-pager-template="<a href=#>Oakland-Alameda</a>" />
-				      <img src="media/sealvl-southbay.jpg" 
-				        class="img-responsive" 
-				        data-cycle-pager-template="<a href=#>South Bay</a>" />
 				  </div>
 				  <div id="no-template-pager" class="col-sm-12 cycle-pager external">
 				  </div>
@@ -953,7 +949,7 @@
 			<div class="col-sm-5" style="padding-left:0px;">
 			<img class="img-responsive" src="media/reefs-big.jpg"/>
 
-			<p class="caption">Sketches of the different artificial reefs styles by the Coastal Conservancy.
+			<p class="caption">Sketches of the different artificial reefs by the Coastal Conservancy.
 			</p>
 
 			</div>
@@ -962,14 +958,11 @@
 			<p>In San Rafael, plots of eelgrass are interspersed with oyster reefs. One goal of the project is to see how reefs and eelgrass beds combined can help protect the shoreline from erosion, Boyer said.</p>
 			<p>Eelgrass has roots that help stabilize the sediments on the bottom of the Bay. And filter-feeding oysters can improve water clarity, helping the eelgrass to grow, Boyer said.</p>
 
-            <div class="col-sm-12">
                 <video width="100%" height="auto" controls>
                     <source src="http://s3-us-west-1.amazonaws.com/climate-california/oysters.mp4" type="video/mp4">
-                    <source src="movie.ogg" type="video/ogg">
-                    Your browser does not support the video tag.
+
                 </video>
-                <p class="caption">See how oysters and eelgrass benefit ecosystem health in the San Francisco Bay. (Art: Tracey Saxby and Jane Hawkey, Integration and Application Network)</p>
-            </div>
+                <p class="caption">See how oysters and eelgrass work together to help the San Francisco Bay ecosystem. (Art: Tracey Saxby and Jane Hawkey, Integration and Application Network)</p>
 
 			<p>It’s been about a year since the reefs were installed at the San Rafael site. In addition to the recruitment of two million oysters, the team found that the reefs are reducing the energy of incoming waves by 30-50 percent.</p>
 			<p>The results offer some hope that a large-scale oyster habitat restoration project, along with ongoing efforts to restore Bay Area tidal marshes, could offer shoreline communities protection against floods and storm surges.</p>
@@ -980,11 +973,11 @@
 			<p>When the reefs were first built, someone contacted Latta wondering how oysters could fix sea level rise. The caller thought oysters, since they’re filter feeders, would just suck up all the water, saving the Bay from climate change.</p>
 			<p>Mistaken as that may be, Latta says, the complex relationship between oysters,  eelgrass and the shoreline holds promise for blunting the impact of global warming.</p>
 			<p>“The more we can focus on what might be the solution and even small ways to adapt, that gives me great hope,” Latta said. “Even if it doesn’t work in the end, I want to spend my time looking for things we might do.”</p>
-			</div>
+			
+            <div style="clear:both;"></div>
+            <a href="#about"><div class="next-arrow"></div></a>
 
-			<div style="clear:both;"></div>
-            <a href="#about"><span class="next-arrow">&#10148;</span></a>
-
+            </div>
 
 		</div>
 	</div><!-- end .row -->
