@@ -63,6 +63,10 @@ body { padding-bottom: 70px;
 			padding-bottom:30px;
 		}
 
+		.col-sm-10 {
+			margin-bottom:25px;
+		}
+
 		#about-section {
 			background-color: white;
 			padding:30px 0 0 0;
@@ -73,34 +77,6 @@ body { padding-bottom: 70px;
 			padding-bottom:30px;
 		}
 
-		.next-box {
-			position:relative;
-			right: 20%;
-			left:50%;
-			height: 60px;
-			width: 45%;
-			margin: 15px 0 15px 0;
-			cursor: pointer;
-
-		}
-		.next-text {
-			position:absolute;
-			font-family: 'Helvetica Neue';
-			color:#777;
-			font-variant: small-caps;
-			font-size: 15px;
-			text-align: left;
-			margin-bottom: 0px;
-		}
-		.next-chapter {
-			position:absolute;
-			font-family: 'Helvetica Neue';
-			font-size: 20px;
-			font-weight: 100;
-			color: #777;
-			font-style: italic;
-			margin-bottom: 0px;
-		}
 		div.next-arrow {
 			position: relative;
 			float:right;
