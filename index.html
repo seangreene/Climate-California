@@ -124,8 +124,8 @@
 
             		$(this).jPlayer("setMedia", {
             			m4v : 'http://s3-us-west-1.amazonaws.com/climate-california/cc-cover.mp4',
-            			ogv : 'http://s3-us-west-1.amazonaws.com/climate-california/cc-cover.ogv'
-            			//poster: 'IMAGE WILL GO HERE'
+            			ogv : 'http://s3-us-west-1.amazonaws.com/climate-california/cc-cover.ogv',
+            			poster: 'video/cc-cover.jpg'
             		}).jPlayer("play");
             	},
             	fullScreen: "true",
@@ -141,8 +141,8 @@
 
             		$(this).jPlayer("setMedia", {
             			m4v : 'http://s3-us-west-1.amazonaws.com/climate-california/cc-drought.mp4',
-            			ogv: 'http://s3-us-west-1.amazonaws.com/climate-california/cc-drought.ogv'
-            			//poster: 'IMAGE WILL GO HERE'
+            			ogv: 'http://s3-us-west-1.amazonaws.com/climate-california/cc-drought.ogv',
+            			poster: 'video/cc-drought.jpg'
             		}).jPlayer("play");
             	},
             	fullScreen: "true",
@@ -158,9 +158,8 @@
 
             		$(this).jPlayer("setMedia", {
             			m4v : 'http://s3-us-west-1.amazonaws.com/climate-california/cc-fire.mp4',
-            			ogv: 'http://s3-us-west-1.amazonaws.com/climate-california/cc-fire.ogv'
-
-            			//poster: 'IMAGE WILL GO HERE'
+            			ogv: 'http://s3-us-west-1.amazonaws.com/climate-california/cc-fire.ogv',
+                        poster: 'video/cc-fire.jpg'
             		}).jPlayer("play");
             	},
             	fullScreen: "true",
@@ -176,8 +175,8 @@
 
             		$(this).jPlayer("setMedia", {
             			m4v : 'http://s3-us-west-1.amazonaws.com/climate-california/cc-ag.mp4',
-  			   			ogv: 'http://s3-us-west-1.amazonaws.com/climate-california/cc-ag.ogv'
-            			//poster: 'IMAGE WILL GO HERE'
+  			   			ogv: 'http://s3-us-west-1.amazonaws.com/climate-california/cc-ag.ogv',
+            			poster: 'video/cc-ag.jpg'
             		}).jPlayer("play");
             	},
             	fullScreen: "true",
@@ -193,8 +192,8 @@
 
             		$(this).jPlayer("setMedia", {
             			m4v : 'http://s3-us-west-1.amazonaws.com/climate-california/cc-sealvl.mp4',
-            			ogv: 'http://s3-us-west-1.amazonaws.com/climate-california/cc-sealvl.ogv'
-            			//poster: 'IMAGE WILL GO HERE'
+            			ogv: 'http://s3-us-west-1.amazonaws.com/climate-california/cc-sealvl.ogv',
+            			poster: 'video/cc-sealevel.jpg'
             		}).jPlayer("play");
             	},
             	fullScreen: "true",
@@ -204,16 +203,17 @@
             	supplied : "m4v, ogv"
             });
 
-            $('#oyster-video').jPlayer({
+            $('#about-video').jPlayer({
                 ready : function(e){
 
                     $(this).jPlayer("setMedia", {
-                        m4v : 'http://s3-us-west-1.amazonaws.com/climate-california/oysters.mp4'
-                        //ogv: 'http://s3-us-west-1.amazonaws.com/climate-california/cc-sealvl.ogv'
-                        //poster: 'IMAGE WILL GO HERE'
+                        m4v : 'http://s3-us-west-1.amazonaws.com/climate-california/cc-cover.mp4',
+                        ogv : 'http://s3-us-west-1.amazonaws.com/climate-california/cc-cover.ogv',
+                        poster: 'video/cc-cover.jpg'
                     }).jPlayer("play");
                 },
-                fullScreen: "false",
+                fullScreen: "true",
+                loop: "true",
                 size     : {'width': '100%', 'height': '100%'},
                 swfPath  : "js/Jplayer.swf",
                 solution : "html",
@@ -221,6 +221,8 @@
             });
 
         });
+
+
     </script>
 
     <!--
@@ -567,7 +569,8 @@
             In the Sierra National Forest, this is a restorative process.
             </p>
 			
-			<img src="media/fire1.jpg" class="img-responsive" />
+			<img src="media/fire1.jpg" class="img-responsive" style="margin-bottom:5px" />
+            <p class="caption">Carolyn Ballard walks through a cleared meadow in Dinkey Creek.</p>
 
 			<p><strong>Over the course</strong> of her 30-year career, Ballard has seen the changes pile up in her section of forest in the southern Sierra, known as Dinkey Creek. The forest, she says, is “out of whack."</p>
             <p>
@@ -645,7 +648,7 @@
 
             <div class="col-sm-12">
 			<img src="media/fire-gfx.png" class="img-responsive" style="margin-bottom:0px;"/>
-            <p class="caption" style="text-align:right; margin-bottom:15px;">Images: Edward Boatman, Jason Dilworth, Rohith M S, Gerardo Martín Martínez/The Noun Project</p>
+            <p class="caption" style="font-size: 10px; text-align:right; margin-bottom:15px;">Images: Edward Boatman, Jason Dilworth, Rohith M S, Gerardo Martín Martínez/The Noun Project</p>
             </div>
 
             <div class="col-sm-10 col-sm-offset-1">
@@ -801,7 +804,8 @@
             These days, Floyd Zaiger is semi-retired and his daughter, Leith Gardiner, mainly runs the orchard. Gardiner has a plant sciences degree from the University of California, Davis and “a gazillion years experience” from working the family business.
             </p>
 
-			<img src="media/zaigers5.jpg" class="img-responsive" />
+			<img src="media/zaigers5.jpg" class="img-responsive" style="margin-bottom:5px"/>
+            <p class="caption">Leith Gardiner makes her way around the orchard of Zaiger's Genetics with her dog Trixie.</p>
 
             <p>
             On a February afternoon, she makes her rounds on a golf cart, rolling down aisle after aisle of trees, a cloud of red dust trailing behind. Her two dogs, Lucy and Trixie, follow along, weaving between trees, sometimes stopping to dig. When one gets tired, it hops up on the passenger side of the cart.
@@ -834,7 +838,7 @@
 			<img src="media/zaigers4.jpg" class="img-responsive" />
 
 			<p>
-            <strong>In some areas</strong>of the Central Valley, winter chilling hours have decreased by 30 percent since 1950, according to a 2009 study by researchers at UC Davis. Back then, growers could rely on 700-1200 chilling hours per winter.
+            <strong>In some areas</strong> of the Central Valley, winter chilling hours have decreased by 30 percent since 1950, according to a 2009 study by researchers at UC Davis. Back then, growers could rely on 700-1200 chilling hours per winter.
             </p>
 			
 			<div class="col-sm-6">	
@@ -924,7 +928,8 @@
             At Zaiger’s Genetics, workers use eye shadow brushes to hand-pollinate 2,000 barreled trees starting as early as late January each year. Then they can collect the resulting seeds, plant them and evaluate the quality of the new trees. The desirable plants will provide pollen for future varieties.
             </p>
 
-			<img src="media/zaigers6.jpg" class="img-responsive" />
+			<img src="media/zaigers6.jpg" class="img-responsive" style="margin-bottom:5px"/>
+            <p class="caption">Grant Zaiger, Gardiner's brother, inspects a tree at the orchard.</p>
 
             <p>
             “It takes so long from taking a tree with characteristics that you want to having a variety that you can release confidently into the marketplace,” she said.
@@ -1014,7 +1019,7 @@
             Eight hundred feet offshore, across sticky, bubbling mud, the scientists make their way to that fortress, giving its 2 million inhabitants a checkup like doctors making a house call.
             </p>
 
-            <img src="media/oyster1.jpg" class="img-responsive" />
+            <img src="media/oyster1.jpg" class="img-responsive" style="margin-bottom:5px"/>
 
 			<p>
             <strong>As glacial ice</strong> melts and the warming ocean expand in volume, the sea level in the Bay Area could rise 14 inches by 2050 and 55 inches by 2100, according to estimates published by the California Ocean Protection Council. From 1900 to 2000, water levels have risen 8 inches under the Golden Gate Bridge.
@@ -1178,7 +1183,8 @@
             </p>
 
                 <video width="100%" height="auto" controls>
-                    <source src="http://s3-us-west-1.amazonaws.com/climate-california/oysters.mp4" type="video/mp4">
+                    <source src="http://s3-us-west-1.amazonaws.com/climate-california/oysters2.mp4" type="video/mp4">
+                    <source src="http://s3-us-west-1.amazonaws.com/climate-california/oysters2.ogv" type="video/ogg">
 
                 </video>
                 <p class="caption">See how oysters and eelgrass work together to help the San Francisco Bay ecosystem. (Art: Tracey Saxby and Jane Hawkey, Integration and Application Network)</p>
@@ -1224,11 +1230,11 @@
 
     <div class="row section" id="about">
 
-        <video class="cover" autoplay loop>
+        <!-- <video class="cover" autoplay loop>
             <source src="http://s3-us-west-1.amazonaws.com/climate-california/cc-cover.mp4" type="video/mp4">
-            <source src="movie.ogg" type="video/ogg">
-            <img src="" />
-        </video>
+            <source src="http://s3-us-west-1.amazonaws.com/climate-california/cc-cover.ogg" type="video/ogg">
+        </video> -->
+        <div id="about-video" class="cover"></div>
 
         <div class="col-sm-6 col-sm-offset-3" id="about-section">
             <div class="col-sm-10 col-sm-offset-1">

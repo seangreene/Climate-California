@@ -107,13 +107,13 @@ body { padding-bottom: 70px;
 			right:0;
 			bottom: 0;
 			cursor:pointer;
-			background-image:url('arrow-light.png');
+			background-image:url('arrow-light2.png');
 			background-repeat: no-repeat;
 			height:50px;
 			width:150px;			
 		}
 		div.next-arrow:hover{
-			background-image:url('arrow-dark.png');
+			background-image:url('arrow-dark2.png');
 			background-repeat: no-repeat;
 		}
 
@@ -158,13 +158,21 @@ body { padding-bottom: 70px;
 		video {
 			object-fit:cover;
 		}
-
-		.cover {position:fixed;left:50%;top:50%;-webkit-transform:translate(-50%, -50%);-moz-transform:translate(-50%, -50%);-ms-transform:translate(-50%, -50%);transform:translate(-50%, -50%);height:100%;width:auto;
+		.cover {
+			position:fixed;
+			left:50%;top:50%;
+			-webkit-transform:translate(-50%, -50%);
+				-moz-transform:translate(-50%, -50%);
+					-ms-transform:translate(-50%, -50%);
+						transform:translate(-50%, -50%);
+			height:100%;width:auto;
+			z-index: -100;
+			background-size:cover;
 		}
 
 		iframe.cover{width:100%;height:100%;}
-        	@media screen and (min-aspect-ratio: 16/9) { video.cover{height:auto;width:100%;}}
-
+        	@media screen and (min-aspect-ratio: 16/9) { 
+        		video.cover{height:auto;width:100%;}}
 
 		.droughtviz-container {
         	position: relative;
