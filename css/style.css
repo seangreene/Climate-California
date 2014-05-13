@@ -16,12 +16,10 @@ body { padding-bottom: 70px;
 			/*text-align: center;*/
 			padding-top:15px;
 		}
-		@media screen and (min-width: 0px) and (max-width: 400px) {
-		  #quote { display: none; }  /* show it on small screens */
-		}
+		@media only screen and (max-width: 400px) {
 
-		@media screen and (min-width: 401px) and (max-width: 1024px) {
-		  #quote { display: block; }   /* hide it elsewhere */
+   		#quote { font-size: 0px; }
+
 		}
 
 		#title{
@@ -42,7 +40,7 @@ body { padding-bottom: 70px;
 		h2.chapter_title{
 			position:absolute;
 			top:150px;
-			font-family: "Montserrat";
+			font-family: "Montserrat", 'Arial Black', sans-serif;
 			font-style: normal;
 			font-weight: 700;
 			font-size:6em;
