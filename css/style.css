@@ -16,7 +16,13 @@ body { padding-bottom: 70px;
 			/*text-align: center;*/
 			padding-top:15px;
 		}
+		@media screen and (min-width: 0px) and (max-width: 400px) {
+		  #quote { display: none; }  /* show it on small screens */
+		}
 
+		@media screen and (min-width: 401px) and (max-width: 1024px) {
+		  #quote { display: block; }   /* hide it elsewhere */
+		}
 
 		#title{
 			position:absolute;
@@ -43,6 +49,11 @@ body { padding-bottom: 70px;
 			line-height:85px;
 			color: #ffffff;
 			z-index:100;
+		}
+		@media only screen and (max-width: 400px) {
+
+   		h2.chapter_title { font-size: 4em; }
+
 		}
 
 		.subhead {

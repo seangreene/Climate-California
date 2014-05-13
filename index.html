@@ -85,6 +85,11 @@
  				if(e.path == "/" || e.path == "/home"){
  					$("#home").css('display', 'block');
  				}
+
+                var windowsize = $window.width();
+                if( windowsize > 400 ){
+                    $('#quote').css('display','none');
+                }
  				
                 window.scrollTo(0,0);
 
