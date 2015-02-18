@@ -44,6 +44,21 @@
     <script type="text/javascript" charset="utf-8">
     	var vidH, vidW;
 
+
+        /************ TWENTYTWENTY SCRIPT ***************/
+
+        $(window).load(function(){
+          $(".twentytwenty-container").twentytwenty({
+            default_offset_pct: 0.5, // How much of the before image is visible when the page loads
+            orientation: 'horizontal' // Orientation of the before and after images ('horizontal' or 'vertical')
+          });
+        });
+
+        // var winH = parseInt($(window).height());
+        // var winW = parseInt($(window).width());
+        // vidW = winW / winH * 16 > 9 ? (16 * winH / 9): winW ;
+        // vidH = winW / winH * 16 > 9 ? winH : (9 * winW / 16);
+
         jQuery(document).ready(function($){
 
         	//click arrow to automatically scroll down a little bit
@@ -103,19 +118,7 @@
                 return $(this).attr('href').replace(/^#/, '');  
             });
 
-            /************ TWENTYTWENTY SCRIPT ***************/
 
-            $(window).load(function(){
-              $(".twentytwenty-container").twentytwenty({
-                default_offset_pct: 0.5, // How much of the before image is visible when the page loads
-                orientation: 'horizontal' // Orientation of the before and after images ('horizontal' or 'vertical')
-              });
-            });
-
-            // var winH = parseInt($(window).height());
-            // var winW = parseInt($(window).width());
-            // vidW = winW / winH * 16 > 9 ? (16 * winH / 9): winW ;
-            // vidH = winW / winH * 16 > 9 ? winH : (9 * winW / 16);
 
             /********* JPLAYER **********/
 
