@@ -44,21 +44,6 @@
     <script type="text/javascript" charset="utf-8">
     	var vidH, vidW;
 
-
-        /************ TWENTYTWENTY SCRIPT ***************/
-
-        $(window).load(function(){
-          $(".twentytwenty-container").twentytwenty({
-            default_offset_pct: 0.5, // How much of the before image is visible when the page loads
-            orientation: 'horizontal' // Orientation of the before and after images ('horizontal' or 'vertical')
-          });
-        });
-
-        // var winH = parseInt($(window).height());
-        // var winW = parseInt($(window).width());
-        // vidW = winW / winH * 16 > 9 ? (16 * winH / 9): winW ;
-        // vidH = winW / winH * 16 > 9 ? winH : (9 * winW / 16);
-
         jQuery(document).ready(function($){
 
         	//click arrow to automatically scroll down a little bit
@@ -402,6 +387,18 @@
 				</div>
                 <p class="caption">Use the slider to compare California snowpacks in January 2013 to January 2014, when Governor Jerry Brown declared a drought emergency. (Images: NASA)</p>
             </div>
+
+            <script>
+            /************ TWENTYTWENTY SCRIPT ***************/
+
+            $(window).load(function(){
+              $(".twentytwenty-container").twentytwenty({
+                default_offset_pct: 0.5, // How much of the before image is visible when the page loads
+                orientation: 'horizontal' // Orientation of the before and after images ('horizontal' or 'vertical')
+              });
+            });
+
+            </script>
 
             <p>
             <strong>Drought in the West</strong> is a cyclic phenomenon as much as it is a symptom of climate change. The Mediterranean climate here means summers are dry and winters wet. Multi-year and multi-decade atmospheric patterns also influence how much rain the region gets.
