@@ -260,3 +260,14 @@ body { padding-bottom: 70px;
 			font-family: Georgia, serif;
 		}
 
+	/* media queries */
+
+		@media (max-width: 768px) {
+			#chapter {padding: 20px; padding-bottom:50px;}
+
+		}
+		@media (max-width: 360px) {
+			#cover-video { background:url('video/cc-cover.jpg');}
+		}
+
+
