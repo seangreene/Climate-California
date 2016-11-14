@@ -4,6 +4,23 @@
     <meta charset="utf-8">
     <title>Climate California</title>
     <link rel="shortcut icon" href="media/bearicon.ico" type="image/x-icon" />
+    <meta name="description" content="Stories from the front lines in the battle against climate change." />
+    <meta name="keywords" content="climate change, California, global warming, drought, wildfire, sea level rise" />
+
+    <!-- Twitter Card data -->
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Climate California">
+    <meta name="twitter:description" content="Stories from the front lines in the battle against climate change.">
+    <meta name="twitter:creator" content="@seangreene89">
+    <meta name="twitter:image" content="http://climatecalifornia.com/video/cc-cover.jpg">
+
+    <!-- Open Graph data -->
+    <meta property="og:title" content="Climate California" />
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="http://www.climatecalifornia.com/" />
+    <meta property="og:image" content="http://climatecalifornia.com/video/cc-cover.jpg" />
+    <meta property="og:description" content="Stories from the front lines in the battle against climate change." /> 
+    <meta property="og:site_name" content="Climate California" />
 
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <script src="js/jquery.min.js"></script>
@@ -89,13 +106,6 @@
  				}
  				
                 window.scrollTo(0,0);
-
-
-                /*
-                if(id == 'ag'){
-                    
-                }
-                */
                  
             });
 
@@ -103,12 +113,10 @@
                 return $(this).attr('href').replace(/^#/, '');  
             });
 
-
-
             /********* JPLAYER **********/
 
                
-            $('#cover-video').jPlayer({
+            $('.cover-video').jPlayer({
             	ready : function(e){
 
             		$(this).jPlayer("setMedia", {
@@ -210,8 +218,27 @@
                 solution : "html",
                 supplied : "m4v, ogv"
             });
+            
+            var cw = $(document).width();
+                
+                if ( cw < 600 ){
+                    $('#jp_video_0').remove();
+                    $('#jp_video_1').remove();
+                    $('#jp_video_2').remove();
+                    $('#jp_video_3').remove();
+                    $('#jp_video_4').remove();
+                    $('#jp_video_5').remove();
 
-            $('.cover').addClass('jplayer');
+                    $('#cover-video').css('background-image', 'url("video/cc-cover.jpg")');
+                    $('#drought-video').css('background-image', 'url("video/cc-drought.jpg")');
+                    $('#fire-video').css('background-image', 'url("video/cc-fire.jpg")');
+                    $('#ag-video').css('background-image', 'url("video/cc-ag.jpg")');
+                    $('#sealevel-video').css('background-image', 'url("video/cc-sealevel.jpg")');
+                    $('#about-video').css('background-image', 'url("video/cc-cover.jpg")');
+                }
+                
+
+
 
     });
 
@@ -269,7 +296,7 @@
 <!--TITLE PAGE -->
 	<div class="row section" id="home">
 
-		<div id="cover-video" class="cover"></div>
+		<div id="cover-video" class="cover-video cover"></div>
 
 		<div id="fds">
 
@@ -292,10 +319,10 @@
 				<img src="media/down-arrow2.png" id="down-arrow" class="img-responsive fade down-arrow" />
 		</div><!--fds-->
 
-		<div class="col-sm-6 col-sm-offset-3" id="chapter">
+		<div class="col-sm-6 col-sm-offset-3 chapter" id="chapter">
 
 			<div class="col-sm-10 col-sm-offset-1" style="padding-top:15px;">
-			
+
 			<p><span class="dropcap">I</span>n this past year, drought parched the state, wildfire ripped through massive swaths of forest, and crops in the Central Valley suffered in a warmer winter. </p>
             <p>
             All the while, the sea continues to rise, compromising California’s iconic coastlines.
@@ -348,7 +375,7 @@
 			
 		</div>
 
-		<div class="col-sm-6 col-sm-offset-3" id="chapter">
+		<div class="col-sm-6 col-sm-offset-3 chapter" id="chapter">
 
 			<div class="col-sm-10 col-sm-offset-1">
 			
@@ -563,7 +590,7 @@
 			</h2>
 		</div>
 
-		<div class="col-sm-6 col-sm-offset-3" id="chapter">
+		<div class="col-sm-6 col-sm-offset-3 chapter" id="chapter">
 			<div class="col-sm-10 col-sm-offset-1">
 
 			<h3 class="subhead">In the Southern Sierra, a group works to prevent a disaster like the Rim Fire in their forest. Using fire.</h3>
@@ -768,7 +795,7 @@
 			</h2>
 		</div>
 
-		<div class="col-sm-6 col-sm-offset-3" id="chapter">
+		<div class="col-sm-6 col-sm-offset-3 chapter" id="chapter">
 
 			<div class="col-sm-10 col-sm-offset-1">
 
@@ -1007,7 +1034,7 @@
 			</h2>
 		</div>
 
-		<div class="col-sm-6 col-sm-offset-3" id="chapter">
+		<div class="col-sm-6 col-sm-offset-3 chapter" id="chapter">
 			<div class="col-sm-10 col-sm-offset-1">
 
 			<h3 class="subhead">
